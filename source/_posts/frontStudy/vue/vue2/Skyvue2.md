@@ -1,6 +1,9 @@
 ---
 title: vue2
-categories: 前端学习
+top: 96
+categories: 
+    - 前端学习
+    - vue2
 tags:
   - js
   - vue2
