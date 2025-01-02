@@ -1,6 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo</title>
+    <url>/posts/21358/</url>
+    <content><![CDATA[<p>Hexo&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; node.js&#x7684;&#x5FEB;&#x901F;&#x751F;&#x6210;&#x9759;&#x6001;&#x535A;&#x5BA2;&#x7684;&#x5F00;&#x6E90;&#x6846;&#x67B6;,&#x652F;&#x6301; Markdown&#x548C;&#x5927;&#x591A;&#x6570; Octopress&#x63D2;&#x4EF6;,&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x5373;&#x53EF;&#x90E8;&#x7F72;&#x5230; Github&#x9875;&#x9762;&#x3001; Giteee&#x3001; Heroku&#x7B49;,&#x5F3A;&#x5927;&#x7684;APl,&#x53EF;&#x65E0;&#x9650;&#x6269;&#x5C55;,&#x62E5;&#x6709;&#x6570;&#x767E;&#x4E2A;&#x4E3B;&#x9898;&#x548C;&#x63D2;&#x4EF6;&#x3002;</p>
+<span id="more"></span>
+
+<h1 id="Hexo-&#x96F6;&#x57FA;&#x7840;&#x642D;&#x5EFA;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;"><a href="#Hexo-&#x96F6;&#x57FA;&#x7840;&#x642D;&#x5EFA;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;" class="headerlink" title="Hexo-&#x96F6;&#x57FA;&#x7840;&#x642D;&#x5EFA;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;"></a>Hexo-&#x96F6;&#x57FA;&#x7840;&#x642D;&#x5EFA;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;</h1><p>&#x7B80;&#x5355;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x7528;&#x4F60;&#x5199;&#x4EE3;&#x7801;&#xFF0C;&#x5C31;&#x80FD;&#x642D;&#x5EFA;&#x4E00;&#x5957;&#x5C5E;&#x4E8E;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;&#x7F51;&#x7AD9; &#x5E94;&#x7528;&#xFF08;&#x96F6;&#x57FA;&#x7840;&#x5C0F;&#x767D;&#x4E5F;&#x4F1A;&#xFF09;&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4E0A;&#x9762;&#x7F16;&#x5199;&#x6587;&#x7AE0;&#xFF0C;&#x505A;&#x7B14;&#x8BB0;&#xFF0C;&#x5199;&#x65E5;&#x8BB0;&#xFF0C;&#x7801;&#x4EE3;&#x7801;&#x3002;&#xFF08;&#x4E00;&#x4E2A;&#x5C5E;&#x4E8E;&#x4F60;&#x7684;&#x4E16;&#x754C;&#xFF01;&#x4E00;&#x4E2A;&#x53EF;&#x4F9B;&#x522B;&#x4EBA;&#x8BBF;&#x95EE;&#x7684;&#x4E2A;&#x4EBA;&#x4E16;&#x754C;&#xFF09;</p>
+<h2 id="&#x4E00;&#x3001;&#x73AF;&#x5883;&#x51C6;&#x5907;"><a href="#&#x4E00;&#x3001;&#x73AF;&#x5883;&#x51C6;&#x5907;" class="headerlink" title="&#x4E00;&#x3001;&#x73AF;&#x5883;&#x51C6;&#x5907;"></a>&#x4E00;&#x3001;&#x73AF;&#x5883;&#x51C6;&#x5907;</h2><h3 id="1-&#x5B89;&#x88C5;node-js"><a href="#1-&#x5B89;&#x88C5;node-js" class="headerlink" title="1.&#x5B89;&#x88C5;node.js"></a>1.&#x5B89;&#x88C5;node.js</h3><p>&#x76F4;&#x63A5;&#x5230;&#x5B98;&#x7F51;&#x4E0A;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5373;&#x53EF;<a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+<ul>
+<li><p><a href="http://nodejs.org/">Node.js</a> (Node.js &#x7248;&#x672C;&#x9700;&#x4E0D;&#x4F4E;&#x4E8E; 10.13&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; Node.js 12.0 &#x53CA;&#x4EE5;&#x4E0A;&#x7248;&#x672C;)</p>
+</li>
+<li><p>Node&#x81EA;&#x5E26;npm</p>
+</li>
+</ul>
+<h3 id="2-&#x5B89;&#x88C5;Git"><a href="#2-&#x5B89;&#x88C5;Git" class="headerlink" title="2.&#x5B89;&#x88C5;Git"></a>2.&#x5B89;&#x88C5;Git</h3><ul>
+<li>Windows&#xFF1A;&#x4E0B;&#x8F7D;&#x5E76;&#x5B89;&#x88C5; <a href="https://git-scm.com/download/win">git</a>.</li>
+<li>Mac&#xFF1A;&#x4F7F;&#x7528; <a href="http://mxcl.github.com/homebrew/">Homebrew</a>, <a href="http://www.macports.org/">MacPorts</a> &#x6216;&#x8005;&#x4E0B;&#x8F7D; <a href="http://sourceforge.net/projects/git-osx-installer/">&#x5B89;&#x88C5;&#x7A0B;&#x5E8F;</a>&#x3002;</li>
+<li>Linux (Ubuntu, Debian)&#xFF1A;<code>sudo apt-get install git-core</code></li>
+<li>Linux (Fedora, Red Hat, CentOS)&#xFF1A;<code>sudo yum install git-core</code></li>
+</ul>
+<p><img src="/posts/21358/D:\study\blog\source_posts\hello-world\nodeGit.png"></p>
+<p>npm&#x4E0B;&#x8F7D;&#x6162;&#x7684;&#x8BDD;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0B;&#x8F7D;&#x6DD8;&#x5B9D;&#x4E0B;&#x8F7D;&#x6E90;cnpm</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">npm</span> <span class="string">install -g cnpm --registry=https://registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="&#x4E8C;&#x3001;&#x5F00;&#x59CB;&#x5B89;&#x88C5;hexo"><a href="#&#x4E8C;&#x3001;&#x5F00;&#x59CB;&#x5B89;&#x88C5;hexo" class="headerlink" title="&#x4E8C;&#x3001;&#x5F00;&#x59CB;&#x5B89;&#x88C5;hexo"></a>&#x4E8C;&#x3001;&#x5F00;&#x59CB;&#x5B89;&#x88C5;hexo</h2><h3 id="1-&#x5B89;&#x88C5;hexo"><a href="#1-&#x5B89;&#x88C5;hexo" class="headerlink" title="1.&#x5B89;&#x88C5;hexo"></a>1.&#x5B89;&#x88C5;hexo</h3><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">npm</span> <span class="string">install -g hexo-cli</span></span><br><span class="line"><span class="attr">&#x6216;&#x8005;</span></span><br><span class="line"><span class="attr">cnpm</span> <span class="string">install -g hexo-cli</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x53EF;&#x4EE5;&#x8F93;&#x5165;npx hexo -v&#x67E5;&#x770B;&#x7248;&#x672C;</p>
+<p><img src="/posts/21358/D:\study\blog\source_posts\hello-world\hexoV.png" alt="image-20241231174852695"></p>
+<h3 id="2-&#x521D;&#x59CB;&#x5316;hexo&#xFF0C;&#x65B0;&#x5EFA;&#x5B58;&#x50A8;&#x535A;&#x5BA2;&#x7684;&#x6587;&#x4EF6;&#x5939;"><a href="#2-&#x521D;&#x59CB;&#x5316;hexo&#xFF0C;&#x65B0;&#x5EFA;&#x5B58;&#x50A8;&#x535A;&#x5BA2;&#x7684;&#x6587;&#x4EF6;&#x5939;" class="headerlink" title="2.&#x521D;&#x59CB;&#x5316;hexo&#xFF0C;&#x65B0;&#x5EFA;&#x5B58;&#x50A8;&#x535A;&#x5BA2;&#x7684;&#x6587;&#x4EF6;&#x5939;"></a>2.&#x521D;&#x59CB;&#x5316;hexo&#xFF0C;&#x65B0;&#x5EFA;&#x5B58;&#x50A8;&#x535A;&#x5BA2;&#x7684;&#x6587;&#x4EF6;&#x5939;</h3><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">hexo</span> <span class="string">init BLOG</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-&#x8FDB;&#x5165;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x5B89;&#x88C5;&#x4E00;&#x4E0B;npm"><a href="#3-&#x8FDB;&#x5165;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x5B89;&#x88C5;&#x4E00;&#x4E0B;npm" class="headerlink" title="3.&#x8FDB;&#x5165;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x5B89;&#x88C5;&#x4E00;&#x4E0B;npm"></a>3.&#x8FDB;&#x5165;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x5B89;&#x88C5;&#x4E00;&#x4E0B;npm</h3><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">cd</span> <span class="string">BLOG</span></span><br><span class="line"><span class="attr">npm</span> <span class="string">install</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x7684;hexo&#x7AD9;&#x70B9;&#x5C31;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x597D;&#x4E86;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x542F;&#x52A8;&#x4ED6;&#x4E86;</p>
+<p><img src="/posts/21358/D:\study\blog\source_posts\hello-world\hexoFiles.png" alt="iShot2021-12-03 16.55.54"></p>
+<h3 id="4-&#x542F;&#x52A8;&#x670D;&#x52A1;&#x7AD9;&#x70B9;"><a href="#4-&#x542F;&#x52A8;&#x670D;&#x52A1;&#x7AD9;&#x70B9;" class="headerlink" title="4.&#x542F;&#x52A8;&#x670D;&#x52A1;&#x7AD9;&#x70B9;"></a>4.&#x542F;&#x52A8;&#x670D;&#x52A1;&#x7AD9;&#x70B9;</h3><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">npx</span> <span class="string">hexo g</span></span><br><span class="line"><span class="attr">npx</span> <span class="string">hexo s</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x8BBF;&#x95EE;<a href="http://localhost:4000/">http://localhost:4000/</a> &#x81F3;&#x6B64;hero&#x5C31;&#x642D;&#x5EFA;&#x597D;&#x4E86;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x672C;&#x5730;&#x8BBF;&#x95EE;&#x4E86;</p>
+<p><img src="/posts/21358/D:\study\blog\source_posts\hello-world\hexoHome.png" alt="20211203170208"></p>
+<h2 id="&#x4E09;&#x3001;Hexo&#x90E8;&#x7F72;&#x7AD9;&#x70B9;&#x81F3;Github"><a href="#&#x4E09;&#x3001;Hexo&#x90E8;&#x7F72;&#x7AD9;&#x70B9;&#x81F3;Github" class="headerlink" title="&#x4E09;&#x3001;Hexo&#x90E8;&#x7F72;&#x7AD9;&#x70B9;&#x81F3;Github"></a>&#x4E09;&#x3001;Hexo&#x90E8;&#x7F72;&#x7AD9;&#x70B9;&#x81F3;Github</h2><h4 id="1-Github-Pages&#x7B80;&#x4ECB;"><a href="#1-Github-Pages&#x7B80;&#x4ECB;" class="headerlink" title="1.Github Pages&#x7B80;&#x4ECB;"></a>1.Github Pages&#x7B80;&#x4ECB;</h4><p><a href="https://pages.github.com/">Github Pages &#x5B98;&#x7F51;</a></p>
+<p><a href="https://help.github.com/en/articles/what-is-github-pages">GitHub Pages</a> &#x662F;&#x4E00;&#x79CD;&#x9759;&#x6001;&#x7AD9;&#x70B9;&#x6258;&#x7BA1;&#x670D;&#x52A1;&#xFF0C;&#x65E8;&#x5728;&#x76F4;&#x63A5;&#x4ECE; GitHub &#x5B58;&#x50A8;&#x5E93;&#x6258;&#x7BA1;&#x60A8;&#x7684;&#x4E2A;&#x4EBA;&#xFF0C;&#x7EC4;&#x7EC7;&#x6216;&#x9879;&#x76EE;&#x9875;&#x9762;&#x3002;</p>
+<h4 id="2-&#x521B;&#x5EFA;Github-Pages&#x4ED3;&#x5E93;"><a href="#2-&#x521B;&#x5EFA;Github-Pages&#x4ED3;&#x5E93;" class="headerlink" title="2.&#x521B;&#x5EFA;Github Pages&#x4ED3;&#x5E93;"></a>2.&#x521B;&#x5EFA;Github Pages&#x4ED3;&#x5E93;</h4><p>&#x8F6C;&#x5230; <a href="https://github.com/">GitHub</a> &#x5E76;<a href="https://github.com/new">&#x521B;&#x5EFA;</a>&#x4E00;&#x4E2A;&#x540D;&#x4E3A; <code>username.github.io</code> &#x7684;&#x65B0;&#x4ED3;&#x5E93;&#xFF0C;&#x5176;&#x4E2D; username &#x662F;&#x60A8;&#x5728; GitHub &#x4E0A;&#x7684;&#x7528;&#x6237;&#x540D;&#xFF08;&#x6216;&#x7EC4;&#x7EC7;&#x540D;&#x79F0;&#xFF09;&#x3002;<strong>&#x5982;&#x679C;&#x4ED3;&#x5E93;&#x540D;&#x7684;&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#xFF08;username &#x90E8;&#x5206;&#xFF09;&#x4E0E;&#x60A8;&#x7684;&#x7528;&#x6237;&#x540D;&#x4E0D;&#x5B8C;&#x5168;&#x5339;&#x914D;&#xFF0C;&#x5219;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF0C;&#x56E0;&#x6B64;&#x8BF7;&#x52A1;&#x5FC5;&#x6B63;&#x786E;&#x4F7F;&#x7528;&#x3002;</strong></p>
+<p><img src="/posts/21358/D:\study\blog\source_posts\hello-world\image-20250102110319850.png" alt="image-20250102110319850"></p>
+<p>Repository name&#x586B;&#x5199;&#x683C;&#x5F0F;username.github.io</p>
+<h4 id="3-&#x914D;&#x7F6E;SSH-Key"><a href="#3-&#x914D;&#x7F6E;SSH-Key" class="headerlink" title="3.&#x914D;&#x7F6E;SSH Key"></a>3.&#x914D;&#x7F6E;SSH Key</h4><p>SSH Key &#x662F;&#x4F60;&#x7684;&#x8EAB;&#x4EFD;&#x51ED;&#x8BC1;&#xFF0C;&#x62E5;&#x6709;&#x5BC6;&#x94A5;&#x4F60;&#x624D;&#x80FD;&#x5411;&#x4ED3;&#x5E93;&#x63A8;&#x9001;&#x4FEE;&#x6539;&#xFF0C;&#x5982;&#x679C;&#x65E0;&#x9700;&#x4EFB;&#x4F55;&#x51ED;&#x8BC1;&#x5C31;&#x80FD;&#x63A8;&#x9001;&#xFF0C;&#x90A3;&#x4E48;&#x8C01;&#x90FD;&#x53EF;&#x4EE5;&#x5411;&#x4F60;&#x7684;&#x4ED3;&#x5E93;&#x63A8;&#x9001;&#x4FEE;&#x6539;&#x3002;&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x914D;&#x7F6E;&#x8FC7;&#x4E86;&#x5C31;&#x65E0;&#x9700;&#x518D;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x914D;&#x7F6E;&#x8FC7;&#x6216;&#x8005;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x914D;&#x7F6E;&#x7684;&#xFF0C;&#x8BF7;&#x8FDB;&#x884C;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;&#x3002;</p>
+<h5 id="&#x914D;&#x7F6E;&#x7528;&#x6237;&#x4FE1;&#x606F;"><a href="#&#x914D;&#x7F6E;&#x7528;&#x6237;&#x4FE1;&#x606F;" class="headerlink" title="&#x914D;&#x7F6E;&#x7528;&#x6237;&#x4FE1;&#x606F;"></a>&#x914D;&#x7F6E;&#x7528;&#x6237;&#x4FE1;&#x606F;</h5><p>&#x521D;&#x6B21;&#x8FD0;&#x884C; Git &#x524D;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x4F60;&#x4E2A;&#x4EBA;&#x7684;&#x7528;&#x6237;&#x540D;&#x79F0;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x4F60;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x5730;&#x5740;&#x3002;&#x5982;&#x679C;&#x5DF2;&#x914D;&#x7F6E;&#x5219;&#x53EF;&#x4EE5;&#x8DF3;&#x8FC7;&#x3002;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name your name</span><br><span class="line">$ git config --global user.email your email</span><br></pre></td></tr></table></figure>
+
+<h5 id="&#x68C0;&#x67E5;&#x662F;&#x5426;&#x5DF2;&#x6709;SSH-Key"><a href="#&#x68C0;&#x67E5;&#x662F;&#x5426;&#x5DF2;&#x6709;SSH-Key" class="headerlink" title="&#x68C0;&#x67E5;&#x662F;&#x5426;&#x5DF2;&#x6709;SSH Key"></a>&#x68C0;&#x67E5;&#x662F;&#x5426;&#x5DF2;&#x6709;SSH Key</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd ~/.ssh</span><br></pre></td></tr></table></figure>
+
+<p>&#x6267;&#x884C;ls&#x6216;&#x8005;ll</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ls</span><br><span class="line">id_rsa  id_rsa.pub  known_hosts</span><br></pre></td></tr></table></figure>
+
+<p>&#x770B;&#x662F;&#x5426;&#x5B58;&#x5728; id_rsa &#x548C; id_rsa.pub &#x6587;&#x4EF6;&#xFF08;&#x6216;&#x8005;&#x662F;&#x5176;&#x5B83;&#x6587;&#x4EF6;&#x540D;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x8BF4;&#x660E;&#x5DF2;&#x6709; ssh key&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8DF3;&#x8FC7;&#x751F;&#x6210;&#x5BC6;&#x94A5;&#xFF0C;&#x5176;&#x4E2D; id_rsa &#x4E3A;&#x79C1;&#x94A5;&#xFF0C;id_rsa.pub &#x4E3A;&#x516C;&#x94A5;&#x3002;</p>
+<h5 id="&#x751F;&#x6210;SSH-Key"><a href="#&#x751F;&#x6210;SSH-Key" class="headerlink" title="&#x751F;&#x6210;SSH Key"></a>&#x751F;&#x6210;SSH Key</h5><p>&#x6267;&#x884C;&#x4E0B;&#x5217;&#x547D;&#x4EE4;&#xFF0C;&#x4E09;&#x6B21;&#x56DE;&#x8F66;&#x786E;&#x8BA4;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</span><br></pre></td></tr></table></figure>
+
+<h5 id="&#x6DFB;&#x52A0;-SSH-Key-&#x5230;-Github"><a href="#&#x6DFB;&#x52A0;-SSH-Key-&#x5230;-Github" class="headerlink" title="&#x6DFB;&#x52A0; SSH Key &#x5230; Github"></a>&#x6DFB;&#x52A0; SSH Key &#x5230; Github</h5><ul>
+<li>&#x767B;&#x5F55; github&#xFF0C;&#x70B9;&#x51FB;&#x5934;&#x50CF;&#xFF0C;&#x70B9;&#x51FB; Settings &#x8FDB;&#x5165;&#x8BBE;&#x7F6E;&#x9875;&#x9762;</li>
+<li>&#x7136;&#x540E;&#x70B9;&#x51FB;&#x83DC;&#x5355;&#x680F;&#x7684; SSH Key &#x8FDB;&#x5165;&#x9875;&#x9762;&#x6DFB;&#x52A0; SSH Key</li>
+<li>&#x70B9;&#x51FB; New SSH Key &#x6309;&#x94AE;&#x540E;&#x8FDB;&#x884C; Key &#x7684;&#x586B;&#x5199;&#xFF0C;&#x5176;&#x4E2D; Title &#x968F;&#x610F;&#xFF0C;Key &#x4E3A;&#x521A;&#x521A;&#x751F;&#x6210;&#x7684;&#x516C;&#x94A5;&#xFF0C;&#x516C;&#x94A5;&#x5728;&#x6587;&#x4EF6; id_rsa.pub &#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x76F4;&#x63A5; copy &#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x7C98;&#x8D34;&#x5373;&#x53EF;</li>
+</ul>
+<h5 id="&#x6D4B;&#x8BD5;SSH-Key"><a href="#&#x6D4B;&#x8BD5;SSH-Key" class="headerlink" title="&#x6D4B;&#x8BD5;SSH Key"></a>&#x6D4B;&#x8BD5;SSH Key</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>&#x76F4;&#x63A5;&#x8F93;&#x5165; yes &#x56DE;&#x8F66;&#xFF0C;&#x5982;&#x679C;&#x63D0;&#x793A;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x8BF4;&#x660E;&#x5DF2;&#x914D;&#x7F6E;&#x6210;&#x529F;&#x3002;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hi xxx! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-&#x5206;&#x652F;&#x7BA1;&#x7406;&#x8BF4;&#x660E;"><a href="#4-&#x5206;&#x652F;&#x7BA1;&#x7406;&#x8BF4;&#x660E;" class="headerlink" title="4.&#x5206;&#x652F;&#x7BA1;&#x7406;&#x8BF4;&#x660E;"></a>4.&#x5206;&#x652F;&#x7BA1;&#x7406;&#x8BF4;&#x660E;</h4><p><strong>&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x5206;&#x652F;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#xFF0C;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x7528;&#x4E8E;&#x90E8;&#x7F72;&#x7AD9;&#x70B9;&#xFF0C;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x7248;&#x672C;&#x63A7;&#x5236;&#x3002;</strong></p>
+<p>&#x5F53;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x4ED3;&#x5E93;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4ED3;&#x5E93;&#x5C06;&#x81EA;&#x52A8;&#x5305;&#x542B;&#x4E00;&#x4E2A; master &#x5206;&#x652F;&#x3002;&#x5982;&#x679C;&#x5C06;&#x7AD9;&#x70B9;&#x90E8;&#x7F72;&#x5230; Github Pages&#xFF0C;&#x5FC5;&#x987B;&#x914D;&#x7F6E;&#x90E8;&#x7F72;&#x5230; <code>username.github.io</code> &#x7684; master &#x5206;&#x652F;&#xFF0C;&#x56E0;&#x4E3A;&#x73B0;&#x5728; Github Pages &#x5DF2;&#x7ECF;&#x4E0D;&#x652F;&#x6301;&#x6307;&#x5B9A;&#x5206;&#x652F;&#x8FDB;&#x884C;&#x90E8;&#x7F72;&#x4E86;&#x6240;&#x4EE5;&#x5BF9;&#x4E8E;&#x6258;&#x7BA1;&#x5230; github &#x7684;&#xFF0C;&#x5EFA;&#x8BAE;&#x5C06; hexo &#x751F;&#x6210;&#x7684;&#x7AD9;&#x70B9;&#x6587;&#x4EF6;&#x63A8;&#x9001;&#x5230; master &#x5206;&#x652F;&#xFF0C;&#x5C06;&#x6E90;&#x4EE3;&#x7801;&#x63A8;&#x9001;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#xFF0C;&#x5982; dev &#x5206;&#x652F;&#xFF0C;&#x90A3;&#x4E48;&#x6240;&#x6709;&#x7684;&#x5199;&#x4F5C;&#x548C;&#x5404;&#x79CD;&#x914D;&#x7F6E;&#x4FEE;&#x6539;&#x90FD;&#x5728; dev &#x5206;&#x652F;&#x4E0B;&#x5B8C;&#x6210;&#xFF0C;dev &#x5206;&#x652F;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x5199;&#x4F5C;&#x5206;&#x652F;&#x3002;</p>
+<p>&#x8FD9;&#x4E00;&#x5207;&#x662F;&#x5982;&#x4F55;&#x53D1;&#x751F;&#x7684;&#xFF1F;<br>&#x5F53;&#x6267;&#x884C; hexo deploy &#x65F6;&#xFF0C;Hexo &#x4F1A;&#x521B;&#x5EFA;&#x6216;&#x66F4;&#x65B0;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x90E8;&#x7F72;&#x7684;&#x5206;&#x652F;&#xFF0C;&#x8FD9;&#x4E2A;&#x5206;&#x652F;&#x5C31;&#x662F; _config.yml &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x5206;&#x652F;&#x3002;Hexo &#x4F1A;&#x5C06;&#x751F;&#x6210;&#x7684;&#x7AD9;&#x70B9;&#x6587;&#x4EF6;&#x63A8;&#x9001;&#x81F3;&#x8BE5;&#x5206;&#x652F;&#x4E0B;&#xFF0C;&#x5E76;&#x4E14;&#x5B8C;&#x5168;&#x8986;&#x76D6;&#x8BE5;&#x5206;&#x652F;&#x4E0B;&#x7684;&#x5DF2;&#x6709;&#x5185;&#x5BB9;&#x3002;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;hexo deploy &#x5E76;&#x4E0D;&#x4F1A;&#x5BF9;&#x672C;&#x5730;&#x6216;&#x8FDC;&#x7A0B;&#x7684;&#x5199;&#x4F5C;&#x5206;&#x652F;&#x8FDB;&#x884C;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;&#xFF0C;&#x56E0;&#x6B64;&#x4F9D;&#x65E7;&#x9700;&#x8981;&#x624B;&#x52A8;&#x63A8;&#x9001;&#x5199;&#x4F5C;&#x5206;&#x652F;&#x7684;&#x6240;&#x6709;&#x6539;&#x52A8;&#x4EE5;&#x5B9E;&#x73B0;&#x7248;&#x672C;&#x63A7;&#x5236;&#x3002;</p>
+<h5 id="&#x4FEE;&#x6539;&#x90E8;&#x7F72;&#x914D;&#x7F6E;"><a href="#&#x4FEE;&#x6539;&#x90E8;&#x7F72;&#x914D;&#x7F6E;" class="headerlink" title="&#x4FEE;&#x6539;&#x90E8;&#x7F72;&#x914D;&#x7F6E;"></a>&#x4FEE;&#x6539;&#x90E8;&#x7F72;&#x914D;&#x7F6E;</h5><p>&#x6253;&#x5F00;&#x7AD9;&#x70B9;&#x914D;&#x7F6E;&#x6587;&#x4EF6; _config.yml&#xFF0C;&#x4FEE;&#x6539; deploy &#x914D;&#x7F6E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:username/username.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center">Setting</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">repo</td>
+<td align="center">&#x4ED3;&#x5E93;&#x5E93;&#xFF08;Repository&#xFF09;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td align="center">branch</td>
+<td align="center">&#x5206;&#x652F;&#x540D;&#x79F0;&#x3002;&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7684;&#x662F; GitHub &#x6216; GitCafe &#x7684;&#x8BDD;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x5C1D;&#x8BD5;&#x81EA;&#x52A8;&#x68C0;&#x6D4B;&#x3002;</td>
+</tr>
+<tr>
+<td align="center">message</td>
+<td align="center">&#x81EA;&#x5B9A;&#x4E49;&#x63D0;&#x4EA4;&#x4FE1;&#x606F; (&#x9ED8;&#x8BA4;&#x4E3A; Site updated:  { {  now(&#x2018;YYYY-MM-DD HH:mm:ss&#x2019;) } } )</td>
+</tr>
+</tbody></table>
+<p><strong>&#x8BF7;&#x5C06; <code>username</code> &#x6539;&#x6210;&#x4F60;&#x7684;&#x7528;&#x6237;&#x540D;</strong></p>
+<p><strong>Github Pages &#x4EC5;&#x5728; <code>master</code> &#x5206;&#x652F;&#x4E0B;&#x5B9E;&#x73B0;</strong></p>
+<h5 id="&#x90E8;&#x7F72;&#x7AD9;&#x70B9;"><a href="#&#x90E8;&#x7F72;&#x7AD9;&#x70B9;" class="headerlink" title="&#x90E8;&#x7F72;&#x7AD9;&#x70B9;"></a>&#x90E8;&#x7F72;&#x7AD9;&#x70B9;</h5><p>&#x6267;&#x884C;&#x4E0B;&#x5217;&#x547D;&#x4EE4;&#x751F;&#x6210;&#x7AD9;&#x70B9;&#x6587;&#x4EF6;&#x5E76;&#x63A8;&#x9001;&#x81F3;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npx hexo clean &amp;&amp; npx hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p><code>npx hexo clean</code>&#x6E05;&#x9664;&#x7AD9;&#x70B9;&#x6587;&#x4EF6;&#xFF0C;<code>npx hexo deploy</code>&#x91CD;&#x65B0;&#x751F;&#x6210;&#x7AD9;&#x70B9;&#x6587;&#x4EF6;&#x5E76;&#x5C06;&#x4E4B;&#x63A8;&#x9001;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x4ED3;&#x5E93;&#x5206;&#x652F;.</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x624B;&#x52A8;&#x751F;&#x6210;&#x9759;&#x6001;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528; git &#x63A8;&#x9001; public &#x6587;&#x4EF6;&#x5939;&#x5185;&#x7684;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x5230;&#x90E8;&#x7F72;&#x5206;&#x652F;&#x3002;&#x5728;&#x6267;&#x884C; hexo deploy &#x547D;&#x4EE4;&#x540E;&#xFF0C;&#x4F1A;&#x5728;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x751F;&#x6210;&#x4E00;&#x4E2A; .deploy_git &#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x5176;&#x5B9E;&#x5C31;&#x662F; public &#x6587;&#x4EF6;&#x5939;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x540C;&#x65F6; .deploy_git &#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x8FD8;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4E2A; .git &#x76EE;&#x5F55;&#xFF0C;&#x8868;&#x660E;&#x4E86; .deploy_git &#x662F;&#x4E00;&#x4E2A;&#x4ED3;&#x5E93;&#x76EE;&#x5F55;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; git &#x8FDB;&#x884C;&#x7248;&#x672C;&#x63A7;&#x5236;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x63A8;&#x9001; public &#x6587;&#x4EF6;&#x5939;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x9700;&#x8981;&#x5C06; public &#x521D;&#x59CB;&#x5316;&#x4E3A;&#x4E00;&#x4E2A;&#x4ED3;&#x5E93;&#xFF0C;&#x5373;&#x6267;&#x884C; git init &#x547D;&#x4EE4;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x8FDB;&#x884C;&#x63A8;&#x9001;&#x3002;</p>
+<p>&#x90E8;&#x7F72;&#x5230; Github Pages &#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x901A;&#x8FC7;&#x7F51;&#x5740; <a href="https://username.github.io/">https://username.github.io/</a> &#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#x4E86;&#x3002;(username &#x4E3A;&#x4F60;&#x7684; github &#x7528;&#x6237;&#x540D;)</p>
+<h5 id="&#x63D0;&#x4EA4;&#x6E90;&#x4EE3;&#x7801;&#x5206;&#x652F;"><a href="#&#x63D0;&#x4EA4;&#x6E90;&#x4EE3;&#x7801;&#x5206;&#x652F;" class="headerlink" title="&#x63D0;&#x4EA4;&#x6E90;&#x4EE3;&#x7801;&#x5206;&#x652F;"></a>&#x63D0;&#x4EA4;&#x6E90;&#x4EE3;&#x7801;&#x5206;&#x652F;</h5><h6 id="&#x521D;&#x6B21;&#x63D0;&#x4EA4;"><a href="#&#x521D;&#x6B21;&#x63D0;&#x4EA4;" class="headerlink" title="&#x521D;&#x6B21;&#x63D0;&#x4EA4;"></a>&#x521D;&#x6B21;&#x63D0;&#x4EA4;</h6><p>1.&#x521D;&#x59CB;&#x5316;&#x4ED3;&#x5E93;</p>
+<p>&#x5982;&#x679C;&#x662F;&#x521D;&#x6B21;&#x63D0;&#x4EA4;&#xFF0C;&#x6B64;&#x65F6;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x662F;&#x6CA1;&#x6709; <code>.git</code> &#x6587;&#x4EF6;&#x5939;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x6267;&#x884C;&#x4E0B;&#x5217;&#x547D;&#x4EE4;&#x5C06;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;&#x521D;&#x59CB;&#x5316;&#x4E3A;&#x4E00;&#x4E2A;&#x4ED3;&#x5E93;&#xFF0C;&#x5728;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x6267;&#x884C;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<p>2.&#x5B9A;&#x4E49;&#x5FFD;&#x7565;&#x89C4;&#x5219;</p>
+<p>Hexo &#x5728;&#x6267;&#x884C;&#x5EFA;&#x7AD9;&#x547D;&#x4EE4;&#x65F6;&#x9ED8;&#x8BA4;&#x4F1A;&#x5728;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x751F;&#x6210; <code>.gitignore</code> &#x6587;&#x4EF6;&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x5B83;&#x5DF2;&#x7ECF;&#x914D;&#x7F6E;&#x597D;&#x4E86;&#x4E0D;&#x9700;&#x8981; push &#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5219;&#x9700;&#x8981;&#x81EA;&#x884C;&#x521B;&#x5EFA;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x5FFD;&#x7565;&#x89C4;&#x5219;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>db.json</code>&#xFF1A;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x9700;&#x8981; push</li>
+<li><code>node_modules/</code>&#xFF1A;&#x6A21;&#x5757;&#x5305;&#x76EE;&#x5F55;&#xFF0C;&#x5728;&#x6267;&#x884C; <code>npm install</code> &#x65F6;&#x4F1A;&#x91CD;&#x65B0;&#x751F;&#x6210;&#xFF0C;&#x4E0D;&#x9700;&#x8981; push</li>
+<li><code>public/</code>&#xFF1A;<code>hexo g</code> &#x751F;&#x6210;&#x7684;&#x9759;&#x6001;&#x7F51;&#x9875;&#xFF0C;&#x4E0D;&#x9700;&#x8981; push</li>
+<li><code>.deploy_git/</code>&#xFF1A;<code>hexo d</code> &#x751F;&#x6210;&#xFF0C;&#x4E0D;&#x9700;&#x8981; push</li>
+</ul>
+<p>3.&#x91CD;&#x547D;&#x540D;&#x5F53;&#x524D;&#x5206;&#x652F;</p>
+<p>&#x5728;&#x521D;&#x59CB;&#x5316;&#x4ED3;&#x5E93;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x9ED8;&#x8BA4;&#x5728;&#x540D;&#x4E3A; <code>master</code> &#x7684;&#x5206;&#x652F;&#x4E0B;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x8FD9;&#x4E2A;&#x5206;&#x652F;&#x662F;&#x7528;&#x4E8E;&#x63D0;&#x4EA4;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x53E6;&#x8D77;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x540D;&#xFF0C;&#x4EE5;&#x533A;&#x522B;&#x4E8E;&#x8FDC;&#x7A0B;&#x5E93;&#x7684;&#x7528;&#x4E8E;&#x90E8;&#x7F72;&#x7AD9;&#x70B9;&#x7684; <code>master</code> &#x5206;&#x652F;&#x3002;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch -m master dev</span><br></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C06;&#x672C;&#x5730; <code>master</code> &#x5206;&#x652F;&#x91CD;&#x547D;&#x540D;&#x4E3A; <code>dev</code>&#xFF0C;&#x5728;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x4F1A;&#x63A8;&#x9001;&#x8BE5;&#x5206;&#x652F;&#x4F5C;&#x4E3A;&#x8FDC;&#x7A0B;&#x5E93;&#x7684; <code>dev</code> &#x5206;&#x652F;&#x3002;</p>
+<p>4.&#x672C;&#x5730;&#x63D0;&#x4EA4;&#x66F4;&#x65B0;</p>
+<p>&#x6267;&#x884C;&#x4E0B;&#x5217;&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x5206;&#x652F;&#x72B6;&#x6001;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<p>&#x4F7F;&#x7528;&#x4E0B;&#x5217;&#x547D;&#x4EE4;&#x8DDF;&#x8E2A;&#x65B0;&#x6587;&#x4EF6;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add *</span><br></pre></td></tr></table></figure>
+
+<p>&#x518D;&#x6B21;&#x4F7F;&#x7528; <code>git status</code> &#x67E5;&#x770B;&#x5206;&#x652F;&#x72B6;&#x6001;&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E9B;&#x9690;&#x85CF;&#x6587;&#x4EF6;&#x672A;&#x88AB;&#x8DDF;&#x8E2A;&#x800C;&#x53C8;&#x9700;&#x8981;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x8DDF;&#x8E2A;&#x7684;&#xFF0C;&#x4F8B;&#x5982;&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x8DDF;&#x8E2A; <code>.gitignore</code> &#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x8FD8;&#x9700;&#x8981;&#x6267;&#x884C;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .gitignore</span><br></pre></td></tr></table></figure>
+
+<p>&#x6267;&#x884C;&#x4E0B;&#x5217;&#x547D;&#x4EE4;&#xFF0C;&#x5C06;&#x66F4;&#x65B0;&#x63D0;&#x4EA4;&#x5230;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x5206;&#x652F;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git commit -m &quot;Commit Message&quot;</span><br></pre></td></tr></table></figure>
+
+<p>5.&#x63A8;&#x9001;&#x66F4;&#x65B0;&#x81F3;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x63D0;&#x4EA4;&#x66F4;&#x65B0;&#x53EA;&#x662F;&#x672C;&#x5730;&#x64CD;&#x4F5C;&#xFF0C;&#x4E0E;&#x8FDC;&#x7A0B;&#x5E93;&#x5E76;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5173;&#x8054;&#xFF0C;&#x6240;&#x4EE5;&#x8FD8;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;&#x5C06;&#x66F4;&#x65B0;&#x63A8;&#x9001;&#x81F3;&#x8FDC;&#x7A0B;&#x5E93;&#x3002;</p>
+<p>&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote add origin git@github.com:username/username.github.io.git</span><br></pre></td></tr></table></figure>
+
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x5DF2;&#x6DFB;&#x52A0;&#x7684;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">origin	git@github.com:sky20010519/sky20010519.github.io.git (fetch)</span><br><span class="line">origin	git@github.com:sky20010519/sky20010519.github.io.git (push)</span><br></pre></td></tr></table></figure>
+
+<p>&#x6267;&#x884C;&#x4E0B;&#x5217;&#x547D;&#x4EE4;&#xFF0C;&#x4E0A;&#x4F20;&#x5F53;&#x524D;&#x5206;&#x652F;&#x5230;&#x8FDC;&#x7A0B;&#x5E93;&#xFF0C;&#x5E76;&#x4E14;&#x5173;&#x8054;&#x5F53;&#x524D;&#x5206;&#x652F;&#x4E0E;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push -u origin dev:dev</span><br></pre></td></tr></table></figure>
+
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230; git &#x4F1A;&#x4E3A;&#x6211;&#x4EEC;&#x81EA;&#x52A8;&#x5728;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x521B;&#x5EFA; <code>dev</code> &#x5206;&#x652F;&#xFF0C;&#x5E76;&#x4E14;&#x5173;&#x8054;&#x672C;&#x5730;&#x7684; <code>dev</code> &#x5206;&#x652F;&#x548C;&#x8FDC;&#x7A0B;&#x7684; <code>dev</code> &#x5206;&#x652F;&#x3002;</p>
+<h6 id="&#x540E;&#x7EED;&#x63D0;&#x4EA4;&#x66F4;&#x65B0;"><a href="#&#x540E;&#x7EED;&#x63D0;&#x4EA4;&#x66F4;&#x65B0;" class="headerlink" title="&#x540E;&#x7EED;&#x63D0;&#x4EA4;&#x66F4;&#x65B0;"></a>&#x540E;&#x7EED;&#x63D0;&#x4EA4;&#x66F4;&#x65B0;</h6><p>&#x56E0;&#x4E3A;&#x521D;&#x6B21;&#x63D0;&#x4EA4;&#x65F6;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5173;&#x8054;&#x4E86;&#x672C;&#x5730;&#x5206;&#x652F;&#x4E0E;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#xFF0C;&#x6240;&#x4EE5;&#x540E;&#x7EED;&#x63D0;&#x4EA4;&#x66F4;&#x65B0;&#x65F6;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x6267;&#x884C;&#x4E0B;&#x5217;&#x547D;&#x4EE4;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x8DDF;&#x8E2A;&#x65B0;&#x6587;&#x4EF6;&#x548C;&#x4FEE;&#x6539;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add *</span><br></pre></td></tr></table></figure>
+
+<p>&#x63D0;&#x4EA4;&#x66F4;&#x65B0;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git commit -m &quot;Commit Message&quot;</span><br></pre></td></tr></table></figure>
+
+<p>&#x63A8;&#x9001;&#x66F4;&#x65B0;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<h4 id="&#x5176;&#x4ED6;&#x8BBE;&#x5907;&#x7BA1;&#x7406;&#x535A;&#x5BA2;"><a href="#&#x5176;&#x4ED6;&#x8BBE;&#x5907;&#x7BA1;&#x7406;&#x535A;&#x5BA2;" class="headerlink" title="&#x5176;&#x4ED6;&#x8BBE;&#x5907;&#x7BA1;&#x7406;&#x535A;&#x5BA2;"></a>&#x5176;&#x4ED6;&#x8BBE;&#x5907;&#x7BA1;&#x7406;&#x535A;&#x5BA2;</h4><p>&#x5F53;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x5176;&#x5B83;&#x7535;&#x8111;&#x4E0A;&#x7BA1;&#x7406;&#x535A;&#x5BA2;&#x65F6;&#xFF0C;&#x9996;&#x5148;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x76F8;&#x5173;&#x73AF;&#x5883;&#x3002;</p>
+<h6 id="&#x914D;&#x7F6E;&#x76F8;&#x5173;&#x73AF;&#x5883;"><a href="#&#x914D;&#x7F6E;&#x76F8;&#x5173;&#x73AF;&#x5883;" class="headerlink" title="&#x914D;&#x7F6E;&#x76F8;&#x5173;&#x73AF;&#x5883;"></a>&#x914D;&#x7F6E;&#x76F8;&#x5173;&#x73AF;&#x5883;</h6><ul>
+<li>&#x5B89;&#x88C5; <code>Git</code></li>
+<li>&#x5B89;&#x88C5; <code>Node.js</code></li>
+<li>&#x914D;&#x7F6E; SSH Key</li>
+</ul>
+<p>Clone&#x6E90;&#x7801;&#x5206;&#x652F;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b dev git@github.com:username/username.github.io.git</span><br></pre></td></tr></table></figure>
+
+<p><code>dev</code> &#x4E3A;&#x6211;&#x7684;&#x6E90;&#x7801;&#x5206;&#x652F;&#x540D;&#x79F0;&#xFF0C;&#x4F60;&#x5E94;&#x6839;&#x636E;&#x4F60;&#x7684;&#x5206;&#x652F;&#x540D;&#x79F0;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x3002;</p>
+<h6 id="&#x5B89;&#x88C5;-Hexo-&#x53CA;&#x76F8;&#x5173;&#x4F9D;&#x8D56;"><a href="#&#x5B89;&#x88C5;-Hexo-&#x53CA;&#x76F8;&#x5173;&#x4F9D;&#x8D56;" class="headerlink" title="&#x5B89;&#x88C5; Hexo &#x53CA;&#x76F8;&#x5173;&#x4F9D;&#x8D56;"></a>&#x5B89;&#x88C5; Hexo &#x53CA;&#x76F8;&#x5173;&#x4F9D;&#x8D56;</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
     <title>vue2</title>
     <url>/posts/6049/</url>
     <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue2&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue2&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue2&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue2&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;</h5><span id="more"></span>
@@ -642,36 +811,5 @@
         <tag>vue2</tag>
         <tag>css</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>hexo</title>
-    <url>/posts/21358/</url>
-    <content><![CDATA[<p>Hexo&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; node.js&#x7684;&#x5FEB;&#x901F;&#x751F;&#x6210;&#x9759;&#x6001;&#x535A;&#x5BA2;&#x7684;&#x5F00;&#x6E90;&#x6846;&#x67B6;,&#x652F;&#x6301; Markdown&#x548C;&#x5927;&#x591A;&#x6570; Octopress&#x63D2;&#x4EF6;,&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x5373;&#x53EF;&#x90E8;&#x7F72;&#x5230; Github&#x9875;&#x9762;&#x3001; Giteee&#x3001; Heroku&#x7B49;,&#x5F3A;&#x5927;&#x7684;APl,&#x53EF;&#x65E0;&#x9650;&#x6269;&#x5C55;,&#x62E5;&#x6709;&#x6570;&#x767E;&#x4E2A;&#x4E3B;&#x9898;&#x548C;&#x63D2;&#x4EF6;&#x3002;</p>
-<span id="more"></span>
-
-<h1 id="Hexo-&#x96F6;&#x57FA;&#x7840;&#x642D;&#x5EFA;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;"><a href="#Hexo-&#x96F6;&#x57FA;&#x7840;&#x642D;&#x5EFA;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;" class="headerlink" title="Hexo-&#x96F6;&#x57FA;&#x7840;&#x642D;&#x5EFA;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;"></a>Hexo-&#x96F6;&#x57FA;&#x7840;&#x642D;&#x5EFA;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;</h1><p>&#x7B80;&#x5355;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x7528;&#x4F60;&#x5199;&#x4EE3;&#x7801;&#xFF0C;&#x5C31;&#x80FD;&#x642D;&#x5EFA;&#x4E00;&#x5957;&#x5C5E;&#x4E8E;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;&#x7F51;&#x7AD9; &#x5E94;&#x7528;&#xFF08;&#x96F6;&#x57FA;&#x7840;&#x5C0F;&#x767D;&#x4E5F;&#x4F1A;&#xFF09;&#x3002;</p>
-<p>&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4E0A;&#x9762;&#x7F16;&#x5199;&#x6587;&#x7AE0;&#xFF0C;&#x505A;&#x7B14;&#x8BB0;&#xFF0C;&#x5199;&#x65E5;&#x8BB0;&#xFF0C;&#x7801;&#x4EE3;&#x7801;&#x3002;&#xFF08;&#x4E00;&#x4E2A;&#x5C5E;&#x4E8E;&#x4F60;&#x7684;&#x4E16;&#x754C;&#xFF01;&#x4E00;&#x4E2A;&#x53EF;&#x4F9B;&#x522B;&#x4EBA;&#x8BBF;&#x95EE;&#x7684;&#x4E2A;&#x4EBA;&#x4E16;&#x754C;&#xFF09;</p>
-<h2 id="&#x4E00;&#x3001;&#x73AF;&#x5883;&#x51C6;&#x5907;"><a href="#&#x4E00;&#x3001;&#x73AF;&#x5883;&#x51C6;&#x5907;" class="headerlink" title="&#x4E00;&#x3001;&#x73AF;&#x5883;&#x51C6;&#x5907;"></a>&#x4E00;&#x3001;&#x73AF;&#x5883;&#x51C6;&#x5907;</h2><h3 id="1-&#x5B89;&#x88C5;node-js"><a href="#1-&#x5B89;&#x88C5;node-js" class="headerlink" title="1.&#x5B89;&#x88C5;node.js"></a>1.&#x5B89;&#x88C5;node.js</h3><p>&#x76F4;&#x63A5;&#x5230;&#x5B98;&#x7F51;&#x4E0A;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5373;&#x53EF;<a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
-<ul>
-<li><p><a href="http://nodejs.org/">Node.js</a> (Node.js &#x7248;&#x672C;&#x9700;&#x4E0D;&#x4F4E;&#x4E8E; 10.13&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; Node.js 12.0 &#x53CA;&#x4EE5;&#x4E0A;&#x7248;&#x672C;)</p>
-</li>
-<li><p>Node&#x81EA;&#x5E26;npm</p>
-</li>
-</ul>
-<h3 id="2-&#x5B89;&#x88C5;Git"><a href="#2-&#x5B89;&#x88C5;Git" class="headerlink" title="2.&#x5B89;&#x88C5;Git"></a>2.&#x5B89;&#x88C5;Git</h3><ul>
-<li>Windows&#xFF1A;&#x4E0B;&#x8F7D;&#x5E76;&#x5B89;&#x88C5; <a href="https://git-scm.com/download/win">git</a>.</li>
-<li>Mac&#xFF1A;&#x4F7F;&#x7528; <a href="http://mxcl.github.com/homebrew/">Homebrew</a>, <a href="http://www.macports.org/">MacPorts</a> &#x6216;&#x8005;&#x4E0B;&#x8F7D; <a href="http://sourceforge.net/projects/git-osx-installer/">&#x5B89;&#x88C5;&#x7A0B;&#x5E8F;</a>&#x3002;</li>
-<li>Linux (Ubuntu, Debian)&#xFF1A;<code>sudo apt-get install git-core</code></li>
-<li>Linux (Fedora, Red Hat, CentOS)&#xFF1A;<code>sudo yum install git-core</code></li>
-</ul>
-<p><img src="/posts/21358/D:\study\blog\source_posts\hello-world\nodeGit.png"></p>
-<p>npm&#x4E0B;&#x8F7D;&#x6162;&#x7684;&#x8BDD;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0B;&#x8F7D;&#x6DD8;&#x5B9D;&#x4E0B;&#x8F7D;&#x6E90;cnpm</p>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">npm</span> <span class="string">install -g cnpm --registry=https://registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="&#x4E8C;&#x3001;&#x5F00;&#x59CB;&#x5B89;&#x88C5;hexo"><a href="#&#x4E8C;&#x3001;&#x5F00;&#x59CB;&#x5B89;&#x88C5;hexo" class="headerlink" title="&#x4E8C;&#x3001;&#x5F00;&#x59CB;&#x5B89;&#x88C5;hexo"></a>&#x4E8C;&#x3001;&#x5F00;&#x59CB;&#x5B89;&#x88C5;hexo</h2><h3 id="1-&#x5B89;&#x88C5;hexo"><a href="#1-&#x5B89;&#x88C5;hexo" class="headerlink" title="1.&#x5B89;&#x88C5;hexo"></a>1.&#x5B89;&#x88C5;hexo</h3><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">npm</span> <span class="string">install -g hexo-cli</span></span><br><span class="line"><span class="attr">&#x6216;&#x8005;</span></span><br><span class="line"><span class="attr">cnpm</span> <span class="string">install -g hexo-cli</span></span><br></pre></td></tr></table></figure>
-
-<p>&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x53EF;&#x4EE5;&#x8F93;&#x5165;npx hexo -v&#x67E5;&#x770B;&#x7248;&#x672C;</p>
-<p><img src="/posts/21358/D:\study\blog\source_posts\hello-world\hexoV.png" alt="image-20241231174852695"></p>
-<h3 id="2-&#x521D;&#x59CB;&#x5316;hexo&#xFF0C;&#x65B0;&#x5EFA;&#x5B58;&#x50A8;&#x535A;&#x5BA2;&#x7684;&#x6587;&#x4EF6;&#x5939;"><a href="#2-&#x521D;&#x59CB;&#x5316;hexo&#xFF0C;&#x65B0;&#x5EFA;&#x5B58;&#x50A8;&#x535A;&#x5BA2;&#x7684;&#x6587;&#x4EF6;&#x5939;" class="headerlink" title="2.&#x521D;&#x59CB;&#x5316;hexo&#xFF0C;&#x65B0;&#x5EFA;&#x5B58;&#x50A8;&#x535A;&#x5BA2;&#x7684;&#x6587;&#x4EF6;&#x5939;"></a>2.&#x521D;&#x59CB;&#x5316;hexo&#xFF0C;&#x65B0;&#x5EFA;&#x5B58;&#x50A8;&#x535A;&#x5BA2;&#x7684;&#x6587;&#x4EF6;&#x5939;</h3>]]></content>
   </entry>
 </search>
