@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>html</title>
+    <url>/posts/1879f8e5/</url>
+    <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;</h5><span id="more"></span>]]></content>
+      <categories>
+        <category>前端学习</category>
+        <category>html</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css</title>
+    <url>/posts/78cea6d8/</url>
+    <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;</h5><span id="more"></span>]]></content>
+      <categories>
+        <category>前端学习</category>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo</title>
     <url>/posts/21358/</url>
     <content><![CDATA[<h5 id="Hexo&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;-node-js&#x7684;&#x5FEB;&#x901F;&#x751F;&#x6210;&#x9759;&#x6001;&#x535A;&#x5BA2;&#x7684;&#x5F00;&#x6E90;&#x6846;&#x67B6;-&#x652F;&#x6301;-Markdown&#x548C;&#x5927;&#x591A;&#x6570;-Octopress&#x63D2;&#x4EF6;-&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x5373;&#x53EF;&#x90E8;&#x7F72;&#x5230;-Github&#x9875;&#x9762;&#x3001;-Giteee&#x3001;-Heroku&#x7B49;-&#x5F3A;&#x5927;&#x7684;APl-&#x53EF;&#x65E0;&#x9650;&#x6269;&#x5C55;-&#x62E5;&#x6709;&#x6570;&#x767E;&#x4E2A;&#x4E3B;&#x9898;&#x548C;&#x63D2;&#x4EF6;&#x3002;"><a href="#Hexo&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;-node-js&#x7684;&#x5FEB;&#x901F;&#x751F;&#x6210;&#x9759;&#x6001;&#x535A;&#x5BA2;&#x7684;&#x5F00;&#x6E90;&#x6846;&#x67B6;-&#x652F;&#x6301;-Markdown&#x548C;&#x5927;&#x591A;&#x6570;-Octopress&#x63D2;&#x4EF6;-&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x5373;&#x53EF;&#x90E8;&#x7F72;&#x5230;-Github&#x9875;&#x9762;&#x3001;-Giteee&#x3001;-Heroku&#x7B49;-&#x5F3A;&#x5927;&#x7684;APl-&#x53EF;&#x65E0;&#x9650;&#x6269;&#x5C55;-&#x62E5;&#x6709;&#x6570;&#x767E;&#x4E2A;&#x4E3B;&#x9898;&#x548C;&#x63D2;&#x4EF6;&#x3002;" class="headerlink" title="Hexo&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; node.js&#x7684;&#x5FEB;&#x901F;&#x751F;&#x6210;&#x9759;&#x6001;&#x535A;&#x5BA2;&#x7684;&#x5F00;&#x6E90;&#x6846;&#x67B6;,&#x652F;&#x6301; Markdown&#x548C;&#x5927;&#x591A;&#x6570; Octopress&#x63D2;&#x4EF6;,&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x5373;&#x53EF;&#x90E8;&#x7F72;&#x5230; Github&#x9875;&#x9762;&#x3001; Giteee&#x3001; Heroku&#x7B49;,&#x5F3A;&#x5927;&#x7684;APl,&#x53EF;&#x65E0;&#x9650;&#x6269;&#x5C55;,&#x62E5;&#x6709;&#x6570;&#x767E;&#x4E2A;&#x4E3B;&#x9898;&#x548C;&#x63D2;&#x4EF6;&#x3002;"></a>Hexo&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; node.js&#x7684;&#x5FEB;&#x901F;&#x751F;&#x6210;&#x9759;&#x6001;&#x535A;&#x5BA2;&#x7684;&#x5F00;&#x6E90;&#x6846;&#x67B6;,&#x652F;&#x6301; Markdown&#x548C;&#x5927;&#x591A;&#x6570; Octopress&#x63D2;&#x4EF6;,&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x5373;&#x53EF;&#x90E8;&#x7F72;&#x5230; Github&#x9875;&#x9762;&#x3001; Giteee&#x3001; Heroku&#x7B49;,&#x5F3A;&#x5927;&#x7684;APl,&#x53EF;&#x65E0;&#x9650;&#x6269;&#x5C55;,&#x62E5;&#x6709;&#x6570;&#x767E;&#x4E2A;&#x4E3B;&#x9898;&#x548C;&#x63D2;&#x4EF6;&#x3002;</h5><span id="more"></span>
@@ -169,18 +193,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>html</title>
-    <url>/posts/1879f8e5/</url>
-    <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;</h5><span id="more"></span>]]></content>
-      <categories>
-        <category>前端学习</category>
-        <category>html</category>
-      </categories>
-      <tags>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>js</title>
     <url>/posts/17c7b154/</url>
     <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;js&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;js&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;js&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;js&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;</h5><span id="more"></span>]]></content>
@@ -193,15 +205,51 @@
       </tags>
   </entry>
   <entry>
-    <title>css</title>
-    <url>/posts/78cea6d8/</url>
-    <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;</h5><span id="more"></span>]]></content>
+    <title>css面试总结</title>
+    <url>/posts/49d38819/</url>
+    <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;</h5><span id="more"></span>]]></content>
       <categories>
-        <category>前端学习</category>
+        <category>面试</category>
         <category>css</category>
       </categories>
       <tags>
         <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>html面试总结</title>
+    <url>/posts/d9d45835/</url>
+    <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;</h5><span id="more"></span>]]></content>
+      <categories>
+        <category>面试</category>
+        <category>html</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue2面试总结</title>
+    <url>/posts/66bf6e1f/</url>
+    <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue2&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue2&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue2&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue2&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;</h5><span id="more"></span>]]></content>
+      <categories>
+        <category>面试</category>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js面试总结</title>
+    <url>/posts/d41c1e8f/</url>
+    <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;js&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;js&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;js&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;js&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;</h5><span id="more"></span>]]></content>
+      <categories>
+        <category>面试</category>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -846,6 +894,18 @@
         <tag>css</tag>
         <tag>js</tag>
         <tag>vue2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue3面试总结</title>
+    <url>/posts/bb29b79a/</url>
+    <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue3&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue3&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue3&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue3&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;</h5><span id="more"></span>]]></content>
+      <categories>
+        <category>面试</category>
+        <category>vue3</category>
+      </categories>
+      <tags>
+        <tag>vue3</tag>
       </tags>
   </entry>
   <entry>
@@ -1746,6 +1806,142 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import { ref } from &apos;vue&apos;</span><br><span class="line"></span><br><span class="line">const a = 1</span><br><span class="line">const b = ref(2)</span><br><span class="line"></span><br><span class="line">// &#x50CF; defineExpose &#x8FD9;&#x6837;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x5B8F;&#x4E0D;&#x9700;&#x8981;&#x5BFC;&#x5165;</span><br><span class="line">defineExpose({</span><br><span class="line">  a,</span><br><span class="line">  b</span><br><span class="line">})</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 <p>&#x5F53;&#x7236;&#x7EC4;&#x4EF6;&#x901A;&#x8FC7;&#x6A21;&#x677F;&#x5F15;&#x7528;&#x83B7;&#x53D6;&#x5230;&#x4E86;&#x8BE5;&#x7EC4;&#x4EF6;&#x7684;&#x5B9E;&#x4F8B;&#x65F6;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x5B9E;&#x4F8B;&#x7C7B;&#x578B;&#x4E3A; <code>{ a: number, b: number }</code> (ref &#x90FD;&#x4F1A;&#x81EA;&#x52A8;&#x89E3;&#x5305;&#xFF0C;&#x548C;&#x4E00;&#x822C;&#x7684;&#x5B9E;&#x4F8B;&#x4E00;&#x6837;)&#x3002;</p>
+<h3 id="13-&#x7EC4;&#x4EF6;&#x57FA;&#x7840;"><a href="#13-&#x7EC4;&#x4EF6;&#x57FA;&#x7840;" class="headerlink" title="13.&#x7EC4;&#x4EF6;&#x57FA;&#x7840;"></a>13.&#x7EC4;&#x4EF6;&#x57FA;&#x7840;</h3><p>&#x7EC4;&#x4EF6;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x5C06; UI &#x5212;&#x5206;&#x4E3A;&#x72EC;&#x7ACB;&#x7684;&#x3001;&#x53EF;&#x91CD;&#x7528;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x5BF9;&#x6BCF;&#x4E2A;&#x90E8;&#x5206;&#x8FDB;&#x884C;&#x5355;&#x72EC;&#x7684;&#x601D;&#x8003;&#x3002;&#x5728;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x7EC4;&#x4EF6;&#x5E38;&#x5E38;&#x88AB;&#x7EC4;&#x7EC7;&#x6210;&#x4E00;&#x4E2A;&#x5C42;&#x5C42;&#x5D4C;&#x5957;&#x7684;&#x6811;&#x72B6;&#x7ED3;&#x6784;&#xFF1A;</p>
+<p><img src="/posts/9a707413/image-20250110165410223.png" alt="image-20250110165410223"></p>
+<p>&#x8FD9;&#x548C;&#x6211;&#x4EEC;&#x5D4C;&#x5957; HTML &#x5143;&#x7D20;&#x7684;&#x65B9;&#x5F0F;&#x7C7B;&#x4F3C;&#xFF0C;Vue &#x5B9E;&#x73B0;&#x4E86;&#x81EA;&#x5DF1;&#x7684;&#x7EC4;&#x4EF6;&#x6A21;&#x578B;&#xFF0C;&#x4F7F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x5185;&#x5C01;&#x88C5;&#x81EA;&#x5B9A;&#x4E49;&#x5185;&#x5BB9;&#x4E0E;&#x903B;&#x8F91;&#x3002;Vue &#x540C;&#x6837;&#x4E5F;&#x80FD;&#x5F88;&#x597D;&#x5730;&#x914D;&#x5408;&#x539F;&#x751F; Web Component&#x3002;</p>
+<h4 id="&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;"><a href="#&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;" class="headerlink" title="&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;"></a>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;</h4><p>&#x5F53;&#x4F7F;&#x7528;&#x6784;&#x5EFA;&#x6B65;&#x9AA4;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x4F1A;&#x5C06; Vue &#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#x5728;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684; <code>.vue</code> &#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x8FD9;&#x88AB;&#x53EB;&#x505A;<a href="https://cn.vuejs.org/guide/scaling-up/sfc.html">&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;</a> (&#x7B80;&#x79F0; SFC)&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import { ref } from &apos;vue&apos;</span><br><span class="line"></span><br><span class="line">const count = ref(0)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;button @click=&quot;count++&quot;&gt;You clicked me {{ count }} times.&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x5F53;&#x4E0D;&#x4F7F;&#x7528;&#x6784;&#x5EFA;&#x6B65;&#x9AA4;&#x65F6;&#xFF0C;&#x4E00;&#x4E2A; Vue &#x7EC4;&#x4EF6;&#x4EE5;&#x4E00;&#x4E2A;&#x5305;&#x542B; Vue &#x7279;&#x5B9A;&#x9009;&#x9879;&#x7684; JavaScript &#x5BF9;&#x8C61;&#x6765;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> { ref } <span class="keyword">from</span> <span class="string">&apos;vue&apos;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> {</span><br><span class="line">  <span class="title function_">setup</span>(<span class="params"></span>) {</span><br><span class="line">    <span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> { count }</span><br><span class="line">  },</span><br><span class="line">  <span class="attr">template</span>: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;button @click=&quot;count++&quot;&gt;</span></span><br><span class="line"><span class="string">      You clicked me {{ count }} times.</span></span><br><span class="line"><span class="string">    &lt;/button&gt;`</span></span><br><span class="line">  <span class="comment">// &#x4E5F;&#x53EF;&#x4EE5;&#x9488;&#x5BF9;&#x4E00;&#x4E2A; DOM &#x5185;&#x8054;&#x6A21;&#x677F;&#xFF1A;</span></span><br><span class="line">  <span class="comment">// template: &apos;#my-template-element&apos;</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x91CC;&#x7684;&#x6A21;&#x677F;&#x662F;&#x4E00;&#x4E2A;&#x5185;&#x8054;&#x7684; JavaScript &#x5B57;&#x7B26;&#x4E32;&#xFF0C;Vue &#x5C06;&#x4F1A;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x7F16;&#x8BD1;&#x5B83;&#x3002;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; ID &#x9009;&#x62E9;&#x5668;&#x6765;&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x5143;&#x7D20; (&#x901A;&#x5E38;&#x662F;&#x539F;&#x751F;&#x7684; <code>&lt;template&gt;</code> &#x5143;&#x7D20;)&#xFF0C;Vue &#x5C06;&#x4F1A;&#x4F7F;&#x7528;&#x5176;&#x5185;&#x5BB9;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x6765;&#x6E90;&#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF0C;&#x5E76;&#x5728;&#x4E00;&#x4E2A; <code>.js</code> &#x6587;&#x4EF6;&#x91CC;&#x9ED8;&#x8BA4;&#x5BFC;&#x51FA;&#x4E86;&#x5B83;&#x81EA;&#x5DF1;&#xFF0C;&#x4F46;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5177;&#x540D;&#x5BFC;&#x51FA;&#x5728;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x5BFC;&#x51FA;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x3002;</p>
+<h4 id="&#x4F7F;&#x7528;&#x7EC4;&#x4EF6;"><a href="#&#x4F7F;&#x7528;&#x7EC4;&#x4EF6;" class="headerlink" title="&#x4F7F;&#x7528;&#x7EC4;&#x4EF6;"></a>&#x4F7F;&#x7528;&#x7EC4;&#x4EF6;</h4><blockquote>
+<p>TIP</p>
+<p>&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x6307;&#x5F15;&#x4E2D;&#x4F7F;&#x7528;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x8BED;&#x6CD5;&#xFF0C;&#x65E0;&#x8BBA;&#x4F60;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x6784;&#x5EFA;&#x6B65;&#x9AA4;&#xFF0C;&#x7EC4;&#x4EF6;&#x76F8;&#x5173;&#x7684;&#x6982;&#x5FF5;&#x90FD;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;<a href="https://cn.vuejs.org/examples/">&#x793A;&#x4F8B;</a>&#x4E00;&#x8282;&#x4E2D;&#x5C55;&#x793A;&#x4E86;&#x4E24;&#x79CD;&#x573A;&#x666F;&#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x3002;</p>
+</blockquote>
+<p>&#x8981;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x7236;&#x7EC4;&#x4EF6;&#x4E2D;&#x5BFC;&#x5165;&#x5B83;&#x3002;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x628A;&#x8BA1;&#x6570;&#x5668;&#x7EC4;&#x4EF6;&#x653E;&#x5728;&#x4E86;&#x4E00;&#x4E2A;&#x53EB;&#x505A; <code>ButtonCounter.vue</code> &#x7684;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x5C06;&#x4F1A;&#x4EE5;&#x9ED8;&#x8BA4;&#x5BFC;&#x51FA;&#x7684;&#x5F62;&#x5F0F;&#x88AB;&#x66B4;&#x9732;&#x7ED9;&#x5916;&#x90E8;&#x3002;</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ButtonCounter</span> <span class="keyword">from</span> <span class="string">&apos;./ButtonCounter.vue&apos;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Here is a child component!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ButtonCounter</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x901A;&#x8FC7; <code>&lt;script setup&gt;</code>&#xFF0C;&#x5BFC;&#x5165;&#x7684;&#x7EC4;&#x4EF6;&#x90FD;&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x76F4;&#x63A5;&#x53EF;&#x7528;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5168;&#x5C40;&#x5730;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF0C;&#x4F7F;&#x5F97;&#x5B83;&#x5728;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x7EC4;&#x4EF6;&#x4E0A;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x989D;&#x5916;&#x518D;&#x5BFC;&#x5165;&#x3002;</p>
+<p>&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x88AB;&#x91CD;&#x7528;&#x4EFB;&#x610F;&#x591A;&#x6B21;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;h1&gt;Here is a child component!&lt;/h1&gt;</span><br><span class="line">&lt;ButtonCounter /&gt;</span><br><span class="line">&lt;ButtonCounter /&gt;</span><br><span class="line">&lt;ButtonCounter /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x4F60;&#x4F1A;&#x6CE8;&#x610F;&#x5230;&#xFF0C;&#x6BCF;&#x5F53;&#x70B9;&#x51FB;&#x8FD9;&#x4E9B;&#x6309;&#x94AE;&#x65F6;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x90FD;&#x7EF4;&#x62A4;&#x7740;&#x81EA;&#x5DF1;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x662F;&#x4E0D;&#x540C;&#x7684; <code>count</code>&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x6BCF;&#x5F53;&#x4F60;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF0C;&#x5C31;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;<strong>&#x5B9E;&#x4F8B;</strong>&#x3002;</p>
+<p>&#x5728;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x4E2D;&#xFF0C;&#x63A8;&#x8350;&#x4E3A;&#x5B50;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528; <code>PascalCase</code> &#x7684;&#x6807;&#x7B7E;&#x540D;&#xFF0C;&#x4EE5;&#x6B64;&#x6765;&#x548C;&#x539F;&#x751F;&#x7684; HTML &#x5143;&#x7D20;&#x4F5C;&#x533A;&#x5206;&#x3002;&#x867D;&#x7136;&#x539F;&#x751F; HTML &#x6807;&#x7B7E;&#x540D;&#x662F;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x7684;&#xFF0C;&#x4F46; Vue &#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x662F;&#x53EF;&#x4EE5;&#x5728;&#x7F16;&#x8BD1;&#x4E2D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>/&gt;</code> &#x6765;&#x5173;&#x95ED;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x662F;&#x76F4;&#x63A5;&#x5728; DOM &#x4E2D;&#x4E66;&#x5199;&#x6A21;&#x677F; (&#x4F8B;&#x5982;&#x539F;&#x751F; <code>&lt;template&gt;</code> &#x5143;&#x7D20;&#x7684;&#x5185;&#x5BB9;)&#xFF0C;&#x6A21;&#x677F;&#x7684;&#x7F16;&#x8BD1;&#x9700;&#x8981;&#x9075;&#x4ECE;&#x6D4F;&#x89C8;&#x5668;&#x4E2D; HTML &#x7684;&#x89E3;&#x6790;&#x884C;&#x4E3A;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x9700;&#x8981;&#x4F7F;&#x7528; <code>kebab-case</code> &#x5F62;&#x5F0F;&#x5E76;&#x663E;&#x5F0F;&#x5730;&#x5173;&#x95ED;&#x8FD9;&#x4E9B;&#x7EC4;&#x4EF6;&#x7684;&#x6807;&#x7B7E;&#x3002;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- &#x5982;&#x679C;&#x662F;&#x5728; DOM &#x4E2D;&#x4E66;&#x5199;&#x8BE5;&#x6A21;&#x677F; --&gt;</span><br><span class="line">&lt;button-counter&gt;&lt;/button-counter&gt;</span><br><span class="line">&lt;button-counter&gt;&lt;/button-counter&gt;</span><br><span class="line">&lt;button-counter&gt;&lt;/button-counter&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="&#x4F20;&#x9012;props"><a href="#&#x4F20;&#x9012;props" class="headerlink" title="&#x4F20;&#x9012;props"></a>&#x4F20;&#x9012;props</h4><p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6B63;&#x5728;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x535A;&#x5BA2;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#x7684;&#x7EC4;&#x4EF6;&#x3002;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x6240;&#x6709;&#x7684;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#x5206;&#x4EAB;&#x76F8;&#x540C;&#x7684;&#x89C6;&#x89C9;&#x5E03;&#x5C40;&#xFF0C;&#x4F46;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x8981;&#x5B9E;&#x73B0;&#x8FD9;&#x6837;&#x7684;&#x6548;&#x679C;&#x81EA;&#x7136;&#x5FC5;&#x987B;&#x5411;&#x7EC4;&#x4EF6;&#x4E2D;&#x4F20;&#x9012;&#x6570;&#x636E;&#xFF0C;&#x4F8B;&#x5982;&#x6BCF;&#x7BC7;&#x6587;&#x7AE0;&#x6807;&#x9898;&#x548C;&#x5185;&#x5BB9;&#xFF0C;&#x8FD9;&#x5C31;&#x4F1A;&#x4F7F;&#x7528;&#x5230; props&#x3002;</p>
+<p>Props &#x662F;&#x4E00;&#x79CD;&#x7279;&#x522B;&#x7684; attributes&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x7EC4;&#x4EF6;&#x4E0A;&#x58F0;&#x660E;&#x6CE8;&#x518C;&#x3002;&#x8981;&#x4F20;&#x9012;&#x7ED9;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#x7EC4;&#x4EF6;&#x4E00;&#x4E2A;&#x6807;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x5728;&#x7EC4;&#x4EF6;&#x7684; props &#x5217;&#x8868;&#x4E0A;&#x58F0;&#x660E;&#x5B83;&#x3002;&#x8FD9;&#x91CC;&#x8981;&#x7528;&#x5230; <a href="https://cn.vuejs.org/api/sfc-script-setup.html#defineprops-defineemits"><code>defineProps</code></a> &#x5B8F;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- BlogPost.vue --&gt;</span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">defineProps([&apos;title&apos;])</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;h4&gt;{{ title }}&lt;/h4&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>defineProps</code> &#x662F;&#x4E00;&#x4E2A;&#x4EC5; <code>&lt;script setup&gt;</code> &#x4E2D;&#x53EF;&#x7528;&#x7684;&#x7F16;&#x8BD1;&#x5B8F;&#x547D;&#x4EE4;&#xFF0C;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x663E;&#x5F0F;&#x5730;&#x5BFC;&#x5165;&#x3002;&#x58F0;&#x660E;&#x7684; props &#x4F1A;&#x81EA;&#x52A8;&#x66B4;&#x9732;&#x7ED9;&#x6A21;&#x677F;&#x3002;<code>defineProps</code> &#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x7ED9;&#x7EC4;&#x4EF6;&#x7684;&#x6240;&#x6709; props&#xFF1A;</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> props = <span class="title function_">defineProps</span>([<span class="string">&apos;title&apos;</span>])</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(props.<span class="property">title</span>)</span><br></pre></td></tr></table></figure>
+
+<p>&#x5982;&#x679C;&#x4F60;&#x6CA1;&#x6709;&#x4F7F;&#x7528; <code>&lt;script setup&gt;</code>&#xFF0C;props &#x5FC5;&#x987B;&#x4EE5; <code>props</code> &#x9009;&#x9879;&#x7684;&#x65B9;&#x5F0F;&#x58F0;&#x660E;&#xFF0C;props &#x5BF9;&#x8C61;&#x4F1A;&#x4F5C;&#x4E3A; <code>setup()</code> &#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x88AB;&#x4F20;&#x5165;&#xFF1A;</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> {</span><br><span class="line">  <span class="attr">props</span>: [<span class="string">&apos;title&apos;</span>],</span><br><span class="line">  <span class="title function_">setup</span>(<span class="params">props</span>) {</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(props.<span class="property">title</span>)</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<p>&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x6709;&#x4EFB;&#x610F;&#x591A;&#x7684; props&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6240;&#x6709; prop &#x90FD;&#x63A5;&#x53D7;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x4E00;&#x4E2A; prop &#x88AB;&#x6CE8;&#x518C;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x50CF;&#x8FD9;&#x6837;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49; attribute &#x7684;&#x5F62;&#x5F0F;&#x4F20;&#x9012;&#x6570;&#x636E;&#x7ED9;&#x5B83;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;BlogPost title=&quot;My journey with Vue&quot; /&gt;</span><br><span class="line">&lt;BlogPost title=&quot;Blogging with Vue&quot; /&gt;</span><br><span class="line">&lt;BlogPost title=&quot;Why Vue is so fun&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x5728;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x5728;&#x7236;&#x7EC4;&#x4EF6;&#x4E2D;&#x4F1A;&#x6709;&#x5982;&#x4E0B;&#x7684;&#x4E00;&#x4E2A;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#x6570;&#x7EC4;&#xFF1A;</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> posts = <span class="title function_">ref</span>([</span><br><span class="line">  { <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">title</span>: <span class="string">&apos;My journey with Vue&apos;</span> },</span><br><span class="line">  { <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">title</span>: <span class="string">&apos;Blogging with Vue&apos;</span> },</span><br><span class="line">  { <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">title</span>: <span class="string">&apos;Why Vue is so fun&apos;</span> }</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>v-for</code> &#x6765;&#x6E32;&#x67D3;&#x5B83;&#x4EEC;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;BlogPost</span><br><span class="line">  v-for=&quot;post in posts&quot;</span><br><span class="line">  :key=&quot;post.id&quot;</span><br><span class="line">  :title=&quot;post.title&quot;</span><br><span class="line"> /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x7559;&#x610F;&#x6211;&#x4EEC;&#x662F;&#x5982;&#x4F55;&#x4F7F;&#x7528; <a href="https://cn.vuejs.org/api/built-in-directives.html#v-bind"><code>v-bind</code> &#x8BED;&#x6CD5;</a> (<code>:title=&quot;post.title&quot;</code>) &#x6765;&#x4F20;&#x9012;&#x52A8;&#x6001; prop &#x503C;&#x7684;&#x3002;&#x5F53;&#x4E8B;&#x5148;&#x4E0D;&#x77E5;&#x9053;&#x8981;&#x6E32;&#x67D3;&#x7684;&#x786E;&#x5207;&#x5185;&#x5BB9;&#x65F6;&#xFF0C;&#x8FD9;&#x4E00;&#x70B9;&#x7279;&#x522B;&#x6709;&#x7528;&#x3002;</p>
+<h4 id="&#x76D1;&#x542C;&#x4E8B;&#x4EF6;-1"><a href="#&#x76D1;&#x542C;&#x4E8B;&#x4EF6;-1" class="headerlink" title="&#x76D1;&#x542C;&#x4E8B;&#x4EF6;"></a>&#x76D1;&#x542C;&#x4E8B;&#x4EF6;</h4><p>&#x8BA9;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x5173;&#x6CE8;&#x6211;&#x4EEC;&#x7684; <code>&lt;BlogPost&gt;</code> &#x7EC4;&#x4EF6;&#x3002;&#x6211;&#x4EEC;&#x4F1A;&#x53D1;&#x73B0;&#x6709;&#x65F6;&#x5019;&#x5B83;&#x9700;&#x8981;&#x4E0E;&#x7236;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8981;&#x5728;&#x6B64;&#x5904;&#x5B9E;&#x73B0;&#x65E0;&#x969C;&#x788D;&#x8BBF;&#x95EE;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x5C06;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#x7684;&#x6587;&#x5B57;&#x80FD;&#x591F;&#x653E;&#x5927;&#xFF0C;&#x800C;&#x9875;&#x9762;&#x7684;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x4ECD;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x5B57;&#x53F7;&#x3002;</p>
+<p>&#x5728;&#x7236;&#x7EC4;&#x4EF6;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A; <code>postFontSize</code> ref &#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x6548;&#x679C;&#xFF1A;</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> posts = <span class="title function_">ref</span>([</span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> postFontSize = <span class="title function_">ref</span>(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x7528;&#x5B83;&#x6765;&#x63A7;&#x5236;&#x6240;&#x6709;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#x7684;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div :style=&quot;{ fontSize: postFontSize + &apos;em&apos; }&quot;&gt;</span><br><span class="line">  &lt;BlogPost</span><br><span class="line">    v-for=&quot;post in posts&quot;</span><br><span class="line">    :key=&quot;post.id&quot;</span><br><span class="line">    :title=&quot;post.title&quot;</span><br><span class="line">   /&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x7136;&#x540E;&#xFF0C;&#x7ED9; <code>&lt;BlogPost&gt;</code> &#x7EC4;&#x4EF6;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6309;&#x94AE;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- BlogPost.vue, &#x7701;&#x7565;&#x4E86; &lt;script&gt; --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;blog-post&quot;&gt;</span><br><span class="line">    &lt;h4&gt;{{ title }}&lt;/h4&gt;</span><br><span class="line">    &lt;button&gt;Enlarge text&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x4E2A;&#x6309;&#x94AE;&#x76EE;&#x524D;&#x8FD8;&#x6CA1;&#x6709;&#x505A;&#x4EFB;&#x4F55;&#x4E8B;&#x60C5;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x70B9;&#x51FB;&#x8FD9;&#x4E2A;&#x6309;&#x94AE;&#x6765;&#x544A;&#x8BC9;&#x7236;&#x7EC4;&#x4EF6;&#x5B83;&#x5E94;&#x8BE5;&#x653E;&#x5927;&#x6240;&#x6709;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#x7684;&#x6587;&#x5B57;&#x3002;&#x8981;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;&#x7236;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>v-on</code> &#x6216; <code>@</code> &#x6765;&#x9009;&#x62E9;&#x6027;&#x5730;&#x76D1;&#x542C;&#x5B50;&#x7EC4;&#x4EF6;&#x4E0A;&#x629B;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x5C31;&#x50CF;&#x76D1;&#x542C;&#x539F;&#x751F; DOM &#x4E8B;&#x4EF6;&#x90A3;&#x6837;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;BlogPost</span><br><span class="line">  ...</span><br><span class="line">  @enlarge-text=&quot;postFontSize += 0.1&quot;</span><br><span class="line"> /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x5B50;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x5185;&#x7F6E;&#x7684; <a href="https://cn.vuejs.org/api/component-instance.html#emit"><strong><code>$emit</code></strong> &#x65B9;&#x6CD5;</a>&#xFF0C;&#x901A;&#x8FC7;&#x4F20;&#x5165;&#x4E8B;&#x4EF6;&#x540D;&#x79F0;&#x6765;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- BlogPost.vue, &#x7701;&#x7565;&#x4E86; &lt;script&gt; --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;blog-post&quot;&gt;</span><br><span class="line">    &lt;h4&gt;{{ title }}&lt;/h4&gt;</span><br><span class="line">    &lt;button @click=&quot;$emit(&apos;enlarge-text&apos;)&quot;&gt;Enlarge text&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x56E0;&#x4E3A;&#x6709;&#x4E86; <code>@enlarge-text=&quot;postFontSize += 0.1&quot;</code> &#x7684;&#x76D1;&#x542C;&#xFF0C;&#x7236;&#x7EC4;&#x4EF6;&#x4F1A;&#x63A5;&#x6536;&#x8FD9;&#x4E00;&#x4E8B;&#x4EF6;&#xFF0C;&#x4ECE;&#x800C;&#x66F4;&#x65B0; <code>postFontSize</code> &#x7684;&#x503C;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <a href="https://cn.vuejs.org/api/sfc-script-setup.html#defineprops-defineemits"><code>defineEmits</code></a> &#x5B8F;&#x6765;&#x58F0;&#x660E;&#x9700;&#x8981;&#x629B;&#x51FA;&#x7684;&#x4E8B;&#x4EF6;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- BlogPost.vue --&gt;</span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">defineProps([&apos;title&apos;])</span><br><span class="line">defineEmits([&apos;enlarge-text&apos;])</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x58F0;&#x660E;&#x4E86;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x53EF;&#x80FD;&#x89E6;&#x53D1;&#x7684;&#x6240;&#x6709;&#x4E8B;&#x4EF6;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5BF9;&#x4E8B;&#x4EF6;&#x7684;&#x53C2;&#x6570;&#x8FDB;&#x884C;<a href="https://cn.vuejs.org/guide/components/events.html#validate-emitted-events">&#x9A8C;&#x8BC1;</a>&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x8FD9;&#x8FD8;&#x53EF;&#x4EE5;&#x8BA9; Vue &#x907F;&#x514D;&#x5C06;&#x5B83;&#x4EEC;&#x4F5C;&#x4E3A;&#x539F;&#x751F;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5668;&#x9690;&#x5F0F;&#x5730;&#x5E94;&#x7528;&#x4E8E;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x6839;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x548C; <code>defineProps</code> &#x7C7B;&#x4F3C;&#xFF0C;<code>defineEmits</code> &#x4EC5;&#x53EF;&#x7528;&#x4E8E; <code>&lt;script setup&gt;</code> &#x4E4B;&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x9700;&#x8981;&#x5BFC;&#x5165;&#xFF0C;&#x5B83;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7B49;&#x540C;&#x4E8E; <code>$emit</code> &#x65B9;&#x6CD5;&#x7684; <code>emit</code> &#x51FD;&#x6570;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x4E8E;&#x5728;&#x7EC4;&#x4EF6;&#x7684; <code>&lt;script setup&gt;</code> &#x4E2D;&#x629B;&#x51FA;&#x4E8B;&#x4EF6;&#xFF0C;&#x56E0;&#x4E3A;&#x6B64;&#x5904;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE; <code>$emit</code>&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">const emit = defineEmits([&apos;enlarge-text&apos;])</span><br><span class="line"></span><br><span class="line">emit(&apos;enlarge-text&apos;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x5982;&#x679C;&#x4F60;&#x6CA1;&#x6709;&#x5728;&#x4F7F;&#x7528; <code>&lt;script setup&gt;</code>&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>emits</code> &#x9009;&#x9879;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x4F1A;&#x629B;&#x51FA;&#x7684;&#x4E8B;&#x4EF6;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4ECE; <code>setup()</code> &#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5373; setup &#x4E0A;&#x4E0B;&#x6587;&#x5BF9;&#x8C61;&#x4E0A;&#x8BBF;&#x95EE;&#x5230; <code>emit</code> &#x51FD;&#x6570;&#xFF1A;</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> {</span><br><span class="line">  <span class="attr">emits</span>: [<span class="string">&apos;enlarge-text&apos;</span>],</span><br><span class="line">  <span class="title function_">setup</span>(<span class="params">props, ctx</span>) {</span><br><span class="line">    ctx.<span class="title function_">emit</span>(<span class="string">&apos;enlarge-text&apos;</span>)</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h4 id="&#x901A;&#x8FC7;&#x63D2;&#x69FD;&#x6765;&#x5206;&#x914D;&#x5185;&#x5BB9;"><a href="#&#x901A;&#x8FC7;&#x63D2;&#x69FD;&#x6765;&#x5206;&#x914D;&#x5185;&#x5BB9;" class="headerlink" title="&#x901A;&#x8FC7;&#x63D2;&#x69FD;&#x6765;&#x5206;&#x914D;&#x5185;&#x5BB9;"></a>&#x901A;&#x8FC7;&#x63D2;&#x69FD;&#x6765;&#x5206;&#x914D;&#x5185;&#x5BB9;</h4><p>&#x4E00;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x6211;&#x4EEC;&#x4F1A;&#x5E0C;&#x671B;&#x80FD;&#x548C; HTML &#x5143;&#x7D20;&#x4E00;&#x6837;&#x5411;&#x7EC4;&#x4EF6;&#x4E2D;&#x4F20;&#x9012;&#x5185;&#x5BB9;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;AlertBox&gt;</span><br><span class="line">  Something bad happened.</span><br><span class="line">&lt;/AlertBox&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x6211;&#x4EEC;&#x671F;&#x671B;&#x80FD;&#x6E32;&#x67D3;&#x6210;&#x8FD9;&#x6837;&#xFF1A;</p>
+<p><img src="/posts/9a707413/image-20250110174001176.png" alt="image-20250110174001176"></p>
+<p>&#x8FD9;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; Vue &#x7684;&#x81EA;&#x5B9A;&#x4E49; <code>&lt;slot&gt;</code> &#x5143;&#x7D20;&#x6765;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- AlertBox.vue --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;alert-box&quot;&gt;</span><br><span class="line">    &lt;strong&gt;This is an Error for Demo Purposes&lt;/strong&gt;</span><br><span class="line">    &lt;slot /&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.alert-box {</span><br><span class="line">  /* ... */</span><br><span class="line">}</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528; <code>&lt;slot&gt;</code> &#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5360;&#x4F4D;&#x7B26;&#xFF0C;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x8FDB;&#x6765;&#x7684;&#x5185;&#x5BB9;&#x5C31;&#x4F1A;&#x6E32;&#x67D3;&#x5728;&#x8FD9;&#x91CC;&#x3002;</p>
+<h4 id="&#x52A8;&#x6001;&#x7EC4;&#x4EF6;"><a href="#&#x52A8;&#x6001;&#x7EC4;&#x4EF6;" class="headerlink" title="&#x52A8;&#x6001;&#x7EC4;&#x4EF6;"></a>&#x52A8;&#x6001;&#x7EC4;&#x4EF6;</h4><p>&#x6709;&#x4E9B;&#x573A;&#x666F;&#x4F1A;&#x9700;&#x8981;&#x5728;&#x4E24;&#x4E2A;&#x7EC4;&#x4EF6;&#x95F4;&#x6765;&#x56DE;&#x5207;&#x6362;&#xFF0C;&#x6BD4;&#x5982; Tab &#x754C;&#x9762;&#xFF1A;</p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x662F;&#x901A;&#x8FC7; Vue &#x7684; <code>&lt;component&gt;</code> &#x5143;&#x7D20;&#x548C;&#x7279;&#x6B8A;&#x7684; <code>is</code> attribute &#x5B9E;&#x73B0;&#x7684;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- currentTab &#x6539;&#x53D8;&#x65F6;&#x7EC4;&#x4EF6;&#x4E5F;&#x6539;&#x53D8; --&gt;</span><br><span class="line">&lt;component :is=&quot;tabs[currentTab]&quot;&gt;&lt;/component&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x88AB;&#x4F20;&#x7ED9; <code>:is</code> &#x7684;&#x503C;&#x53EF;&#x4EE5;&#x662F;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#xFF1A;</p>
+<ul>
+<li>&#x88AB;&#x6CE8;&#x518C;&#x7684;&#x7EC4;&#x4EF6;&#x540D;</li>
+<li>&#x5BFC;&#x5165;&#x7684;&#x7EC4;&#x4EF6;&#x5BF9;&#x8C61;</li>
+</ul>
+<p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>is</code> attribute &#x6765;&#x521B;&#x5EFA;&#x4E00;&#x822C;&#x7684; HTML &#x5143;&#x7D20;&#x3002;</p>
+<p>&#x5F53;&#x4F7F;&#x7528; <code>&lt;component :is=&quot;...&quot;&gt;</code> &#x6765;&#x5728;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x95F4;&#x4F5C;&#x5207;&#x6362;&#x65F6;&#xFF0C;&#x88AB;&#x5207;&#x6362;&#x6389;&#x7684;&#x7EC4;&#x4EF6;&#x4F1A;&#x88AB;&#x5378;&#x8F7D;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <a href="https://cn.vuejs.org/guide/built-ins/keep-alive.html">`` &#x7EC4;&#x4EF6;</a>&#x5F3A;&#x5236;&#x88AB;&#x5207;&#x6362;&#x6389;&#x7684;&#x7EC4;&#x4EF6;&#x4ECD;&#x7136;&#x4FDD;&#x6301;&#x201C;&#x5B58;&#x6D3B;&#x201D;&#x7684;&#x72B6;&#x6001;&#x3002;</p>
+<h4 id="DOM-&#x5185;&#x6A21;&#x677F;&#x89E3;&#x6790;&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><a href="#DOM-&#x5185;&#x6A21;&#x677F;&#x89E3;&#x6790;&#x6CE8;&#x610F;&#x4E8B;&#x9879;" class="headerlink" title="DOM &#x5185;&#x6A21;&#x677F;&#x89E3;&#x6790;&#x6CE8;&#x610F;&#x4E8B;&#x9879;"></a>DOM &#x5185;&#x6A21;&#x677F;&#x89E3;&#x6790;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h4><p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5728; DOM &#x4E2D;&#x76F4;&#x63A5;&#x4E66;&#x5199; Vue &#x6A21;&#x677F;&#xFF0C;Vue &#x5219;&#x5FC5;&#x987B;&#x4ECE; DOM &#x4E2D;&#x83B7;&#x53D6;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x7531;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x539F;&#x751F; HTML &#x89E3;&#x6790;&#x884C;&#x4E3A;&#x9650;&#x5236;&#xFF0C;&#x6709;&#x4E00;&#x4E9B;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x4E8B;&#x9879;&#x3002;</p>
+<blockquote>
+<p>TIP</p>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#x4E0B;&#x9762;&#x8BA8;&#x8BBA;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x76F4;&#x63A5;&#x5728; DOM &#x4E2D;&#x7F16;&#x5199;&#x6A21;&#x677F;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x6765;&#x81EA;&#x4EE5;&#x4E0B;&#x6765;&#x6E90;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#xFF0C;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x987E;&#x8651;&#x8FD9;&#x4E9B;&#x9650;&#x5236;&#x4E86;&#xFF1A;</p>
+<ul>
+<li>&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;</li>
+<li>&#x5185;&#x8054;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32; (&#x4F8B;&#x5982; <code>template: &apos;...&apos;</code>)</li>
+<li><code>&lt;script type=&quot;text/x-template&quot;&gt;</code></li>
+</ul>
+</blockquote>
+<h5 id="&#x5927;&#x5C0F;&#x5199;&#x533A;&#x5206;"><a href="#&#x5927;&#x5C0F;&#x5199;&#x533A;&#x5206;" class="headerlink" title="&#x5927;&#x5C0F;&#x5199;&#x533A;&#x5206;"></a>&#x5927;&#x5C0F;&#x5199;&#x533A;&#x5206;</h5><p>HTML &#x6807;&#x7B7E;&#x548C;&#x5C5E;&#x6027;&#x540D;&#x79F0;&#x662F;&#x4E0D;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x628A;&#x4EFB;&#x4F55;&#x5927;&#x5199;&#x7684;&#x5B57;&#x7B26;&#x89E3;&#x91CA;&#x4E3A;&#x5C0F;&#x5199;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5F53;&#x4F60;&#x4F7F;&#x7528; DOM &#x5185;&#x7684;&#x6A21;&#x677F;&#x65F6;&#xFF0C;&#x65E0;&#x8BBA;&#x662F; PascalCase &#x5F62;&#x5F0F;&#x7684;&#x7EC4;&#x4EF6;&#x540D;&#x79F0;&#x3001;camelCase &#x5F62;&#x5F0F;&#x7684; prop &#x540D;&#x79F0;&#x8FD8;&#x662F; v-on &#x7684;&#x4E8B;&#x4EF6;&#x540D;&#x79F0;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x8F6C;&#x6362;&#x4E3A;&#x76F8;&#x5E94;&#x7B49;&#x4EF7;&#x7684; kebab-case (&#x77ED;&#x6A2A;&#x7EBF;&#x8FDE;&#x5B57;&#x7B26;) &#x5F62;&#x5F0F;&#xFF1A;</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// JavaScript &#x4E2D;&#x7684; camelCase</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">BlogPost</span> = {</span><br><span class="line">  <span class="attr">props</span>: [<span class="string">&apos;postTitle&apos;</span>],</span><br><span class="line">  <span class="attr">emits</span>: [<span class="string">&apos;updatePost&apos;</span>],</span><br><span class="line">  <span class="attr">template</span>: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;h3&gt;{{ postTitle }}&lt;/h3&gt;</span></span><br><span class="line"><span class="string">  `</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML &#x4E2D;&#x7684; kebab-case --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">blog-post</span> <span class="attr">post-title</span>=<span class="string">&quot;hello!&quot;</span> @<span class="attr">update-post</span>=<span class="string">&quot;onUpdatePost&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="&#x95ED;&#x5408;&#x6807;&#x7B7E;"><a href="#&#x95ED;&#x5408;&#x6807;&#x7B7E;" class="headerlink" title="&#x95ED;&#x5408;&#x6807;&#x7B7E;"></a>&#x95ED;&#x5408;&#x6807;&#x7B7E;</h5><p>&#x6211;&#x4EEC;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;&#x8FC7;&#x4E86;&#x95ED;&#x5408;&#x6807;&#x7B7E; (self-closing tag)&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;MyComponent /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x662F;&#x56E0;&#x4E3A; Vue &#x7684;&#x6A21;&#x677F;&#x89E3;&#x6790;&#x5668;&#x652F;&#x6301;&#x4EFB;&#x610F;&#x6807;&#x7B7E;&#x4F7F;&#x7528; <code>/&gt;</code> &#x4F5C;&#x4E3A;&#x6807;&#x7B7E;&#x5173;&#x95ED;&#x7684;&#x6807;&#x5FD7;&#x3002;</p>
+<p>&#x7136;&#x800C;&#x5728; DOM &#x5185;&#x6A21;&#x677F;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x663E;&#x5F0F;&#x5730;&#x5199;&#x51FA;&#x5173;&#x95ED;&#x6807;&#x7B7E;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;my-component&gt;&lt;/my-component&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x662F;&#x7531;&#x4E8E; HTML &#x53EA;&#x5141;&#x8BB8;<a href="https://html.spec.whatwg.org/multipage/syntax.html#void-elements">&#x4E00;&#x5C0F;&#x90E8;&#x5206;&#x7279;&#x6B8A;&#x7684;&#x5143;&#x7D20;</a>&#x7701;&#x7565;&#x5176;&#x5173;&#x95ED;&#x6807;&#x7B7E;&#xFF0C;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x5C31;&#x662F; <code>&lt;input&gt;</code> &#x548C; <code>&lt;img&gt;</code>&#x3002;&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x7684;&#x5143;&#x7D20;&#x6765;&#x8BF4;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7701;&#x7565;&#x4E86;&#x5173;&#x95ED;&#x6807;&#x7B7E;&#xFF0C;&#x539F;&#x751F;&#x7684; HTML &#x89E3;&#x6790;&#x5668;&#x4F1A;&#x8BA4;&#x4E3A;&#x5F00;&#x542F;&#x7684;&#x6807;&#x7B7E;&#x6C38;&#x8FDC;&#x6CA1;&#x6709;&#x7ED3;&#x675F;&#xFF0C;&#x7528;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x4E3E;&#x4F8B;&#x6765;&#x8BF4;&#xFF1A;</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-component</span> /&gt;</span> <span class="comment">&lt;!-- &#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5728;&#x8FD9;&#x91CC;&#x5173;&#x95ED;&#x6807;&#x7B7E;... --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x5C06;&#x88AB;&#x89E3;&#x6790;&#x4E3A;&#xFF1A;</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-component</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span> <span class="comment">&lt;!-- &#x4F46;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x5728;&#x8FD9;&#x91CC;&#x5173;&#x95ED;&#x6807;&#x7B7E; --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="&#x5143;&#x7D20;&#x4F4D;&#x7F6E;&#x9650;&#x5236;"><a href="#&#x5143;&#x7D20;&#x4F4D;&#x7F6E;&#x9650;&#x5236;" class="headerlink" title="&#x5143;&#x7D20;&#x4F4D;&#x7F6E;&#x9650;&#x5236;"></a>&#x5143;&#x7D20;&#x4F4D;&#x7F6E;&#x9650;&#x5236;</h5><p>&#x67D0;&#x4E9B; HTML &#x5143;&#x7D20;&#x5BF9;&#x4E8E;&#x653E;&#x5728;&#x5176;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x6709;&#x9650;&#x5236;&#xFF0C;&#x4F8B;&#x5982; <code>&lt;ul&gt;</code>&#xFF0C;<code>&lt;ol&gt;</code>&#xFF0C;<code>&lt;table&gt;</code> &#x548C; <code>&lt;select&gt;</code>&#xFF0C;&#x76F8;&#x5E94;&#x7684;&#xFF0C;&#x67D0;&#x4E9B;&#x5143;&#x7D20;&#x4EC5;&#x5728;&#x653E;&#x7F6E;&#x4E8E;&#x7279;&#x5B9A;&#x5143;&#x7D20;&#x4E2D;&#x65F6;&#x624D;&#x4F1A;&#x663E;&#x793A;&#xFF0C;&#x4F8B;&#x5982; <code>&lt;li&gt;</code>&#xFF0C;<code>&lt;tr&gt;</code> &#x548C; <code>&lt;option&gt;</code>&#x3002;</p>
+<p>&#x8FD9;&#x5C06;&#x5BFC;&#x81F4;&#x5728;&#x4F7F;&#x7528;&#x5E26;&#x6709;&#x6B64;&#x7C7B;&#x9650;&#x5236;&#x5143;&#x7D20;&#x7684;&#x7EC4;&#x4EF6;&#x65F6;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">blog-post-row</span>&gt;</span><span class="tag">&lt;/<span class="name">blog-post-row</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7EC4;&#x4EF6; <code>&lt;blog-post-row&gt;</code> &#x5C06;&#x4F5C;&#x4E3A;&#x65E0;&#x6548;&#x7684;&#x5185;&#x5BB9;&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x56E0;&#x800C;&#x5728;&#x6700;&#x7EC8;&#x5448;&#x73B0;&#x7684;&#x8F93;&#x51FA;&#x4E2D;&#x9020;&#x6210;&#x9519;&#x8BEF;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x7684; <a href="https://cn.vuejs.org/api/built-in-special-attributes.html#is"><code>is</code> attribute</a> &#x4F5C;&#x4E3A;&#x4E00;&#x79CD;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span> <span class="attr">is</span>=<span class="string">&quot;vue:blog-post-row&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>TIP</p>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x5728;&#x539F;&#x751F; HTML &#x5143;&#x7D20;&#x4E0A;&#x65F6;&#xFF0C;<code>is</code> &#x7684;&#x503C;&#x5FC5;&#x987B;&#x52A0;&#x4E0A;&#x524D;&#x7F00; <code>vue:</code> &#x624D;&#x53EF;&#x4EE5;&#x88AB;&#x89E3;&#x6790;&#x4E3A;&#x4E00;&#x4E2A; Vue &#x7EC4;&#x4EF6;&#x3002;&#x8FD9;&#x4E00;&#x70B9;&#x662F;&#x5FC5;&#x8981;&#x7684;&#xFF0C;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x548C;&#x539F;&#x751F;&#x7684;<a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example">&#x81EA;&#x5B9A;&#x4E49;&#x5185;&#x7F6E;&#x5143;&#x7D20;</a>&#x76F8;&#x6DF7;&#x6DC6;&#x3002;</p>
+</blockquote>
+<p>&#x4EE5;&#x4E0A;&#x5C31;&#x662F;&#x4F60;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x7684;&#x5173;&#x4E8E; DOM &#x5185;&#x6A21;&#x677F;&#x89E3;&#x6790;&#x7684;&#x6240;&#x6709;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x662F; Vue <em>&#x57FA;&#x7840;</em>&#x90E8;&#x5206;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x3002;&#x795D;&#x8D3A;&#x4F60;&#xFF01;&#x867D;&#x7136;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#x9700;&#x8981;&#x5B66;&#x4E60;&#x7684;&#xFF0C;&#x4F46;&#x4F60;&#x53EF;&#x4EE5;&#x5148;&#x6682;&#x505C;&#x4E00;&#x4E0B;&#xFF0C;&#x53BB;&#x7528; Vue &#x505A;&#x4E00;&#x4E9B;&#x6709;&#x8DA3;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x6216;&#x8005;&#x7814;&#x7A76;&#x4E00;&#x4E9B;<a href="https://cn.vuejs.org/examples/">&#x793A;&#x4F8B;</a>&#x3002;</p>
 ]]></content>
       <categories>
         <category>前端学习</category>
@@ -1754,66 +1950,6 @@
       <tags>
         <tag>css</tag>
         <tag>js</tag>
-        <tag>vue3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>html面试总结</title>
-    <url>/posts/d9d45835/</url>
-    <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;html&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;</h5><span id="more"></span>]]></content>
-      <categories>
-        <category>面试</category>
-        <category>html</category>
-      </categories>
-      <tags>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>js面试总结</title>
-    <url>/posts/d41c1e8f/</url>
-    <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;js&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;js&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;js&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;js&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;</h5><span id="more"></span>]]></content>
-      <categories>
-        <category>面试</category>
-        <category>js</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>css面试总结</title>
-    <url>/posts/49d38819/</url>
-    <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;</h5><span id="more"></span>]]></content>
-      <categories>
-        <category>面试</category>
-        <category>css</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue2面试总结</title>
-    <url>/posts/66bf6e1f/</url>
-    <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue2&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue2&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue2&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue2&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;</h5><span id="more"></span>]]></content>
-      <categories>
-        <category>面试</category>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue3面试总结</title>
-    <url>/posts/bb29b79a/</url>
-    <content><![CDATA[<h5 id="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue3&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"><a href="#&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue3&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;" class="headerlink" title="&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue3&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;"></a>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;vue3&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;</h5><span id="more"></span>]]></content>
-      <categories>
-        <category>面试</category>
-        <category>vue3</category>
-      </categories>
-      <tags>
         <tag>vue3</tag>
       </tags>
   </entry>
