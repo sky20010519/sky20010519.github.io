@@ -1,6 +1,5 @@
 ---
 title: js
-top: 98
 categories: 
   - 前端学习
   - js

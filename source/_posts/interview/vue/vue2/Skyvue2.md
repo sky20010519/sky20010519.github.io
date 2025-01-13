@@ -1,6 +1,5 @@
 ---
 title: vue2面试总结
-top: 91
 categories: 
     - 面试
     - vue2

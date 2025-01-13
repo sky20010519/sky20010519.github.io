@@ -1,6 +1,5 @@
 ---
 title: vue3面试总结
-top: 90
 categories: 
     - 面试
     - vue3

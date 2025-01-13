@@ -1,6 +1,6 @@
 ---
 title: js面试总结
-top: 93
+
 categories: 
     - 面试
     - js

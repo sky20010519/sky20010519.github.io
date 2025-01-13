@@ -1,6 +1,5 @@
 ---
 title: vue2
-top: 96
 categories: 
     - 前端学习
     - vue2

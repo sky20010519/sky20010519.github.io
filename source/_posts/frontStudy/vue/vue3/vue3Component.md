@@ -1,6 +1,5 @@
 ---
 title: vue3组件
-top: 94
 categories:
   - 前端学习
   - vue3
