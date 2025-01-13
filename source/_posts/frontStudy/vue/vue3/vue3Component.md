@@ -13,7 +13,7 @@ abbrlink: 26dc20c6
 date: 2025-01-02 18:12:38
 ---
 
-##### 本文讲述了vue3的相关教程
+##### 本文讲述了vue3组件相关教程
 <!-- more -->
 
 # 深入组件
@@ -588,3 +588,653 @@ defineProps({
 })
 ```
 
+## 三.事件
+
+### 1.触发与监听事件
+
+在组件的模板表达式中，可以直接使用 `$emit` 方法触发自定义事件 (例如：在 `v-on` 的处理函数中)：
+
+```vue
+<!-- MyComponent -->
+<button @click="$emit('someEvent')">Click Me</button>
+```
+
+父组件可以通过 `v-on` (缩写为 `@`) 来监听事件：
+
+```vue
+<MyComponent @some-event="callback" />
+```
+
+同样，组件的事件监听器也支持 `.once` 修饰符：
+
+```vue
+<MyComponent @some-event.once="callback" />
+```
+
+像组件与 prop 一样，事件的名字也提供了自动的格式转换。注意这里我们触发了一个以 camelCase 形式命名的事件，但在父组件中可以使用 kebab-case 形式来监听。与 [prop 大小写格式](https://cn.vuejs.org/guide/components/props.html#prop-name-casing)一样，在模板中我们也推荐使用 kebab-case 形式来编写监听器。
+
+> TIP
+>
+> 和原生 DOM 事件不一样，组件触发的事件**没有冒泡机制**。你只能监听直接子组件触发的事件。平级组件或是跨越多层嵌套的组件间通信，应使用一个外部的事件总线，或是使用一个[全局状态管理方案](https://cn.vuejs.org/guide/scaling-up/state-management.html)。
+
+### 2.事件参数
+
+有时候我们会需要在触发事件时附带一个特定的值。举例来说，我们想要 `<BlogPost>` 组件来管理文本会缩放得多大。在这个场景下，我们可以给 `$emit` 提供一个额外的参数：
+
+```vue
+<button @click="$emit('increaseBy', 1)">
+  Increase by 1
+</button>
+```
+
+然后我们在父组件中监听事件，我们可以先简单写一个内联的箭头函数作为监听器，此函数会接收到事件附带的参数：
+
+```vue
+<MyButton @increase-by="(n) => count += n" />
+```
+
+或者，也可以用一个组件方法来作为事件处理函数：
+
+```vue
+<MyButton @increase-by="increaseCount" />
+```
+
+该方法也会接收到事件所传递的参数：
+
+```js
+function increaseCount(n) {
+  count.value += n
+}
+```
+
+> TIP
+>
+> 所有传入 `$emit()` 的额外参数都会被直接传向监听器。举例来说，`$emit('foo', 1, 2, 3)` 触发后，监听器函数将会收到这三个参数值。
+
+### 3.声明触发的事件
+
+组件可以显式地通过 [`defineEmits()`](https://cn.vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) 宏来声明它要触发的事件：
+
+```vue
+<script setup>
+defineEmits(['inFocus', 'submit'])
+</script>
+```
+
+我们在 `<template>` 中使用的 `$emit` 方法不能在组件的 `<script setup>` 部分中使用，但 `defineEmits()` 会返回一个相同作用的函数供我们使用：
+
+```js
+<script setup>
+const emit = defineEmits(['inFocus', 'submit'])
+
+function buttonClick() {
+  emit('submit')
+}
+</script>
+```
+
+`defineEmits()` 宏**不能**在子函数中使用。如上所示，它必须直接放置在 `<script setup>` 的顶级作用域下。
+
+如果你显式地使用了 `setup` 函数而不是 `<script setup>`，则事件需要通过 [`emits`](https://cn.vuejs.org/api/options-state.html#emits) 选项来定义，`emit` 函数也被暴露在 `setup()` 的上下文对象上：
+
+```js
+export default {
+  emits: ['inFocus', 'submit'],
+  setup(props, ctx) {
+    ctx.emit('submit')
+  }
+}
+```
+
+与 `setup()` 上下文对象中的其他属性一样，`emit` 可以安全地被解构：
+
+```js
+export default {
+  emits: ['inFocus', 'submit'],
+  setup(props, { emit }) {
+    emit('submit')
+  }
+}
+```
+
+这个 `emits` 选项和 `defineEmits()` 宏还支持对象语法。通过 TypeScript 为参数指定类型，它允许我们对触发事件的参数进行验证：
+
+```vue
+<script setup lang="ts">
+const emit = defineEmits({
+  submit(payload: { email: string, password: string }) {
+    // 通过返回值为 `true` 还是为 `false` 来判断
+    // 验证是否通过
+  }
+})
+</script>
+```
+
+如果你正在搭配 TypeScript 使用 `<script setup>`，也可以使用纯类型标注来声明触发的事件：
+
+```vue
+<script setup lang="ts">
+const emit = defineEmits<{
+  (e: 'change', id: number): void
+  (e: 'update', value: string): void
+}>()
+</script>
+```
+
+尽管事件声明是可选的，我们还是推荐你完整地声明所有要触发的事件，以此在代码中作为文档记录组件的用法。同时，事件声明能让 Vue 更好地将事件和[透传 attribute](https://cn.vuejs.org/guide/components/attrs.html#v-on-listener-inheritance) 作出区分，从而避免一些由第三方代码触发的自定义 DOM 事件所导致的边界情况。
+
+> TIP
+>
+> 如果一个原生事件的名字 (例如 `click`) 被定义在 `emits` 选项中，则监听器只会监听组件触发的 `click` 事件而不会再响应原生的 `click` 事件。
+
+### 4.事件校验
+
+和对 props 添加类型校验的方式类似，所有触发的事件也可以使用对象形式来描述。
+
+要为事件添加校验，那么事件可以被赋值为一个函数，接受的参数就是抛出事件时传入 `emit` 的内容，返回一个布尔值来表明事件是否合法。
+
+```vue
+<script setup>
+const emit = defineEmits({
+  // 没有校验
+  click: null,
+
+  // 校验 submit 事件
+  submit: ({ email, password }) => {
+    if (email && password) {
+      return true
+    } else {
+      console.warn('Invalid submit event payload!')
+      return false
+    }
+  }
+})
+
+function submitForm(email, password) {
+  emit('submit', { email, password })
+}
+</script>
+```
+
+## 四.组件v-model
+
+### 1.基本用法
+
+`v-model` 可以在组件上使用以实现双向绑定。
+
+从 Vue 3.4 开始，推荐的实现方式是使用 [`defineModel()`](https://cn.vuejs.org/api/sfc-script-setup.html#definemodel) 宏：
+
+```vue
+<!-- Child.vue -->
+<script setup>
+const model = defineModel()
+
+function update() {
+  model.value++
+}
+</script>
+
+<template>
+  <div>Parent bound v-model is: {{ model }}</div>
+  <button @click="update">Increment</button>
+</template>
+```
+
+父组件可以用 `v-model` 绑定一个值：
+
+```vue
+<!-- Parent.vue -->
+<Child v-model="countModel" />
+```
+
+`defineModel()` 返回的值是一个 ref。它可以像其他 ref 一样被访问以及修改，不过它能起到在父组件和当前变量之间的双向绑定的作用：
+
+- 它的 `.value` 和父组件的 `v-model` 的值同步；
+- 当它被子组件变更了，会触发父组件绑定的值一起更新。
+
+这意味着你也可以用 `v-model` 把这个 ref 绑定到一个原生 input 元素上，在提供相同的 `v-model` 用法的同时轻松包装原生 input 元素：
+
+```vue
+<script setup>
+const model = defineModel()
+</script>
+
+<template>
+  <input v-model="model" />
+</template>
+```
+
+`defineModel` 是一个便利宏。编译器将其展开为以下内容：
+
+- 一个名为 `modelValue` 的 prop，本地 ref 的值与其同步；
+- 一个名为 `update:modelValue` 的事件，当本地 ref 的值发生变更时触发。
+
+在 3.4 版本之前，你一般会按照如下的方式来实现上述相同的子组件：
+
+```vue
+<!-- Child.vue -->
+<script setup>
+const props = defineProps(['modelValue'])
+const emit = defineEmits(['update:modelValue'])
+</script>
+
+<template>
+  <input
+    :value="props.modelValue"
+    @input="emit('update:modelValue', $event.target.value)"
+  />
+</template>
+```
+
+然后，父组件中的 `v-model="foo"` 将被编译为：
+
+```vue
+<!-- Parent.vue -->
+<Child
+  :modelValue="foo"
+  @update:modelValue="$event => (foo = $event)"
+/>
+```
+
+如你所见，这显得冗长得多。然而，这样写有助于理解其底层机制。
+
+因为 `defineModel` 声明了一个 prop，你可以通过给 `defineModel` 传递选项，来声明底层 prop 的选项：
+
+```js
+// 使 v-model 必填
+const model = defineModel({ required: true })
+
+// 提供一个默认值
+const model = defineModel({ default: 0 })
+```
+
+> WARING
+>
+> 如果为 `defineModel` prop 设置了一个 `default` 值且父组件没有为该 prop 提供任何值，会导致父组件与子组件之间不同步。在下面的示例中，父组件的 `myRef` 是 undefined，而子组件的 `model` 是 1：
+>
+> **子组件：**
+>
+> ```JS
+> const model = defineModel({ default: 1 })
+> ```
+>
+> **父组件：**
+>
+> ```js
+> const myRef = ref()
+> ```
+>
+> ```vue
+> <Child v-model="myRef"></Child>
+> ```
+>
+> 
+
+### 2.v-model的参数
+
+组件上的 `v-model` 也可以接受一个参数：
+
+```vue
+<MyComponent v-model:title="bookTitle" />
+```
+
+在子组件中，我们可以通过将字符串作为第一个参数传递给 `defineModel()` 来支持相应的参数：
+
+```vue
+<!-- MyComponent.vue -->
+<script setup>
+const title = defineModel('title')
+</script>
+
+<template>
+  <input type="text" v-model="title" />
+</template>
+```
+
+如果需要额外的 prop 选项，应该在 model 名称之后传递：
+
+```js
+const title = defineModel('title', { required: true })
+```
+
+3.4之前的用法
+
+```vue
+<!-- MyComponent.vue -->
+<script setup>
+defineProps({
+  title: {
+    required: true
+  }
+})
+defineEmits(['update:title'])
+</script>
+
+<template>
+  <input
+    type="text"
+    :value="title"
+    @input="$emit('update:title', $event.target.value)"
+  />
+</template>
+```
+
+### 3.多个v-model绑定
+
+利用刚才在 [`v-model` 的参数](https://cn.vuejs.org/guide/components/v-model.html#v-model-arguments)小节中学到的指定参数与事件名的技巧，我们可以在单个组件实例上创建多个 `v-model` 双向绑定。
+
+组件上的每一个 `v-model` 都会同步不同的 prop，而无需额外的选项：
+
+```vue
+<UserName
+  v-model:first-name="first"
+  v-model:last-name="last"
+/>
+```
+
+```vue
+<script setup>
+const firstName = defineModel('firstName')
+const lastName = defineModel('lastName')
+</script>
+
+<template>
+  <input type="text" v-model="firstName" />
+  <input type="text" v-model="lastName" />
+</template>
+```
+
+3.4之前的用法
+
+```vue
+<script setup>
+defineProps({
+  firstName: String,
+  lastName: String
+})
+
+defineEmits(['update:firstName', 'update:lastName'])
+</script>
+
+<template>
+  <input
+    type="text"
+    :value="firstName"
+    @input="$emit('update:firstName', $event.target.value)"
+  />
+  <input
+    type="text"
+    :value="lastName"
+    @input="$emit('update:lastName', $event.target.value)"
+  />
+</template>
+```
+
+### 4.处理v-model修饰符
+
+在学习输入绑定时，我们知道了 `v-model` 有一些[内置的修饰符](https://cn.vuejs.org/guide/essentials/forms.html#modifiers)，例如 `.trim`，`.number` 和 `.lazy`。在某些场景下，你可能想要一个自定义组件的 `v-model` 支持自定义的修饰符。
+
+我们来创建一个自定义的修饰符 `capitalize`，它会自动将 `v-model` 绑定输入的字符串值第一个字母转为大写：
+
+```vue
+<MyComponent v-model.capitalize="myText" />
+```
+
+通过像这样解构 `defineModel()` 的返回值，可以在子组件中访问添加到组件 `v-model` 的修饰符：
+
+```vue
+<script setup>
+const [model, modifiers] = defineModel()
+
+console.log(modifiers) // { capitalize: true }
+</script>
+
+<template>
+  <input type="text" v-model="model" />
+</template>
+```
+
+为了能够基于修饰符选择性地调节值的读取和写入方式，我们可以给 `defineModel()` 传入 `get` 和 `set` 这两个选项。这两个选项在从模型引用中读取或设置值时会接收到当前的值，并且它们都应该返回一个经过处理的新值。下面是一个例子，展示了如何利用 `set` 选项来应用 `capitalize` (首字母大写) 修饰符：
+
+```vue
+<script setup>
+const [model, modifiers] = defineModel({
+  set(value) {
+    if (modifiers.capitalize) {
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    }
+    return value
+  }
+})
+</script>
+
+<template>
+  <input type="text" v-model="model" />
+</template>
+```
+
+3.4之前的用法
+
+```vue
+<script setup>
+const props = defineProps({
+  modelValue: String,
+  modelModifiers: { default: () => ({}) }
+})
+
+const emit = defineEmits(['update:modelValue'])
+
+function emitValue(e) {
+  let value = e.target.value
+  if (props.modelModifiers.capitalize) {
+    value = value.charAt(0).toUpperCase() + value.slice(1)
+  }
+  emit('update:modelValue', value)
+}
+</script>
+
+<template>
+  <input type="text" :value="props.modelValue" @input="emitValue" />
+</template>
+```
+
+#### 带参数的v-model修饰符
+
+这里是另一个例子，展示了如何在使用多个不同参数的 `v-model` 时使用修饰符：
+
+```vue
+<UserName
+  v-model:first-name.capitalize="first"
+  v-model:last-name.uppercase="last"
+/>
+```
+
+```vue
+<script setup>
+const [firstName, firstNameModifiers] = defineModel('firstName')
+const [lastName, lastNameModifiers] = defineModel('lastName')
+
+console.log(firstNameModifiers) // { capitalize: true }
+console.log(lastNameModifiers) // { uppercase: true }
+</script>
+```
+
+3.4之前的用法
+
+```vue
+<script setup>
+const props = defineProps({
+firstName: String,
+lastName: String,
+firstNameModifiers: { default: () => ({}) },
+lastNameModifiers: { default: () => ({}) }
+})
+defineEmits(['update:firstName', 'update:lastName'])
+
+console.log(props.firstNameModifiers) // { capitalize: true }
+console.log(props.lastNameModifiers) // { uppercase: true }
+</script>
+```
+
+## 五.透传Attributes
+
+### 1.Attributes继承
+
+“透传 attribute”指的是传递给一个组件，却没有被该组件声明为 [props](https://cn.vuejs.org/guide/components/props.html) 或 [emits](https://cn.vuejs.org/guide/components/events.html#defining-custom-events) 的 attribute 或者 `v-on` 事件监听器。最常见的例子就是 `class`、`style` 和 `id`。
+
+当一个组件以单个元素为根作渲染时，透传的 attribute 会自动被添加到根元素上。举例来说，假如我们有一个 `<MyButton>` 组件，它的模板长这样：
+
+```vue
+<!-- <MyButton> 的模板 -->
+<button>Click Me</button>
+```
+
+一个父组件使用了这个组件，并且传入了 `class`：
+
+```vue
+<MyButton class="large" />
+```
+
+最后渲染出的 DOM 结果是：
+
+```vue
+<button class="large">Click Me</button>
+```
+
+这里，`<MyButton>` 并没有将 `class` 声明为一个它所接受的 prop，所以 `class` 被视作透传 attribute，自动透传到了 `<MyButton>` 的根元素上。
+
+### 2.对class和style的合并
+
+如果一个子组件的根元素已经有了 `class` 或 `style` attribute，它会和从父组件上继承的值合并。如果我们将之前的 `<MyButton>` 组件的模板改成这样：
+
+```vue
+<!-- <MyButton> 的模板 -->
+<button class="btn">Click Me</button>
+```
+
+则最后渲染出的 DOM 结果会变成：
+
+```vue
+<button class="btn large">Click Me</button>
+```
+
+### 3.v-on监听器继承
+
+同样的规则也适用于 `v-on` 事件监听器：
+
+```vue
+<MyButton @click="onClick" />
+```
+
+`click` 监听器会被添加到 `<MyButton>` 的根元素，即那个原生的 `<button>` 元素之上。当原生的 `<button>` 被点击，会触发父组件的 `onClick` 方法。同样的，如果原生 `button` 元素自身也通过 `v-on` 绑定了一个事件监听器，则这个监听器和从父组件继承的监听器都会被触发。
+
+### 4.深层组件继承
+
+有些情况下一个组件会在根节点上渲染另一个组件。例如，我们重构一下 `<MyButton>`，让它在根节点上渲染 `<BaseButton>`：
+
+```vue
+<!-- <MyButton/> 的模板，只是渲染另一个组件 -->
+<BaseButton />
+```
+
+此时 `<MyButton>` 接收的透传 attribute 会直接继续传给 `<BaseButton>`。
+
+请注意：
+
+1. 透传的 attribute 不会包含 `<MyButton>` 上声明过的 props 或是针对 `emits` 声明事件的 `v-on` 侦听函数，换句话说，声明过的 props 和侦听函数被 `<MyButton>`“消费”了。
+2. 透传的 attribute 若符合声明，也可以作为 props 传入 `<BaseButton>`。
+
+### 5.禁用Attribute继承
+
+如果你**不想要**一个组件自动地继承 attribute，你可以在组件选项中设置 `inheritAttrs: false`。
+
+从 3.3 开始你也可以直接在 `<script setup>` 中使用 [`defineOptions`](https://cn.vuejs.org/api/sfc-script-setup.html#defineoptions)：
+
+```vue
+<script setup>
+defineOptions({
+  inheritAttrs: false
+})
+// ...setup 逻辑
+</script>
+```
+
+最常见的需要禁用 attribute 继承的场景就是 attribute 需要应用在根节点以外的其他元素上。通过设置 `inheritAttrs` 选项为 `false`，你可以完全控制透传进来的 attribute 被如何使用。
+
+这些透传进来的 attribute 可以在模板的表达式中直接用 `$attrs` 访问到。
+
+```vue
+<span>Fallthrough attribute: {{ $attrs }}</span>
+```
+
+这个 `$attrs` 对象包含了除组件所声明的 `props` 和 `emits` 之外的所有其他 attribute，例如 `class`，`style`，`v-on` 监听器等等。
+
+有几点需要注意：
+
+- 和 props 有所不同，透传 attributes 在 JavaScript 中保留了它们原始的大小写，所以像 `foo-bar` 这样的一个 attribute 需要通过 `$attrs['foo-bar']` 来访问。
+- 像 `@click` 这样的一个 `v-on` 事件监听器将在此对象下被暴露为一个函数 `$attrs.onClick`。
+
+现在我们要再次使用一下[之前小节](https://cn.vuejs.org/guide/components/attrs.html#attribute-inheritance)中的 `<MyButton>` 组件例子。有时候我们可能为了样式，需要在 `<button>` 元素外包装一层 `<div>`：
+
+```vue
+<div class="btn-wrapper">
+  <button class="btn">Click Me</button>
+</div>
+```
+
+我们想要所有像 `class` 和 `v-on` 监听器这样的透传 attribute 都应用在内部的 `<button>` 上而不是外层的 `<div>` 上。我们可以通过设定 `inheritAttrs: false` 和使用 `v-bind="$attrs"` 来实现：
+
+```vue
+<div class="btn-wrapper">
+  <button class="btn" v-bind="$attrs">Click Me</button>
+</div>
+```
+
+### 6.多根节点的Attributes继承
+
+和单根节点组件有所不同，有着多个根节点的组件没有自动 attribute 透传行为。如果 `$attrs` 没有被显式绑定，将会抛出一个运行时警告。
+
+```vue
+<CustomLayout id="custom-layout" @click="changeValue" />
+```
+
+如果 `<CustomLayout>` 有下面这样的多根节点模板，由于 Vue 不知道要将 attribute 透传到哪里，所以会抛出一个警告。
+
+```html
+<header>...</header>
+<main>...</main>
+<footer>...</footer>
+```
+
+如果 `$attrs` 被显式绑定，则不会有警告：
+
+```vue
+<header>...</header>
+<main v-bind="$attrs">...</main>
+<footer>...</footer>
+```
+
+### 7.在 JavaScript 中访问透传 Attributes
+
+如果需要，你可以在 `<script setup>` 中使用 `useAttrs()` API 来访问一个组件的所有透传 attribute：
+
+```vue
+<script setup>
+import { useAttrs } from 'vue'
+
+const attrs = useAttrs()
+</script>
+```
+
+如果没有使用 `<script setup>`，`attrs` 会作为 `setup()` 上下文对象的一个属性暴露：
+
+```js
+export default {
+  setup(props, ctx) {
+    // 透传 attribute 被暴露为 ctx.attrs
+    console.log(ctx.attrs)
+  }
+}
+```
+
+需要注意的是，虽然这里的 `attrs` 对象总是反映为最新的透传 attribute，但它并不是响应式的 (考虑到性能因素)。你不能通过侦听器去监听它的变化。如果你需要响应性，可以使用 prop。或者你也可以使用 `onUpdated()` 使得在每次更新时结合最新的 `attrs` 执行副作用。
