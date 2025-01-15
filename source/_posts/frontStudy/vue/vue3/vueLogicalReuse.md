@@ -1,5 +1,5 @@
 ---
-title: vue3组件
+title: vue3逻辑复用
 categories:
   - 前端学习
   - vue3
@@ -7,8 +7,8 @@ tags:
   - vue3
   - js
   - css
-  - 组件
-abbrlink: 26dc20c6
+  - 逻辑复用
+abbrlink: 852c0c8c
 date: 2025-01-14 16:12:38
 ---
 
