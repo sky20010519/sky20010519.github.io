@@ -566,4 +566,467 @@ box-sizing:content-box;
 box-sizing:border-box
 ```
 
-6.CSS如何进行品字布局
+## 6.CSS如何进行品字布局
+
+### 第一种
+
+```html
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>品字布局</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	overflow: hidden;
+}
+div {
+	margin: auto 0;
+	width: 100px;
+	height: 100px;
+	background: red;
+	font-size: 40px;
+	line-height: 100px;
+	color: #fff;
+	text-align: center;
+}
+.div1 {
+	margin: 100px auto 0;
+}
+.div2 {
+	margin-left: 50%;
+	background: green;
+	float: left;
+	transform: translateX(-100%);
+}
+.div3 {
+	background: blue;
+	float: left;
+	transform: translateX(-100%);
+}
+</style>
+</head>
+<body>
+	<div class="div1">1</div>
+	<div class="div2">2</div>
+	<div class="div3">3</div>
+</body>
+</html>
+```
+
+效果：
+
+![image-20250117112120258](image-20250117112120258.png)
+
+### 第二种（全屏版）
+
+```html
+ <!doctype html>
+ <html>
+ <head>
+ <meta charset="utf-8">
+ <title>品字布局</title>
+ <style>
+ * {
+ 	margin: 0;
+ 	padding: 0;
+ }
+ div {
+ 	width: 100%;
+ 	height: 100px;
+ 	background: red;
+ 	font-size: 40px;
+ 	line-height: 100px;
+ 	color: #fff;
+ 	text-align: center;
+ }
+ .div1 {
+	margin: 0 auto 0;
+ }
+ .div2 {
+	background: green;
+ 	float: left;
+ 	width: 50%;
+ }
+ .div3 {
+ 	background: blue;
+ 	float: left;
+ 	width: 50%;
+ }
+ </style>
+ </head>
+ <body>
+ 	<div class="div1">1</div>
+ 	<div class="div2">2</div>
+ 	<div class="div3">3</div>
+ </body>
+ </html>
+```
+
+效果：
+
+![image-20250117112256586](image-20250117112256586.png)
+
+### 第三种flex
+
+```scss
+.box3{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 100px;
+    color: #fff;
+}
+.box4{
+    display: flex;
+    flex-direction: row;
+}
+.div7{
+    width: 100px;
+    height: 100px;
+    background: red;
+}
+.div8{
+    width: 100px;
+    height: 100px;
+    background: green;
+}
+.div9{
+    width: 100px;
+    height: 100px;
+    background: blue;
+}
+```
+
+```html
+<div class="box3">
+            <div class="div7">1</div>
+            <div class="box4">
+                <div class="div8">2</div>
+                <div class="div9">3</div>
+            </div>
+        </div>
+```
+
+## 7.CSS如何进行圣杯布局
+
+圣杯布局如图：
+
+![image-20250117135934032](image-20250117135934032.png)
+
+而且要做到左右宽度固定，中间宽度自适应
+
+### 利用flex布局
+
+使用CSS3的flex布局实现三栏布局，Flex布局也称弹性布局，可以为盒 状模型提供最大的灵活性，是布局的首选方案，现已得到所有现代浏览 器的支持，此处主要是利用flex容器成员默认按照主轴排列，以及利用 flex属性即
+flex-grow，flex-shrink和flex-basis的简写形式将间的 块自适应撑起。
+
+```scss
+.three1{
+    display: flex;
+    height: 200px;
+    border: 1px solid #eee;
+    .left{
+        width: 200px;
+        background: #19be6b;
+    }
+    .main{
+        flex:1;
+        background: #2979ff;
+    }
+    .right{
+        width: 200px;
+        background: #fa3534;
+    }
+}
+```
+
+```html
+<div class="three1">
+                    <div class="left"></div>
+                    <div class="main"></div>
+                    <div class="right"></div>
+                </div>
+```
+
+### 利用Calc布局
+
+通过CSS的calc可以动态计算 中间部分的长度从而做到自适应，calc可以配合 inline-block行内块级元素实现三栏布局， 注意使用行内块级元素的时候如果编写HTML时换行，这个空 白的换行也会作为元素解析从而会产生空白间隙，所以在编 写时此处不要换行，此外calc通过与float 配合实现也是可行的。
+
+```scss
+.three2{
+    height: 200px;
+    border: 1px solid #eee;
+    .left{
+        width: 200px;
+        background: #19be6b;
+    }
+    .main{
+        width: calc(100% - 400px);
+        background: #2979ff;
+    }
+    .right{
+        width: 200px;
+        background: #fa3534;
+    }
+}
+.three2 div{
+    display: inline-block;
+    height: 100%;
+}
+```
+
+```html
+<div class="three2">
+                    <div class="left"></div><div class="main"></div><div class="right"></div>
+                </div>
+```
+
+### 利用BFC
+
+BFC块级格式化上下文Block Formatting Context， 是Web页面的可视CSS渲染的一部分，是块盒子的布局 过程发生的区域，也是浮动元素与其他元素交互的区域 ，是用于布局块级盒子的一块渲染区域，并且与这个区 域的外部毫无关系，是一个独立的区域，是一个环境， 在这里利用BFC区域不会与浮动元素重叠的特性实现三栏布局。
+
+```scss
+.three3 div{
+    height: 100%;
+}
+.three3{
+    height: 200px;
+    border: 1px solid #eee;
+    .left{
+        float: left;
+        width: 200px;
+        background: #19be6b;
+    }
+    .main{
+        text-align: center;
+        overflow: hidden;
+        background: #2979ff;
+    }
+    .right{
+        float: right;
+        width: 200px;
+        background: #fa3534;
+    }
+}
+```
+
+```html
+<div class="three3">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                    <div class="main"></div>
+                </div>
+```
+
+右两侧固宽，两侧都使用浮动，中间使用margin: 左右两侧的宽度auto，轻松实现三栏自适应布局 ，故意使两侧留出空白，以便确认中间是完全宽度自适应，
+
+```scss
+.three4 div{
+    height: 100%;
+}
+.three4{
+    height: 200px;
+    border: 1px solid #eee;
+    .left{
+        float: left;
+        width: 200px;
+        background: #19be6b;
+    }
+    .main{
+        margin: 0 200px;
+        background: #2979ff;
+    }
+    .right{
+        float: right;
+        width: 200px;
+        background: #fa3534;
+    }
+}
+```
+
+```html
+<div class="three4">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                    <div class="main"></div>
+                </div>
+```
+
+### 利用Float
+
+使用Float配合margin实现三栏布局，主要是margin的负值的应用。
+
+```scss
+.three5 div{
+    height: 100%;
+}
+.three5{
+    height: 200px;
+    border: 1px solid #eee;
+    .left{
+        float: left;
+        width: 200px;
+        margin-left: -100%;
+        background: #19be6b;
+    }
+    .main{
+        float: left;
+        width: 100%;
+        background: #2979ff;
+    }
+    .right{
+        float: right;
+        width: 200px;
+        margin-left: -200px;
+        background-color: #fa3534;
+    }
+}
+```
+
+```html
+<div class="three5">
+                <div class="main"></div>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+```
+
+### 利用table
+
+使用Table布局即表格的样式,实现三栏布局。
+
+```scss
+.three6 div{
+    display: table-cell;
+}
+.three6{
+    display: table;
+    height: 200px;
+    width: 100%;
+    border: 1px solid #eee;
+    .left{
+        width: 200px;
+        background: #19be6b;
+    }
+    .right{
+        width: 200px;
+        background: #fa3534;
+    }
+    .main{
+        background: #2979ff;
+    }
+}
+```
+
+```html
+<div class="three6">
+                <div class="left"></div>
+                <div class="main"></div>
+                <div class="right"></div>
+            </div>
+```
+
+### 利用Grid
+
+目前CSS布局方案中,网格布局可以算得上是最强大的布局方案了 。它可以将网页分为一个个网格，然后利用这些网格组合做出 各种各样的布局。Grid布局与Flex布局有一定的相似性，都可 以指定容器内部多个成员的位置。不同之处在于，Flex布局是 轴线布局，只能指定成员针对轴线的位置，可以看作是一维布局 。Grid布局则是将容器划分成行和列，产生单元格，然后指定成 员所在的单元格，可以看作是二维布局。
+
+```scss
+.three7{
+    display: grid;
+    height: 200px;
+    grid-template-columns: 200px auto 200px;
+    border: 1px solid #eee;
+    .left{
+        background: #19be6b;
+    }
+    .main{
+        background: #2979ff;
+    }
+    .right{
+        background: #fa3534;
+    }
+}
+```
+
+```html
+<div class="three7">
+                    <div class="left"></div>
+                    <div class="main"></div>
+                    <div class="right"></div>
+                </div>
+```
+
+## 8.CSS如何实现双飞翼布局
+
+![image-20250117170651109](image-20250117170651109.png)
+
+有了圣杯布局的铺垫，双飞翼布局也就问题不大啦。这里采用经典的float布局来完成
+
+```scss
+.box6{
+    width: 100%;
+    height: 200px;
+    .main{
+        height: 200px;
+        background: yellow;
+        width: 100%;
+        float: left;
+    }
+    .left{
+        width: 200px;
+        height: 150px;
+        float: left;
+        margin-left: -100%;
+        background: red;
+    }
+    .right{
+        width: 200px;
+        height: 150px;
+        float: right;
+        margin-left: -200px;
+        background: blue;
+    }
+}
+```
+
+```html
+<div class="box6">
+            <div class="main">双飞翼布局</div>
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+```
+
+9.什么是BFC？
+
+W3C对BFC的定义如下： 浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table cells, 和 table-captions），以及overflow值不为"visiable"的块级盒子，都会为他们的内容创建新的 BFC（Block Fromatting Context， 即块级格式上下文）。
+
+10.触发条件
+
+一个HTML元素要创建BFC，则满足下列的任意一个或多个条件即可： 下列方式会创建块格式化上下文： 
+
+- 根元素() 
+- 浮动元素（元素的 float 不是 none） 
+- 绝对定位元素（元素的 position 为 absolute 或 fixed） 
+- 行内块元素（元素的 display 为 inline-block） 
+- 表格单元格（元素的 display为 table-cell，HTML表格单元格默认为该值） 
+- 表格标题（元素的 display 为 table-caption，HTML表格标题默认为该值） 
+- 匿名表格单元格元素（元素的 display为 table、table-row、 table-row-group、table-header group、table-footer-group（分别是HTML table、row、tbody、thead、tfoot的默认属性）或  inline-table） 
+- overflow 值不为 visible 的块元素 -弹性元素（display为 flex 或 inline-flex元素的直接子元素） 
+- 网格元素（display为 grid 或 inline-grid 元素的直接子元素） 等等
+
+11.BFC渲染规则
+
+1. BFC垂直方向边距重叠 
+2. BFC的区域不会与浮动元素的box重叠 
+3. BFC是一个独立的容器，外面的元素不会影响里面的元素 
+4. 计算BFC高度的时候浮动元素也会参与计算
