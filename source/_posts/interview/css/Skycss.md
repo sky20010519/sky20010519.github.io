@@ -1006,11 +1006,11 @@ BFC块级格式化上下文Block Formatting Context， 是Web页面的可视CSS�
         </div>
 ```
 
-9.什么是BFC？
+## 9.什么是BFC？
 
 W3C对BFC的定义如下： 浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table cells, 和 table-captions），以及overflow值不为"visiable"的块级盒子，都会为他们的内容创建新的 BFC（Block Fromatting Context， 即块级格式上下文）。
 
-10.触发条件
+## 10.触发条件
 
 一个HTML元素要创建BFC，则满足下列的任意一个或多个条件即可： 下列方式会创建块格式化上下文： 
 
@@ -1024,9 +1024,245 @@ W3C对BFC的定义如下： 浮动元素和绝对定位元素，非块级盒子�
 - overflow 值不为 visible 的块元素 -弹性元素（display为 flex 或 inline-flex元素的直接子元素） 
 - 网格元素（display为 grid 或 inline-grid 元素的直接子元素） 等等
 
-11.BFC渲染规则
+## 11.BFC渲染规则
 
 1. BFC垂直方向边距重叠 
 2. BFC的区域不会与浮动元素的box重叠 
 3. BFC是一个独立的容器，外面的元素不会影响里面的元素 
-4. 计算BFC高度的时候浮动元素也会参与计算
+4. 计算BFC高度的时候浮动元素也会参与计算                                                                                                         
+
+## 12应用场景
+
+### (1).防止浮动导致的父元素高度塌陷
+
+```css
+.container {
+ 	border: 10px solid red;
+ }
+ .inner {
+ 	background: #08BDEB;
+ 	height: 100px;
+ 	width: 100px;
+ }
+```
+
+```html
+ <div class="container">
+ 	<div class="inner"></div>
+ </div>
+```
+
+![image-20250120102819802](image-20250120102819802.png)
+
+接下来将inner元素设为浮动：
+
+```css
+ .inner {
+	float: left;
+ 	background: #08BDEB;
+ 	height: 100px;
+ 	width: 100px;
+ }
+```
+
+会产生这样的塌陷效果:
+
+![image-20250120104223947](image-20250120104223947.png)
+
+但如果我们对父元素设置BFC后, 这样的问题就解决了
+
+```css
+ .container {
+ 	border: 10px solid red;
+ 	overflow: hidden;
+ }
+```
+
+### (2)避免外边距折叠
+
+两个块同一个BFC会造成外边距折叠，但如果对这两个块分别设置BFC，那么边距重叠的问题就不存在 了。 现有代码如下：
+
+```css
+ .container {
+ 	background-color: green;
+ 	overflow: hidden;
+ }
+ .inner {
+ 	background-color: lightblue;
+ 	margin: 10px 0;
+ }
+```
+
+```html
+ <div class="container">
+ 	<div class="inner">1</div>
+ 	<div class="inner">2</div>
+ 	<div class="inner">3</div>
+ </div>
+```
+
+![image-20250120111712032](image-20250120111712032.png)
+
+此时三个元素的上下间隔都是10px, 因为三个元素同属于一个BFC。 现在我们做如下操作
+
+```html
+ <div class="container">
+ 	<div class="inner">1</div>
+ <div class="bfc">
+	 <div class="inner">2</div>
+ </div>
+ 	<div class="inner">3</div>
+ </div>
+```
+
+```css
+.bfc{
+ 	overflow: hidden;
+ }
+```
+
+效果如下：
+
+![image-20250120111808440](image-20250120111808440.png)
+
+可以明显地看到间隔变大了，而且是原来的两倍，符合我们的预期。
+
+## 13.画一个对话框
+
+要画一个对话框，首先来学习做一个三角形。
+
+```css
+ .triangle{
+ 	width: 0;
+ 	height: 0;
+ 	border: 50px solid;
+ 	border-color: #f00 #0f0 #ccc #00f;
+ }
+```
+
+```html
+ <div class="triangle"></div>
+```
+
+出现如下效果：
+
+![image-20250120140658875](image-20250120140658875.png)
+
+已经知道border的构成原理，然后只需改一行代码：
+
+```css
+// 四个参数对应 ：上 右 下 左
+border-color: transparent transparent #ccc transparent;
+```
+
+于是就只剩下面的三角形部分了
+
+![image-20250120142851618](image-20250120142851618.png)
+
+现在来利用三角形技术来做对话框：
+
+```css
+.dialog {
+ 	position: relative;
+ 	margin-top: 50px;
+ 	margin-left: 50px;
+	padding-left: 20px;
+ 	width: 300px;
+ 	line-height: 2;
+ 	background: lightblue;
+ 	color: #fff;
+ }
+ .dialog::before {
+ 	content: '';
+ 	position: absolute;
+ 	border: 8px solid;
+ 	border-color: transparent lightblue transparent transparent;
+ 	left: -16px;
+ 	top: 8px;
+ }
+```
+
+```html
+ <div class="dialog">这是一个对话框鸭！</div>
+```
+
+效果如下：
+
+![image-20250120144632758](image-20250120144632758.png)
+
+## 14.画一个平行四边形
+
+利用skew特性，第一个参数为x轴倾斜的角度，第二个参数为y轴倾斜的角度。
+
+```css
+ .parallel {
+ 	margin-top: 50px;
+ 	margin-left: 50px;
+ 	width: 200px;
+ 	height: 100px;
+ 	background: lightblue;
+ 	transform: skew(-20deg, 0);
+ }
+```
+
+```html
+ <div class="parallel"></div>
+```
+
+效果如下：
+
+![image-20250120151947161](image-20250120151947161.png)
+
+15.用一个div画一个五角星
+
+![image-20250120152020896](image-20250120152020896.png)
+
+对于这个五角星而言，我们可以拆分成三个部分，想一想是不是这样？
+
+![image-20250120152040710](image-20250120152040710.png)
+
+那我们现在就来实现这三个部分。 对于最上面的三角，我们在第一个部分已经实现了三角形，这个不 难。但是下面的两个如何实现呢？
+
+ 其实也非常的简单，想一想，下面这两个是不是就是一个向上的三角形旋转而来呢？明白了这一点，就 可以动手实现啦！
+
+```css
+ #star {
+ 	position: relative;
+ 	margin: 200px auto;
+ 	width: 0;
+ 	height: 0;
+ 	border-style: solid;
+ 	border-color: transparent transparent red transparent;
+ 	border-width: 70px 100px;
+ 	transform: rotate(35deg);
+ }
+ #star::before {
+ 	position: absolute;
+ 	content: '';
+ 	width: 0;
+ 	height: 0;
+ 	top: -128px;
+ 	left: -95px;
+ 	border-style: solid;
+ 	border-color: transparent transparent red transparent;
+ 	border-width: 80px 30px;
+ 	transform: rotate(-35deg);
+ }
+ #star::after {
+ 	position: absolute;
+ 	content: '';
+ 	width: 0;
+ 	height: 0;
+ 	top: -45px;
+ 	left: -140px;
+ 	border-style: solid;
+	border-color: transparent transparent red transparent;
+ 	border-width: 70px 100px;
+ 	transform: rotate(-70deg);
+ }
+```
+
+```html
+ <div id="star"></div>
+```
+
