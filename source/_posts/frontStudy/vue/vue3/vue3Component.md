@@ -12,18 +12,19 @@ abbrlink: 26dc20c6
 date: 2025-01-13 16:12:38
 ---
 
-##### 本文讲述了vue3组件相关教程
+**本文讲述了vue3组件相关教程**
+
 <!-- more -->
 
 # 深入组件
 
-## 一.组件注册
+## 组件注册
 
 > 此章节假设你已经看过了[组件基础](https://cn.vuejs.org/guide/essentials/component-basics.html)。若你还不了解组件是什么，请先阅读该章节。
 
 一个 Vue 组件在使用前需要先被“注册”，这样 Vue 才能在渲染模板时找到其对应的实现。组件注册有两种方式：全局注册和局部注册。
 
-### 1.全局注册
+### 全局注册
 
 我们可以使用 [Vue 应用实例](https://cn.vuejs.org/guide/essentials/application.html)的 `.component()` 方法，让组件在当前 Vue 应用中全局可用。
 
@@ -70,7 +71,7 @@ app
 
 所有的子组件也可以使用全局注册的组件，这意味着这三个组件也都可以在*彼此内部*使用。
 
-### 2.局部注册
+### 局部注册
 
 全局注册虽然很方便，但有以下几个问题：
 
@@ -119,7 +120,7 @@ export default {
 
 请注意：**局部注册的组件在后代组件中\*不\*可用**。在这个例子中，`ComponentA` 注册后仅在当前组件可用，而在任何的子组件或更深层的子组件中都不可用。
 
-### 3.组件名格式
+### 组件名格式
 
 在整个指引中，我们都使用 PascalCase 作为组件名的注册格式，这是因为：
 
@@ -130,9 +131,9 @@ export default {
 
 为了方便，Vue 支持将模板中使用 kebab-case 的标签解析为使用 PascalCase 注册的组件。这意味着一个以 `MyComponent` 为名注册的组件，在模板中可以通过 `<MyComponent>` 或 `<my-component>` 引用。这让我们能够使用同样的 JavaScript 组件注册代码来配合不同来源的模板。
 
-## 二.Props
+## Props
 
-### 1.Props 声明
+### Props 声明
 
 一个组件需要显式声明它所接受的 props，这样 Vue 才能知道外部传入的哪些是 props，哪些是透传 attribute。
 
@@ -195,7 +196,7 @@ defineProps<{
 </script>
 ```
 
-### 2.响应式 Props 解构 （3.5）
+### 响应式 Props 解构 （3.5）
 
 Vue 的响应系统基于属性访问跟踪状态的使用情况。例如，在计算属性或侦听器中访问 `props.foo` 时，`foo` 属性将被跟踪为依赖项。
 
@@ -256,7 +257,7 @@ useComposable(() => foo)
 
 外部函数可以调用 getter (或使用 [toValue](https://cn.vuejs.org/api/reactivity-utilities.html#tovalue) 进行规范化) 来追踪提供的 prop 变更。例如，在计算属性或侦听器的 getter 中。
 
-### 3.传递prop的细节
+### 传递prop的细节
 
 #### prop名字格式
 
@@ -375,7 +376,7 @@ const post = {
 <BlogPost :id="post.id" :title="post.title" />
 ```
 
-### 4.单向数据流
+### 单向数据流
 
 所有的 props 都遵循着**单向绑定**原则，props 因父组件的更新而变化，自然地将新的状态向下流往子组件，而不会逆向传递。这避免了子组件意外修改父组件的状态的情况，不然应用的数据流将很容易变得混乱而难以理解。
 
@@ -420,7 +421,7 @@ props.foo = 'bar'
 
 这种更改的主要缺陷是它允许了子组件以某种不明显的方式影响父组件的状态，可能会使数据流在将来变得更难以理解。在最佳实践中，你应该尽可能避免这样的更改，除非父子组件在设计上本来就需要紧密耦合。在大多数场景下，子组件应该[抛出一个事件](https://cn.vuejs.org/guide/components/events.html)来通知父组件做出改变。
 
-### 5.Prop效验
+### Prop效验
 
 Vue 组件可以更细致地声明对传入的 props 的校验要求。比如我们上面已经看到过的类型声明，如果传入的值不满足类型要求，Vue 会在浏览器控制台中抛出警告来提醒使用者。这在开发给其他开发者使用的组件时非常有用。
 
@@ -543,7 +544,7 @@ defineProps({
 
 注意如果 `type` 仅为 `null` 而非使用数组语法，它将允许任何类型。
 
-### 6.Boolean类型转换
+### Boolean类型转换
 
 为了更贴近原生 boolean attributes 的行为，声明为 `Boolean` 类型的 props 有特别的类型转换规则。以带有如下声明的 `<MyComponent>` 组件为例：
 
@@ -587,9 +588,9 @@ defineProps({
 })
 ```
 
-## 三.事件
+## 事件
 
-### 1.触发与监听事件
+### 触发与监听事件
 
 在组件的模板表达式中，可以直接使用 `$emit` 方法触发自定义事件 (例如：在 `v-on` 的处理函数中)：
 
@@ -616,7 +617,7 @@ defineProps({
 >
 > 和原生 DOM 事件不一样，组件触发的事件**没有冒泡机制**。你只能监听直接子组件触发的事件。平级组件或是跨越多层嵌套的组件间通信，应使用一个外部的事件总线，或是使用一个[全局状态管理方案](https://cn.vuejs.org/guide/scaling-up/state-management.html)。
 
-### 2.事件参数
+### 事件参数
 
 有时候我们会需要在触发事件时附带一个特定的值。举例来说，我们想要 `<BlogPost>` 组件来管理文本会缩放得多大。在这个场景下，我们可以给 `$emit` 提供一个额外的参数：
 
@@ -650,7 +651,7 @@ function increaseCount(n) {
 >
 > 所有传入 `$emit()` 的额外参数都会被直接传向监听器。举例来说，`$emit('foo', 1, 2, 3)` 触发后，监听器函数将会收到这三个参数值。
 
-### 3.声明触发的事件
+### 声明触发的事件
 
 组件可以显式地通过 [`defineEmits()`](https://cn.vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) 宏来声明它要触发的事件：
 
@@ -726,7 +727,7 @@ const emit = defineEmits<{
 >
 > 如果一个原生事件的名字 (例如 `click`) 被定义在 `emits` 选项中，则监听器只会监听组件触发的 `click` 事件而不会再响应原生的 `click` 事件。
 
-### 4.事件校验
+### 事件校验
 
 和对 props 添加类型校验的方式类似，所有触发的事件也可以使用对象形式来描述。
 
@@ -755,9 +756,9 @@ function submitForm(email, password) {
 </script>
 ```
 
-## 四.组件v-model
+## 组件v-model
 
-### 1.基本用法
+### 基本用法
 
 `v-model` 可以在组件上使用以实现双向绑定。
 
@@ -869,7 +870,7 @@ const model = defineModel({ default: 0 })
 >
 > 
 
-### 2.v-model的参数
+### v-model的参数
 
 组件上的 `v-model` 也可以接受一个参数：
 
@@ -918,7 +919,7 @@ defineEmits(['update:title'])
 </template>
 ```
 
-### 3.多个v-model绑定
+### 多个v-model绑定
 
 利用刚才在 [`v-model` 的参数](https://cn.vuejs.org/guide/components/v-model.html#v-model-arguments)小节中学到的指定参数与事件名的技巧，我们可以在单个组件实例上创建多个 `v-model` 双向绑定。
 
@@ -969,7 +970,7 @@ defineEmits(['update:firstName', 'update:lastName'])
 </template>
 ```
 
-### 4.处理v-model修饰符
+### 处理v-model修饰符
 
 在学习输入绑定时，我们知道了 `v-model` 有一些[内置的修饰符](https://cn.vuejs.org/guide/essentials/forms.html#modifiers)，例如 `.trim`，`.number` 和 `.lazy`。在某些场景下，你可能想要一个自定义组件的 `v-model` 支持自定义的修饰符。
 
@@ -1075,9 +1076,9 @@ console.log(props.lastNameModifiers) // { uppercase: true }
 </script>
 ```
 
-## 五.透传Attributes
+## 透传Attributes
 
-### 1.Attributes继承
+### Attributes继承
 
 “透传 attribute”指的是传递给一个组件，却没有被该组件声明为 [props](https://cn.vuejs.org/guide/components/props.html) 或 [emits](https://cn.vuejs.org/guide/components/events.html#defining-custom-events) 的 attribute 或者 `v-on` 事件监听器。最常见的例子就是 `class`、`style` 和 `id`。
 
@@ -1102,7 +1103,7 @@ console.log(props.lastNameModifiers) // { uppercase: true }
 
 这里，`<MyButton>` 并没有将 `class` 声明为一个它所接受的 prop，所以 `class` 被视作透传 attribute，自动透传到了 `<MyButton>` 的根元素上。
 
-### 2.对class和style的合并
+### 对class和style的合并
 
 如果一个子组件的根元素已经有了 `class` 或 `style` attribute，它会和从父组件上继承的值合并。如果我们将之前的 `<MyButton>` 组件的模板改成这样：
 
@@ -1117,7 +1118,7 @@ console.log(props.lastNameModifiers) // { uppercase: true }
 <button class="btn large">Click Me</button>
 ```
 
-### 3.v-on监听器继承
+### v-on监听器继承
 
 同样的规则也适用于 `v-on` 事件监听器：
 
@@ -1127,7 +1128,7 @@ console.log(props.lastNameModifiers) // { uppercase: true }
 
 `click` 监听器会被添加到 `<MyButton>` 的根元素，即那个原生的 `<button>` 元素之上。当原生的 `<button>` 被点击，会触发父组件的 `onClick` 方法。同样的，如果原生 `button` 元素自身也通过 `v-on` 绑定了一个事件监听器，则这个监听器和从父组件继承的监听器都会被触发。
 
-### 4.深层组件继承
+### 深层组件继承
 
 有些情况下一个组件会在根节点上渲染另一个组件。例如，我们重构一下 `<MyButton>`，让它在根节点上渲染 `<BaseButton>`：
 
@@ -1143,7 +1144,7 @@ console.log(props.lastNameModifiers) // { uppercase: true }
 1. 透传的 attribute 不会包含 `<MyButton>` 上声明过的 props 或是针对 `emits` 声明事件的 `v-on` 侦听函数，换句话说，声明过的 props 和侦听函数被 `<MyButton>`“消费”了。
 2. 透传的 attribute 若符合声明，也可以作为 props 传入 `<BaseButton>`。
 
-### 5.禁用Attribute继承
+### 禁用Attribute继承
 
 如果你**不想要**一个组件自动地继承 attribute，你可以在组件选项中设置 `inheritAttrs: false`。
 
@@ -1189,7 +1190,7 @@ defineOptions({
 </div>
 ```
 
-### 6.多根节点的Attributes继承
+### 多根节点的Attributes继承
 
 和单根节点组件有所不同，有着多个根节点的组件没有自动 attribute 透传行为。如果 `$attrs` 没有被显式绑定，将会抛出一个运行时警告。
 
@@ -1213,7 +1214,7 @@ defineOptions({
 <footer>...</footer>
 ```
 
-### 7.在 JavaScript 中访问透传 Attributes
+### 在 JavaScript 中访问透传 Attributes
 
 如果需要，你可以在 `<script setup>` 中使用 `useAttrs()` API 来访问一个组件的所有透传 attribute：
 
@@ -1238,9 +1239,9 @@ export default {
 
 需要注意的是，虽然这里的 `attrs` 对象总是反映为最新的透传 attribute，但它并不是响应式的 (考虑到性能因素)。你不能通过侦听器去监听它的变化。如果你需要响应性，可以使用 prop。或者你也可以使用 `onUpdated()` 使得在每次更新时结合最新的 `attrs` 执行副作用。
 
-## 六.插槽Slots
+## 插槽Slots
 
-### 1.插槽内容与出口
+### 插槽内容与出口
 
 在之前的章节中，我们已经了解到组件能够接收任意类型的 JavaScript 值作为 props，但组件要如何接收模板内容呢？在某些场景中，我们可能想要为子组件传递一些模板片段，让子组件在它们的组件中渲染这些片段。
 
@@ -1297,7 +1298,7 @@ function FancyButton(slotContent) {
 
 通过使用插槽，`<FancyButton>` 组件更加灵活和具有可复用性。现在组件可以用在不同的地方渲染各异的内容，但同时还保证都具有相同的样式。
 
-### 2.渲染作用域
+### 渲染作用域
 
 插槽内容可以访问到父组件的数据作用域，因为插槽内容本身是在父组件模板中定义的。举例来说：
 
@@ -1312,7 +1313,7 @@ function FancyButton(slotContent) {
 
 > 父组件模板中的表达式只能访问父组件的作用域；子组件模板中的表达式只能访问子组件的作用域。
 
-### 3.默认内容
+### 默认内容
 
 在外部没有提供任何内容的情况下，可以为插槽指定默认内容。比如有这样一个 `<SubmitButton>` 组件：
 
@@ -1356,7 +1357,7 @@ function FancyButton(slotContent) {
 <button type="submit">Save</button>
 ```
 
-### 4.具名插槽
+### 具名插槽
 
 有时在一个组件中包含多个插槽出口是很有用的。举例来说，在一个 `<BaseLayout>` 组件中，有如下模板：
 
@@ -1482,7 +1483,7 @@ function BaseLayout(slots) {
 }
 ```
 
-### 5.条件插槽
+### 条件插槽
 
 有时你需要根据插槽是否存在来渲染某些内容。
 
@@ -1508,7 +1509,7 @@ function BaseLayout(slots) {
 </template>
 ```
 
-### 6.动态插槽名
+### 动态插槽名
 
 [动态指令参数](https://cn.vuejs.org/guide/essentials/template-syntax.html#dynamic-arguments)在 `v-slot` 上也是有效的，即可以定义下面这样的动态插槽名：
 
@@ -1527,7 +1528,7 @@ function BaseLayout(slots) {
 
 注意这里的表达式和动态指令参数受相同的[语法限制](https://cn.vuejs.org/guide/essentials/template-syntax.html#dynamic-argument-syntax-constraints)。
 
-### 7.作用域插槽
+### 作用域插槽
 
 在上面的[渲染作用域](https://cn.vuejs.org/guide/components/slots.html#render-scope)中我们讨论到，插槽的内容无法访问到子组件的状态。
 
@@ -1690,9 +1691,9 @@ function MyComponent(slots) {
 
 尽管如此，作用域插槽在需要**同时**封装逻辑、组合视图界面时还是很有用，就像上面的 `<FancyList>` 组件那样。
 
-## 七.依赖注入
+## 依赖注入
 
-### 1.Prop逐级透传问题
+### Prop逐级透传问题
 
 通常情况下，当我们需要从父组件向子组件传递数据时，会使用 [props](https://cn.vuejs.org/guide/components/props.html)。想象一下这样的结构：有一些多层级嵌套的组件，形成了一棵巨大的组件树，而某个深层的子组件需要一个较远的祖先组件中的部分数据。在这种情况下，如果仅使用 props 则必须将其沿着组件链逐级传递下去，这会非常麻烦：
 
@@ -1704,7 +1705,7 @@ function MyComponent(slots) {
 
 ![image-20250114143008773](image-20250114143008773.png)
 
-### 2.Provide（提供）
+### Provide（提供）
 
 要为组件后代提供数据，需要使用到 [`provide()`](https://cn.vuejs.org/api/composition-api-dependency-injection.html#provide) 函数：
 
@@ -1741,7 +1742,7 @@ provide('key', count)
 
 提供的响应式状态使后代组件可以由此和提供者建立响应式的联系。
 
-### 3.应用层Provide
+### 应用层Provide
 
 除了在一个组件中提供依赖，我们还可以在整个应用层面提供依赖：
 
@@ -1755,7 +1756,7 @@ app.provide(/* 注入名 */ 'message', /* 值 */ 'hello!')
 
 在应用级别提供的数据在该应用内的所有组件中都可以注入。这在你编写[插件](https://cn.vuejs.org/guide/reusability/plugins.html)时会特别有用，因为插件一般都不会使用组件形式来提供值。
 
-### 4.Inject(注入)
+### inject(注入)
 
 要注入上层组件提供的数据，需使用 [`inject()`](https://cn.vuejs.org/api/composition-api-dependency-injection.html#inject) 函数：
 
@@ -1782,7 +1783,7 @@ export default {
 }
 ```
 
-### 5.注入默认值
+### 注入默认值
 
 默认情况下，`inject` 假设传入的注入名会被某个祖先链上的组件提供。如果该注入名的确没有任何组件提供，则会抛出一个运行时警告。
 
@@ -1802,7 +1803,7 @@ const value = inject('key', () => new ExpensiveClass(), true)
 
 第三个参数表示默认值应该被当作一个工厂函数。
 
-### 6.和响应式数据配合使用
+### 和响应式数据配合使用
 
 当提供 / 注入响应式的数据时，**建议尽可能将任何对响应式状态的变更都保持在供给方组件中**。这样可以确保所提供状态的声明和变更操作都内聚在同一个组件内，使其更容易维护。
 
@@ -1879,9 +1880,9 @@ import { myInjectionKey } from './keys.js'
 const injected = inject(myInjectionKey)
 ```
 
-## 八.异步组件
+## 异步组件
 
-### 1.基本用法
+### 基本用法
 
 在大型项目中，我们可能需要拆分应用为更小的块，并仅在需要时再从服务器加载相关组件。Vue 提供了 [`defineAsyncComponent`](https://cn.vuejs.org/api/general.html#defineasynccomponent) 方法来实现此功能：
 
@@ -1935,7 +1936,7 @@ const AdminPage = defineAsyncComponent(() =>
 </template>
 ```
 
-### 2.加载与错误状态
+### 加载与错误状态
 
 异步操作不可避免地会涉及到加载和错误状态，因此 `defineAsyncComponent()` 也支持在高级选项中处理这些状态：
 
@@ -1961,7 +1962,7 @@ const AsyncComp = defineAsyncComponent({
 
 如果提供了一个报错组件，则它会在加载器函数返回的 Promise 抛错时被渲染。你还可以指定一个超时时间，在请求耗时超过指定时间时也会渲染报错组件。
 
-### 3.惰性激活3.5+
+### 惰性激活3.5+
 
 > 如果你正在使用[服务器端渲染](https://cn.vuejs.org/guide/scaling-up/ssr.html)，这一部分才会适用。
 
@@ -2058,6 +2059,6 @@ const AsyncComp = defineAsyncComponent({
 })
 ```
 
-### 4.搭配Suspense使用
+### 搭配Suspense使用
 
 异步组件可以搭配内置的 `<Suspense>` 组件一起使用，若想了解 `<Suspense>` 和异步组件之间交互，请参阅 [``](https://cn.vuejs.org/guide/built-ins/suspense.html) 章节。

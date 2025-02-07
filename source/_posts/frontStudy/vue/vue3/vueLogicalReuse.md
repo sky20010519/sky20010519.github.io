@@ -12,14 +12,15 @@ abbrlink: 852c0c8c
 date: 2025-01-14 16:12:38
 ---
 
-##### 本文讲述了vue3复用相关教程
+**本文讲述了vue3复用相关教程**
+
 <!-- more -->
 
 # 逻辑复用
 
-## 一.组合式函数
+## 组合式函数
 
-### 1.什么是“组合式函数”
+### 什么是“组合式函数”
 
 在 Vue 应用的概念中，“组合式函数”(Composables) 是一个利用 Vue 的组合式 API 来封装和复用**有状态逻辑**的函数。
 
@@ -27,7 +28,7 @@ date: 2025-01-14 16:12:38
 
 相比之下，有状态逻辑负责管理会随时间而变化的状态。一个简单的例子是跟踪当前鼠标在页面中的位置。在实际应用中，也可能是像触摸手势或与数据库的连接状态这样的更复杂的逻辑。
 
-### 2.鼠标跟踪器实例
+### 鼠标跟踪器实例
 
 如果我们要直接在组件中使用组合式 API 实现鼠标跟踪功能，它会是这样的
 
@@ -134,7 +135,7 @@ export function useMouse() {
 >
 > 每一个调用 `useMouse()` 的组件实例会创建其独有的 `x`、`y` 状态拷贝，因此他们不会互相影响。
 
-### 3.异步状态示例
+### 异步状态示例
 
 `useMouse()` 组合式函数没有接收任何参数，因此让我们再来看一个需要接收一个参数的组合式函数示例。在做异步数据请求时，我们常常需要处理不同的状态：加载中、加载成功和加载失败。
 
@@ -247,7 +248,7 @@ export function useFetch(url) {
 
 这个版本的 `useFetch()` 现在能接收静态 URL 字符串、ref 和 getter，使其更加灵活。watch effect 会立即运行，并且会跟踪 `toValue(url)` 期间访问的任何依赖项。如果没有跟踪到依赖项 (例如 url 已经是字符串)，则 effect 只会运行一次；否则，它将在跟踪到的任何依赖项更改时重新运行。
 
-### 4.约定和最佳实践
+### 约定和最佳实践
 
 #### 命名
 
@@ -313,7 +314,7 @@ Mouse position is at: {{ mouse.x }}, {{ mouse.y }}
 >
 > <script setup> 是唯一在调用 await 之后仍可调用组合式函数的地方。编译器会在异步操作之后自动为你恢复当前的组件实例。
 
-### 5.通过抽取组合式函数改善代码结构
+### 通过抽取组合式函数改善代码结构
 
 抽取组合式函数不仅是为了复用，也是为了代码组织。随着组件复杂度的增高，你可能会最终发现组件多得难以查询和理解。组合式 API 会给予你足够的灵活性，让你可以基于逻辑问题将组件代码拆分成更小的函数：
 
@@ -331,7 +332,7 @@ const { qux } = useFeatureC(baz)
 
 在某种程度上，你可以将这些提取出的组合式函数看作是可以相互通信的组件范围内的服务。
 
-### 6.在选项式API中使用组合式函数
+### 在选项式API中使用组合式函数
 
 如果你正在使用选项式 API，组合式函数必须在 `setup()` 中调用。且其返回的绑定必须在 `setup()` 中返回，以便暴露给 `this` 及其模板：
 
@@ -353,7 +354,7 @@ export default {
 }
 ```
 
-### 7.与其他模式的比较
+### 与其他模式的比较
 
 #### 和Mixin的对比
 
@@ -377,16 +378,16 @@ Vue 2 的用户可能会对 [mixins](https://cn.vuejs.org/api/options-compositio
 
 如果你有 React 的开发经验，你可能注意到组合式函数和自定义 React hooks 非常相似。组合式 API 的一部分灵感正来自于 React hooks，Vue 的组合式函数也的确在逻辑组合能力上与 React hooks 相近。然而，Vue 的组合式函数是基于 Vue 细粒度的响应性系统，这和 React hooks 的执行模型有本质上的不同.
 
-### 8.延伸阅读
+### 延伸阅读
 
 - [深入响应性原理](https://cn.vuejs.org/guide/extras/reactivity-in-depth.html)：理解 Vue 响应性系统的底层细节。
 - [状态管理](https://cn.vuejs.org/guide/scaling-up/state-management.html)：多个组件间共享状态的管理模式。
 - [测试组合式函数](https://cn.vuejs.org/guide/scaling-up/testing.html#testing-composables)：组合式函数的单元测试技巧。
 - [VueUse](https://vueuse.org/)：一个日益增长的 Vue 组合式函数集合。源代码本身就是一份不错的学习资料。
 
-## 二.自定义指令
+## 自定义指令
 
-### 1.介绍
+### 介绍
 
 除了 Vue 内置的一系列指令 (比如 `v-model` 或 `v-show`) 之外，Vue 还允许你注册自定义的指令 (Custom Directives)。
 
@@ -440,7 +441,7 @@ app.directive('highlight', {
 })
 ```
 
-### 2.When to use custom directives
+### When to use custom directives
 
 只有当所需功能只能通过直接的 DOM 操作来实现时，才应该使用自定义指令。
 
@@ -535,7 +536,7 @@ const myDirective = {
 >
 > 除了 `el` 外，其他参数都是只读的，不要更改它们。若你需要在不同的钩子间共享信息，推荐通过元素的 [dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset) attribute 实现。
 
-### 3.简化形式
+### 简化形式
 
 对于自定义指令来说，一个很常见的情况是仅仅需要在 `mounted` 和 `updated` 上实现相同的行为，除此之外并不需要其他钩子。这种情况下我们可以直接用一个函数来定义指令，如下所示：
 
@@ -550,7 +551,7 @@ app.directive('color', (el, binding) => {
 })
 ```
 
-### 4.对象字面量
+### 对象字面量
 
 如果你的指令需要多个值，你可以向它传递一个 JavaScript 对象字面量。别忘了，指令也可以接收任何合法的 JavaScript 表达式。
 
@@ -565,7 +566,7 @@ app.directive('demo', (el, binding) => {
 })
 ```
 
-### 5.在组件上使用
+### 在组件上使用
 
 > 不推荐
 >
@@ -587,9 +588,9 @@ app.directive('demo', (el, binding) => {
 
 需要注意的是组件可能含有多个根节点。当应用到一个多根组件时，指令将会被忽略且抛出一个警告。和 attribute 不同，指令不能通过 `v-bind="$attrs"` 来传递给一个不同的元素。
 
-## 三.插件
+## 插件
 
-### 1.介绍
+### 介绍
 
 插件 (Plugins) 是一种能为 Vue 添加全局功能的工具代码。下面是如何安装一个插件的示例：
 
@@ -620,7 +621,7 @@ const myPlugin = {
 3. 向 [`app.config.globalProperties`](https://cn.vuejs.org/api/application.html#app-config-globalproperties) 中添加一些全局实例属性或方法
 4. 一个可能上述三种都包含了的功能库 (例如 [vue-router](https://github.com/vuejs/vue-router-next))。
 
-### 2.编写一个插件
+### 编写一个插件
 
 为了更好地理解如何构建 Vue.js 插件，我们可以试着写一个简单的 `i18n` ([国际化 (Internationalization)](https://en.wikipedia.org/wiki/Internationalization_and_localization) 的缩写) 插件。
 

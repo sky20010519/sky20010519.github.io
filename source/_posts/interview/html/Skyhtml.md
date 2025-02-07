@@ -9,12 +9,13 @@ abbrlink: d9d45835
 date: 2025-01-15 18:12:38
 ---
 
-##### 本文讲述了html面试的相关问题
+**本文讲述了html面试的相关问题**
+
 <!-- more -->
 
-# HTML
 
-## 1.html语义化
+
+## html语义化
 
 意义：根据内容的结构化（内容语义化），选择合适的标签（代码语义化）便于开发者阅读和写出更优 雅的代码的同时让浏览器的爬虫和机器很好地解析。
 
@@ -32,7 +33,7 @@ date: 2025-01-15 18:12:38
 
 ![image-20250115162122475](image-20250115162122475.png)
 
-## 2.canvas相关
+## canvas相关
 
 使用前需要获得上下文环境，暂不支持 3 d
 
@@ -48,14 +49,14 @@ date: 2025-01-15 18:12:38
 - ie9 之前版本通过 createElement 创建 html5 新标签
 - 引入 html5shiv.js
 
-## 3.svg和canvas的区别？
+## svg和canvas的区别？
 
 - canvas是h5提供的新的绘图方法 ；
 - svg已经有了十多年的历史 canvas画图基于像素点，是位图，如果进行放大或缩小会失真 ；svg基于图形，用html标签描绘形 状，放大缩小不会失真 canvas需要在js中绘制 ；
 - svg在html绘制 canvas支持颜色比svg多  canvas无法对已经绘制的图像进行修改、操作 ；
 - svg可以获取到标签进行操作
 
-## 4.html5有那些新特性
+## html5有那些新特性
 
 HTML5主要是关于图像，位置，存储，多任务等功能的增加。
 
@@ -68,17 +69,17 @@ HTML5主要是关于图像，位置，存储，多任务等功能的增加。
 - sessionStorage 的数据在浏览器关闭后自动删除 
 - 表单控件，calendar、date、time、email、url、search
 
-## 5.如何处理HTML新标签的浏览器兼容问题
+## 如何处理HTML新标签的浏览器兼容问题
 
 IE8/IE7/IE6支持通过document.createElement方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5新标签，当然最好的方式是直接使用成熟的框架、使用最多的是html5shim框架
 
-## 6.说说title和alt属性
+## 说说title和alt属性
 
 - 两个属性都是当鼠标滑动到元素上的时候显示 
 - alt 是 img 的特有属性，是图片内容的等价描述，图片无法正常显示时候的替代文字。 
 - title 属性可以用在除了base，basefont，head，html，meta，param，script和title之外的所有标签，是对dom元素的一种类似注释说明
 
-## 7.HTML全局属性（global attribute）有哪些
+## HTML全局属性（global attribute）有哪些
 
 - class :为元素设置类标识 
 - data-* : 为元素增加自定义属性 
