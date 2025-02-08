@@ -59,7 +59,7 @@ function test(person) {
 
 ## null是对象吗？为什么？
 
-结论: null不是对象。 解释: 虽然 typeof null 会输出 object，但是这只是 JS 存在的一个悠久 Bug。在 JS 的最初版本中使用的 是 32 位系统，为了性能考虑使用低位存储变量的类型信息，000 开头代表是对象然而 null 表示为全 零，所以将它错误的判断为 object 。
+结论: null不是对象。 解释: 虽然 typeof null 会输出 object，但是这只是 JS 存在的一个悠久 Bug。在 JS 的最初版本中使用的 是 32 位系统，为了性能考虑使用低位存储变量的类型信息，000 开头代表是对象然而 null 表示为全零，所以将它错误的判断为 object 。
 
 ## '1'.toString()为什么可以调用？
 
@@ -1001,3 +1001,147 @@ nums.sort((a,b)=>{
 当比较函数返回值大于0，则 a 在 b 的后面，即a的下标应该比b大。 反之，则 a 在 b 的后面，即 a 的下标比 b 小。 整个过程就完成了一次升序的排列。 当然还有一个需要注意的情况，就是比较函数不传的时候，是如何进行排序的？
 
 > 答案是将数字转换为字符串，然后根据字母unicode值进行升序排序，也就是根据字符串的比较规 则进行升序排序。
+
+## 谈谈你对js中this的理解
+
+其实JS中的this是一个非常简单的东西，只需要理解它的执行规则就OK。 在这里不想像其他博客一样展示太多的代码例子弄得天花乱坠， 反而不易理解。 call/apply/bind可以显式绑定, 这里就不说了。 主要这些场隐式绑定的场景讨论:
+
+- 全文上下文
+- 直接调用函数
+- 对象.方法的形式调用
+- DOM事件绑定（特殊）
+- new构造函数绑定
+- 箭头函数
+
+### 全局上下文
+
+全局上下文默认this指向window, 严格模式下指向undefined。
+
+### 直接调用函数
+
+比如：
+
+```js
+let obj = {
+  a: function() {
+    console.log(this);
+ }
+}
+let func = obj.a;
+func();
+```
+
+这种情况是直接调用。this相当于全局上下文的情况。
+
+### 对象.方法的形式调用
+
+还是刚刚的例子，我如果这样写：
+
+```js
+obj.a();
+```
+
+这就是对象.方法的情况，this指向这个对象
+
+### DOM事件绑定
+
+onclick和addEventerListener中 this 默认指向绑定事件的元素。 IE比较奇异，使用attachEvent，里面的this默认指向window。
+
+### new+构造函数
+
+此时构造函数中的this指向实例对象。
+
+### 箭头函数？
+
+箭头函数没有this, 因此也不能绑定。里面的this会指向当前最近的非箭头函数的this，找不到就是 window(严格模式是undefined)。比如:
+
+```js
+let obj = {
+  a: function() {
+    let do = () => {
+      console.log(this);
+   }
+    do();
+ }
+}
+obj.a(); // 找到最近的非箭头函数a，a现在绑定着obj, 因此箭头函数中的this是obj
+```
+
+> 优先级: new > call、apply、bind > 对象.方法 > 直接调用。
+
+## js中浅拷贝的手段有哪些
+
+### 重要：什么是拷贝？
+
+首先来直观的感受一下什么是拷贝。
+
+```js
+let arr = [1,2,3];
+let newArr = arr;
+newArr[0] = 100;
+
+console.log(arr);//[100,2,3]
+```
+
+这是直接赋值的情况，不涉及任何拷贝。当改变newArr的时候，由于是同一引用，arr指向的值也跟着改变，
+
+现在进行浅拷贝：
+
+```js
+let arr = [1, 2, 3];
+let newArr = arr.slice();
+newArr[0] = 100;
+
+console.log(arr);//[1, 2, 3]
+```
+
+当修改newArr的时候，arr的值并不改变。什么原因?因为这里newArr是arr浅拷贝后的结果，newArr和 arr现在引用的已经不是同一块空间啦！这就是浅拷贝！ 
+
+但是这又会带来一个潜在的问题:
+
+```js
+let arr = [1, 2, {val: 4}];
+let newArr = arr.slice();
+newArr[2].val = 1000;
+console.log(arr);//[ 1, 2, { val: 1000 } ]
+```
+
+不是已经不是同一块空间的引用了吗？为什么改变了newArr改变了第二个元素的val值，arr也跟着变 了。 这就是浅拷贝的限制所在了。它只能拷贝一层对象。如果有对象的嵌套，那么浅拷贝将无能为力。但幸 运的是，深拷贝就是为了解决这个问题而生的，它能 解决无限极的对象嵌套问题，实现彻底的拷贝。当然，这是我们下一篇的重点。 现在先让大家有一个基本的概念。 接下来，来研究一下JS中实现浅拷贝到底有多少种方式？
+
+### 手动实现
+
+```js
+const shallowClone = (target) =>{
+    if(typeof target === 'object' && target !== null){
+        const newTarget = Array.isArray(target) ? [] : {};
+        for(let prop in target){
+            if(target.hasOwnProperty(prop)){
+                newTarget[prop] = target[prop]
+            }
+        }
+        return newTarget
+    }else{
+        return target
+    }
+}
+```
+
+### Object.assign
+
+但是需要注意的是，Object.assgin() 拷贝的是对象的属性的引用，而不是对象本身。
+
+```js
+let obj = { name: 'sy', age: 18 };
+const obj2 = Object.assign({}, obj, {name: 'sss'});
+console.log(obj2);//{ name: 'sss', age: 18 }
+```
+
+### concat浅拷贝数组
+
+```js
+let arr = [1, 2, 3];
+let newArr = arr.concat();
+newArr[1] = 100;
+console.log(arr);//[ 1, 2, 3 ]
+```
+
