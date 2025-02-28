@@ -1145,3 +1145,573 @@ newArr[1] = 100;
 console.log(arr);//[ 1, 2, 3 ]
 ```
 
+### slice浅拷贝
+
+```js
+let arr = [1, 2, 3];
+let newArr = arr.slice();
+newArr[0] = 100;
+
+console.log(arr);//[1, 2, 3]
+```
+
+### ...展开运算符
+
+```
+let arr = [1,2,3]
+let newArr = [..arr]//跟arr.slice()是一样的效果
+```
+
+## 能不能写一个完整的深拷贝？
+
+### 简易版及问题
+
+```js
+JSON.parse(JSON.stringify());
+```
+
+估计这个api能覆盖大多数的应用场景，没错，谈到深拷贝，我第一个想到的也是它。但是实际上，对于 某些严格的场景来说，这个方法是有巨大的坑的。问题如下：
+
+> 无法解决循环引用的问题。举个例子
+
+```js
+const a = {val:2};
+a.target = a;
+```
+
+拷贝a会出现系统栈溢出，因为出现了 无限递归 的情况
+
+> 无法拷贝一写 特殊的对象 ，诸如 RegExp, Date, Set, Map等。
+
+> 无法拷贝 函数 (划重点)。
+
+因此这个api先pass掉，我们重新写一个深拷贝，简易版如下:
+
+```js
+const deepClone = (target) => {
+  if (typeof target === 'object' && target !== null) {
+    const cloneTarget = Array.isArray(target) ? []: {};
+    for (let prop in target) {
+      if (target.hasOwnProperty(prop)) {
+          cloneTarget[prop] = deepClone(target[prop]);
+     }
+   }
+    return cloneTarget;
+ } else {
+    return target;
+ }
+}
+```
+
+现在，我们以刚刚发现的三个问题为导向，一步步来完善、优化我们的深拷贝代码。
+
+### 解决循环引用
+
+现在问题如下:
+
+```js
+let obj = {val : 100};
+obj.target = obj;
+deepClone(obj);//报错: RangeError: Maximum call stack size exceeded
+```
+
+这就是循环引用。我们怎么来解决这个问题呢？ 创建一个Map。记录下已经拷贝过的对象，如果说已经拷贝过，那直接返回它行了。
+
+```js
+const isObject = (target) => (typeof target === 'object' || typeof target === 
+'function') && target !== null;
+const deepClone = (target, map = new Map()) => { 
+  if(map.get(target))  
+    return target; 
+ 
+ 
+  if (isObject(target)) { 
+    map.set(target, true); 
+    const cloneTarget = Array.isArray(target) ? []: {}; 
+    for (let prop in target) { 
+      if (target.hasOwnProperty(prop)) { 
+          cloneTarget[prop] = deepClone(target[prop],map); 
+     } 
+   } 
+    return cloneTarget; 
+ } else { 
+    return target; 
+ } 
+}
+```
+
+现在来试一试：
+
+```js
+const a = {val:2};
+a.target = a;
+let newA = deepClone(a);
+console.log(newA)//{ val: 2, target: { val: 2, target: [Circular] } }
+```
+
+好像是没有问题了, 拷贝也完成了。但还是有一个潜在的坑, 就是map 上的 key 和 map 构成了 强引用关 系 ，这是相当危险的。我给你解释一下与之相对的弱引用的概念你就明白了：
+
+> 在计算机程序设计中，弱引用与强引用相对
+
+是指不能确保其引用的对象不会被垃圾回收器回收的引用。 一个对象若只被弱引用所引用，则被认为是 不可访问（或弱可访问）的，并因此可能在任何时刻被回收。 --百度百科 
+
+大白话解释一下，被弱引用的对象可以在任何时候被回收，而对于强引用来说，只要这个强引用还在， 那么对象无法被回收。拿上面的例子说，map 和 a一直是强引用的关系， 在程序结束之前，a 所占的内 存空间一直不会被释放。 
+
+怎么解决这个问题？ 
+
+很简单，让 map 的 key 和 map 构成 弱引用 即可。ES6给我们提供了这样的数据结构，它的名字叫 WeakMap ，它是一种特殊的Map, 其中的键是 弱引用 的。其键必须是对象，而值可以是任意的。 稍微改造一下即可:
+
+```js
+const deepClone = (target, map = new WeakMap()) => {
+  //...
+}
+```
+
+### 拷贝特殊对象
+
+#### 可继续遍历
+
+对于特殊的对象，我们使用以下方式来鉴别:
+
+```js
+Object.prototype.toString.call(obj);
+```
+
+梳理一下对于可遍历对象会有什么结果：
+
+```js
+["object Map"]
+["object Set"]
+["object Array"]
+["object Object"]
+["object Arguments"]
+```
+
+好，以这些不同的字符串为依据，我们就可以成功地鉴别这些对象。
+
+```js
+const getType = (target) => Object.prototype.toString.call(target);
+const canTraverse = {
+    '[object Map]': true,
+    '[object Set]': true,
+    '[object Array]': true,
+    '[object Object]': true,
+    '[object Arguments]': true,
+};
+const mapTag = '[object Map]';
+const setTag = '[object Set]';
+const deepClone = (target, map = new WeakMap()) => {
+    if (!isObject(target))
+        return target;
+    let type = getType(target);
+    let cloneTarget;
+    if (!canTraverse[type]) {
+        // 处理不能遍历的对象
+        return;
+    } else {
+        // 这波操作相当关键，可以保证对象的原型不丢失！
+        let ctor = target.constructor;
+        cloneTarget = new ctor();
+    }
+    if (map.get(target))
+        return target;
+    map.put(target, true);
+    if (type === mapTag) {
+        //处理Map
+        target.forEach((item, key) => {
+            cloneTarget.set(deepClone(key), deepClone(item));
+        })
+    }
+
+    if (type === setTag) {
+        //处理Set
+        target.forEach(item => {
+            cloneTarget.add(deepClone(item));
+        })
+    }
+    // 处理数组和对象
+    for (let prop in target) {
+        if (target.hasOwnProperty(prop)) {
+            cloneTarget[prop] = deepClone(target[prop]);
+        }
+    }
+    return cloneTarget;
+}
+
+```
+
+#### 不可遍历的对象
+
+```js
+const boolTag = '[object Boolean]';
+const numberTag = '[object Number]';
+const stringTag = '[object String]';
+const dateTag = '[object Date]';
+const errorTag = '[object Error]';
+const regexpTag = '[object RegExp]';
+const funcTag = '[object Function]';
+```
+
+对于不可遍历的对象，不同的对象有不同的处理。
+
+```js
+const handleRegExp = (target) => {
+const { source, flags } = target;
+  return new target.constructor(source, flags);
+}
+const handleFunc = (target) => {
+  // 待会的重点部分
+}
+const handleNotTraverse = (target, tag) => {
+  const Ctor = targe.constructor;
+  switch(tag) {
+    case boolTag:
+    case numberTag:
+    case stringTag:
+    case errorTag: 
+    case dateTag:
+      return new Ctor(target);
+    case regexpTag:
+      return handleRegExp(target);
+    case funcTag:
+      return handleFunc(target);
+    default:
+      return new Ctor(target);
+ }
+}
+
+```
+
+#### 拷贝函数
+
+虽然函数也是对象，但是它过于特殊，我们单独把它拿出来拆解。
+
+ 提到函数，在JS种有两种函数，一种是普通函数，另一种是箭头函数。每个普通函数都是 Function的实 例，而箭头函数不是任何类的实例，每次调用都是不一样的引用。那我们只需要 处理普通函数的情况， 箭头函数直接返回它本身就好了。 
+
+那么如何来区分两者呢？
+
+ 答案是: 利用原型。箭头函数是不存在原型的。 
+
+代码如下:
+
+```js
+const handleFunc = (func) => {
+  // 箭头函数直接返回自身
+  if(!func.prototype) return func;
+  const bodyReg = /(?<={)(.|\n)+(?=})/m;
+  const paramReg = /(?<=\().+(?=\)\s+{)/;
+  const funcString = func.toString();
+  // 分别匹配 函数参数 和 函数体
+  const param = paramReg.exec(funcString);
+  const body = bodyReg.exec(funcString);
+  if(!body) return null;
+  if (param) {
+    const paramArr = param[0].split(',');
+    return new Function(...paramArr, body[0]);
+ } else {
+    return new Function(body[0]);
+ }
+}
+```
+
+到现在，我们的深拷贝就实现地比较完善了。不过在测试的过程中，我也发现了一个小小的bug。
+
+#### 小小bug
+
+如下所示:
+
+```js
+const target = new Boolean(false);
+const Ctor = target.constructor;
+new Ctor(target); // 结果为 Boolean {true} 而不是 false。
+
+```
+
+对于这样一个bug，我们可以对 Boolean 拷贝做最简单的修改， 调用valueOf: new  target.constructor(target.valueOf())。 
+
+但实际上，这种写法是不推荐的。因为在ES6后不推荐使用【new 基本类型()】这 样的语法，所以es6中 的新类型 Symbol 是不能直接 new 的，只能通过 new Object(SymbelType)。 
+
+因此我们接下来统一一下:
+
+```js
+const handleNotTraverse = (target, tag) => {
+  const Ctor = targe.constructor;
+  switch(tag) {
+    case boolTag:
+      return new Object(Boolean.prototype.valueOf.call(target));
+    case numberTag:
+      return new Object(Number.prototype.valueOf.call(target));
+    case stringTag:
+      return new Object(String.prototype.valueOf.call(target));
+    case errorTag: 
+    case dateTag:
+      return new Ctor(target);
+    case regexpTag:
+      return handleRegExp(target);
+    case funcTag:
+      return handleFunc(target);
+    default:
+      return new Ctor(target);
+ }
+}
+```
+
+### 完整代码展示
+
+```js
+const getType = obj => Object.prototype.toString.call(obj);
+const isObject = (target) => (typeof target === 'object' || typeof target === 'function') && target !== null;
+const canTraverse = {
+    '[object Map]': true,
+    '[object Set]': true,
+    '[object Array]': true,
+    '[object Object]': true,
+    '[object Arguments]': true,
+};
+const mapTag = '[object Map]';
+const setTag = '[object Set]';
+const boolTag = '[object Boolean]';
+const numberTag = '[object Number]';
+const stringTag = '[object String]';
+const symbolTag = '[object Symbol]';
+const dateTag = '[object Date]';
+const errorTag = '[object Error]';
+const regexpTag = '[object RegExp]';
+const funcTag = '[object Function]';
+
+// 处理正则表达式
+const handleRegExp = (target) => {
+    const { source, flags } = target;
+    return new target.constructor(source, flags);
+}
+
+// 处理函数
+const handleFunc = (func) => {
+    // 箭头函数直接返回自身
+    if (!func.prototype) return func;
+    // 对于普通函数，直接返回原函数，因为无法安全地复制其作用域
+    return func;
+}
+
+// 处理不能遍历的数据类型
+const handleNotTraverse = (target, tag) => {
+    const Ctor = target.constructor;
+    switch (tag) {
+        case boolTag:
+            return Boolean(target);
+        case numberTag:
+            return Number(target);
+        case stringTag:
+            return String(target);
+        case symbolTag:
+            // 符号不能直接复制，返回原符号
+            return target;
+        case errorTag:
+        case dateTag:
+            return new Ctor(target);
+        case regexpTag:
+            return handleRegExp(target);
+        case funcTag:
+            return handleFunc(target);
+        default:
+            return new Ctor(target);
+    }
+}
+
+// 深度克隆函数
+const deepClone = (target, map = new WeakMap()) => {
+    // 如果不是对象，直接返回
+    if (!isObject(target)) return target;
+    const type = getType(target);
+    let cloneTarget;
+    // 处理不能遍历的数据类型
+    if (!canTraverse[type]) {
+        return handleNotTraverse(target, type);
+    }
+    // 创建克隆对象，保证原型不丢失
+    const ctor = target.constructor;
+    cloneTarget = new ctor();
+    // 处理循环引用
+    if (map.get(target)) return target;
+    map.set(target, true);
+    // 处理 Map
+    if (type === mapTag) {
+        target.forEach((value, key) => {
+            cloneTarget.set(deepClone(key, map), deepClone(value, map));
+        });
+    }
+    // 处理 Set
+    if (type === setTag) {
+        target.forEach(value => {
+            cloneTarget.add(deepClone(value, map));
+        });
+    }
+    // 处理数组和对象
+    for (const prop in target) {
+        if (target.hasOwnProperty(prop)) {
+            cloneTarget[prop] = deepClone(target[prop], map);
+        }
+    }
+    return cloneTarget;
+}
+```
+
+## 数据是如何存储的？
+
+基本数据类型用栈存储，引用数据类型用堆存储。
+
+看起来没有错误，但实际上是有问题的。可以考虑一下闭包的情况，如果变量存在栈中，那函数调用完 栈顶空间销毁 ，闭包变量不就没了吗？
+
+其实还是需要补充一句:
+
+> 闭包变量是存在堆内存中的。
+
+具体而言，以下数据类型存储在栈中:
+
+- boolean
+- null
+- undefined
+- number
+- string
+- symbol
+- bigint
+
+而所有的对象数据类型存放在堆中。 值得注意的是，对于 赋值 操作，原始类型的数据直接完整地复制变量值，对象数据类型的数据则是复制 引用地址。 因此会有下面的情况:
+
+```js
+let obj = { a: 1 };
+let newObj = obj;
+newObj.a = 2;
+console.log(obj.a);//变成了2
+```
+
+之所以会这样，是因为 obj 和 newObj 是同一份堆空间的地址，改变newObj，等于改变了共同的堆内 存，这时候通过 obj 来获取这块内存的值当然会改变。 
+
+为什么不全部用栈来保存呢？ 
+
+首先，对于系统栈来说，它的功能除了保存变量之外，还有创建并切换函数执行上下文的功能。举个例 子:
+
+```js
+function f(a) {
+  console.log(a);
+}
+function func(a) {
+  f(a);
+}
+func(1);
+```
+
+假设用ESP指针来保存当前的执行状态，在系统栈中会产生如下的过程：
+
+ 1）调用func, 将 func 函数的上下文压栈，ESP指向栈顶。
+
+ 2）执行func，又调用f函数，将 f 函数的上下文压栈，ESP 指针上移。 
+
+3）执行完 f 函数，将ESP 下移，f函数对应的栈顶空间被回收。 
+
+4）执行完 func，ESP 下移，func对应的空间被回收。 图示如下:
+
+![image-20250221164822178](D:\study\blog\source\_posts\interview\js\Skyjs\image-20250221164822178.png)
+
+因此你也看到了，如果采用栈来存储相对基本类型更加复杂的对象数据，那么切换上下文的开销将变得 巨大！ 不过堆内存虽然空间大，能存放大量的数据，但与此同时垃圾内存的回收会带来更大的开销。
+
+## v8引擎如何进行垃圾内存的回收？
+
+JS 语言不像 C/C++, 让程序员自己去开辟或者释放内存，而是类似Java，采用自己的一套垃圾回收算法进 行自动的内存管理。作为一名资深的前端工程师，对于JS内存回收的机制是需要非常清楚, 以便于在极端 的环境下能够分析出系统性能的瓶颈，另一方面，学习这其中的机制，也对我们深入理解JS的闭包特 性、以及对内存的高效使用，都有很大的帮助。
+
+### v8内存限制
+
+在其他的后端语言中，如Java/Go, 对于内存的使用没有什么限制，但是JS不一样，V8只能使用系统的一 部分内存，具体来说，在 64 位系统下，V8最多只能分配 1.4G , 在 32 位系统中，最多只能分配 0.7G 。 你想想在前端这样的大内存需求其实并不大，但对于后端而言，nodejs如果遇到一个2G多的文件，那么 将无法全部将其读入内存进行各种操作了。 
+
+我们知道对于栈内存而言，当ESP指针下移，也就是上下文切换之后，栈顶的空间会自动被回收。但对 于堆内存而言就比较复杂了，我们下面着重分析堆内存的垃圾回收。 
+
+所有的对象类型的数据在JS中都是通过堆进行空间分配的。当我们构造一个对象进行赋值操作的时候， 其实相应的内存已经分配到了堆上。你可以不断的这样创建对象，让 V8 为它分配空间，直到堆的大小达到上限。 
+
+那么问题来了，V8 为什么要给它设置内存上限？明明我的机器大几十G的内存，只能让我用这么一点？究其根本，是由两个因素所共同决定的，一个是JS单线程的执行机制，另一个是JS垃圾回收机制的限制。 
+
+首先JS是单线程运行的，这意味着一旦进入到垃圾回收，那么其它的各种运行逻辑都要暂停; 另一方面垃圾回收其实是非常耗时间的操作，V8 官方是这样形容的:
+
+> 以 1.5GB 的垃圾回收堆内存为例，V8 做一次小的垃圾回收需要50ms 以上，做一次非增量式(ps: 后面会解释)的垃圾回收甚至要 1s 以上。
+
+可见其耗时之久，而且在这么长的时间内，我们的JS代码执行会一直没有响应，造成应用卡顿，导致应用性能和响应能力直线下降。因此，V8 做了一个简单粗暴的选择，那就是限制堆内存，也算是一种权衡 的手段，因为大部分情况是不会遇到操作几个G内存这样的场景的。
+
+ 不过，如果你想调整这个内存的限制也不是不行。配置命令如下:
+
+```js
+// 这是调整老生代这部分的内存，单位是MB。后面会详细介绍新生代和老生代内存
+node --max-old-space-size=2048 xxx.js 
+```
+
+或者
+
+```js
+// 这是调整新生代这部分的内存，单位是 KB。
+node --max-new-space-size=2048 xxx.js
+```
+
+### 新生代内存的回收
+
+V8 把堆内存分成了两部分进行处理——新生代内存和老生代内存。顾名思义，新生代就是临时分配的内存，存活时间短， 老生代是常驻内存，存活的时间长。V8 的堆内存，也就是两个内存之和。
+
+![image-20250224101949653](image-20250224101949653.png)
+
+根据这两种不同种类的堆内存，V8 采用了不同的回收策略，来根据不同的场景做针对性的优化。
+
+首先是新生代的内存，刚刚已经介绍了调整新生代内存的方法，那它的内存默认限制是多少？在 64 位 和 32 位系统下分别为 32MB 和 16MB。够小吧，不过也很好理解，新生代中的变量存活时间短，来了 马上就走，不容易产生太大的内存负担，因此可以将它设的足够小。 
+
+那好了，新生代的垃圾回收是怎么做的呢？ 首先将新生代内存空间一分为二:
+
+![image-20250224102825804](image-20250224102825804.png)
+
+其中From部分表示正在使用的内存，To 是目前闲置的内存。 
+
+当进行垃圾回收时，V8 将From部分的对象检查一遍，如果是存活对象那么复制到To内存中(在To内存中 按照顺序从头放置的)，如果是非存活对象直接回收即可。 
+
+当所有的From中的存活对象按照顺序进入到To内存之后，From 和 To 两者的角色 对调 ，From现在被 闲置，To为正在使用，如此循环。 
+
+那你很可能会问了，直接将非存活对象回收了不就万事大吉了嘛，为什么还要后面的一系列操作？ 
+
+注意，我刚刚特别说明了，在To内存中按照顺序从头放置的，这是为了应对这样的场景:
+
+![image-20250224103051767](image-20250224103051767.png)
+
+深色的小方块代表存活对象，白色部分表示待分配的内存，由于堆内存是连续分配的，这样零零散散的 空间可能会导致稍微大一点的对象没有办法进行空间分配，这种零散的空间也叫做内存碎片。刚刚介绍 的新生代垃圾回收算法也叫Scavenge算法。 
+
+Scavenge 算法主要就是解决内存碎片的问题，在进行一顿复制之后，To空间变成了这个样子:
+
+![image-20250224103159634](image-20250224103159634.png)
+
+是不是整齐了许多？这样就大大方便了后续连续空间的分配。 
+
+不过Scavenge 算法的劣势也非常明显，就是内存只能使用新生代内存的一半，但是它只存放生命周期短的对象，这种对象 一般很少 ，因此 时间 性能非常优秀。
+
+### 老生代内存的回收
+
+刚刚介绍了新生代的回收方式，那么新生代中的变量如果经过多次回收后依然存在，那么就会被放入到 老生代内存中，这种现象就叫晋升 。 
+
+发生晋升其实不只是这一种原因，我们来梳理一下会有那些情况触发晋升: 
+
+- 已经经历过一次 Scavenge 回收。 
+- To（闲置）空间的内存占用超过25%。
+
+现在进入到老生代的垃圾回收机制当中，老生代中累积的变量空间一般都是很大的，当然不能用 Scavenge 算法啦，浪费一半空间不说，对庞大的内存空间进行复制岂不是劳民伤财？ 
+
+那么对于老生代而言，究竟是采取怎样的策略进行垃圾回收的呢？ 
+
+第一步，进行标记-清除。这个过程在《JavaScript高级程序设计(第三版)》中有过详细的介绍，主要分成两个阶段，即标记阶段和清除阶段。首先会遍历堆中的所有对象，对它们做上标记，然后对于代码环境中使用的变量以及被强引用的变量取消标记，剩下的就是要删除的变量了，在随后的清除阶段 对其进行空间的回收。 
+
+当然这又会引发内存碎片的问题，存活对象的空间不连续对后续的空间分配造成障碍。老生代又是如何处理这个问题的呢？
+
+第二步，整理内存碎片。V8 的解决方式非常简单粗暴，在清除阶段结束后，把存活的对象全部往一端靠拢。
+
+![image-20250224104541191](image-20250224104541191.png)
+
+由于是移动对象，它的执行速度不可能很快，事实上也是整个过程中最耗时间的部分。
+
+### 增量标记
+
+由于JS的单线程机制，V8 在进行垃圾回收的时候，不可避免地会阻塞业务逻辑的执行，倘若老生代的垃圾回收任务很重，那么耗时会非常可怕，严重影响应用的性能。那这个时候为了避免这样问题，V8 采取了增量标记的方案，即将一口气完成的标记任务分为很多小的部分完成，每做完一个小的部分就"歇"一 下，就js应用逻辑执行一会儿，然后再执行下面的部分，如果循环，直到标记阶段完成才进入内存碎片的整理上面来。其实这个过程跟React Fiber的思路有点像，这里就不展开了。
+
+经过增量标记之后，垃圾回收过程对JS应用的阻塞时间减少到原来了1 / 6, 可以看到，这是一个非常成功 的改进。
+
+## 描述一下v8执行一段js代码的过程

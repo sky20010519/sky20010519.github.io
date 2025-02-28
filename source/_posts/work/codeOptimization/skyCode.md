@@ -396,3 +396,198 @@ const hideTooltip = () => {
     }
 ```
 
+# vue3获取全局变量
+
+在main.js入口文件中
+
+```js
+const app = createApp(App)
+app.config.globalProperties.sss = { size: 'small', zIndex: 3000 }
+```
+
+在vue组件中
+
+```js
+import { getCurrentInstance } from 'vue';
+const {proxy} = getCurrentInstance()
+console.log(proxy.sss)
+```
+
+![image-20250225093414839](image-20250225093414839.png)
+
+# js控制全局样式插入和删除
+
+```js
+const globalStyleElement = ref(null);
+function handle2() {
+    const styleElement = document.createElement('style');
+    // 定义全局样式
+    const globalStyles = `
+      /* 这里可以添加你想要的全局样式 */
+      .el-date-picker__header{
+        display:none!important
+        }
+    `;
+    // 将样式内容添加到 style 元素中
+    styleElement.textContent = globalStyles;
+    // 将 style 元素插入到 head 标签中
+    document.head.appendChild(styleElement);
+    // 保存 style 元素的引用
+    globalStyleElement.value = styleElement;
+}
+function handle1() {
+    if (globalStyleElement.value) {
+        // 从 head 标签中移除 style 元素
+        document.head.removeChild(globalStyleElement.value);
+        // 清空引用
+        globalStyleElement.value = null;
+    }
+}
+```
+
+# vue3父子组件之间的传递
+
+父组件
+
+```
+
+```
+
+# elmentplus表格的设置
+
+## 表头和表格字体设置
+
+```scss
+// 表头字体样式
+            :deep(.el-table__header th) {
+                font-size: 18px;
+            }
+
+            // 表格主体字体样式
+            :deep(.el-table__body td) {
+                font-size: 16px;
+                font-weight: bold;
+            }
+```
+
+## 取消表格高亮
+
+取消单行悬浮高光
+
+```scss
+:deep(.el-table)tbody tr:hover>td {
+                background-color: unset !important
+            }
+```
+
+多行合并取消悬浮高光
+
+```scss
+:deep(.el-table)tbody tr {
+                pointer-events: none;
+            }
+```
+
+
+
+## 合并行
+
+加上:span-method="objectSpanMethod"
+
+```vue
+<el-table :data="tableData" border style="width: 100%" :span-method="objectSpanMethod">
+```
+
+然后处理
+
+```js
+const mergeObj = {}
+const mergeArr = ['tmonth', 'tsupplier', "tsupplierType", "tdeductionType",]//添加需要合并的行
+mergeArr.forEach((key) => {
+            let count = 0; // 用来记录需要合并行的起始位置
+            mergeObj[key] = []; // 记录每一列的合并信息
+            data.value.forEach((item, index) => {
+                // index == 0表示数据为第一行，直接 push 一个 1
+                if (index === 0) {
+                    mergeObj[key].push(1);
+                } else {
+                    // 判断当前行是否与上一行其值相等 如果相等 在 count 记录的位置其值 +1 表示当前行需要合并 并push 一个 0 作为占位
+                    if (item[key] === data.value[index - 1][key]) {
+                        mergeObj[key][count] += 1;
+                        mergeObj[key].push(0);
+                    } else {
+                        // 如果当前行和上一行其值不相等 
+                        count = index; // 记录当前位置 
+                        mergeObj[key].push(1); // 重新push 一个 1
+                    }
+                }
+            })
+        })
+function objectSpanMethod({ column, rowIndex }) {
+    // 排除汇总行的合并处理
+    if (rowIndex === tableData.value.length - 1) {
+        return [1, 1];
+    }
+    // 判断列的属性
+    if (mergeArr.indexOf(column.property) !== -1) {
+        // 判断其值是不是为0 
+        if (mergeObj[column.property][rowIndex]) {
+            return [mergeObj[column.property][rowIndex], 1]
+        } else {
+            // 如果为0则为需要合并的行
+            return [0, 0];
+        }
+    }
+}
+
+```
+
+## 表格最后一行加上总和
+
+用计算属性先算到需要求和的数据和插入最后一行数据
+
+```js
+const totalAmount = computed(()=>{
+	return data.value.reduce((sum,item)=>{
+		return sum + parseFloat(item.tamout || 0) * 10000;
+	},0) / 10000
+})
+const tableData = computed(()=>{
+    const newData = [...data.value];
+    newData.push({
+        tmonth: '总计',
+        tsupplier: '',
+        tsupplierType: '',
+        tdeductionType: '',
+        tmaterialName: '',
+        tnumber: '',
+        tunitPrice: '',
+        tamount: totalAmount.value,
+        tsettlement: ''
+    });
+    return newData
+})
+```
+
+在表格外部加上div样式
+
+```scss
+.fixed-footer-table {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+    // 表格主体样式
+            :deep(.el-table__body-wrapper) {
+                flex: 1;
+                overflow-y: auto;
+            }
+    // 最后一行固定样式
+            :deep(.el-table__body tr:last-child) {
+                position: sticky;
+                bottom: 0;
+                background-color: white;
+                z-index: 1;
+            }
+}
+```
+
