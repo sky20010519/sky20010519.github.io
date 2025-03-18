@@ -314,150 +314,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/posts/0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Sky">
-      <meta itemprop="description" content="小白学习前端">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端学习">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/0/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-	  
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-03-03 15:36:57" itemprop="dateCreated datePublished" datetime="2025-03-03T15:36:57+08:00">2025-03-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-03-06 16:28:28" itemprop="dateModified" datetime="2025-03-06T16:28:28+08:00">2025-03-06</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/posts/0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="create-react-app&#x57FA;&#x672C;&#x4F7F;&#x7528;"><a href="#create-react-app&#x57FA;&#x672C;&#x4F7F;&#x7528;" class="headerlink" title="create-react-app&#x57FA;&#x672C;&#x4F7F;&#x7528;"></a>create-react-app&#x57FA;&#x672C;&#x4F7F;&#x7528;</h1><p>create-react-app&#xFF1A;&#x811A;&#x624B;&#x67B6;&#xFF0C;&#x57FA;&#x4E8E;&#x5B83;&#x521B;&#x5EFA;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C31;&#x628A;webpack&#x7684;&#x6253;&#x5305;&#x89C4;&#x5219;&#x5DF2;&#x7ECF;&#x5904;&#x7406;&#x597D;&#x4E86;&#xFF0C;&#x628A;&#x4E00;&#x4E9B;&#x9879;&#x76EE;&#x9700;&#x8981;&#x7684;&#x57FA;&#x672C;&#x6587;&#x4EF6;&#x4E5F;&#x521B;&#x5EFA;&#x597D;&#x4E86;</p>
-<p>&#x5B89;&#x88C5;&#x811A;&#x624B;&#x67B6;</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">npm</span> i create-react-app -g</span><br></pre></td></tr></table></figure>
-
-<p>&#x68C0;&#x67E5;&#x5B89;&#x88C5;&#x60C5;&#x51B5;</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create-react-<span class="attribute">app</span> --version</span><br></pre></td></tr></table></figure>
-
-<p>&#x57FA;&#x4E8E;&#x811A;&#x624B;&#x67B6;&#x521B;&#x5EFA;React&#x5DE5;&#x7A0B;&#x5316;&#x7684;&#x9879;&#x76EE;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create-react-app &#x9879;&#x76EE;&#x540D;&#x79F0;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>&#x9879;&#x76EE;&#x540D;&#x79F0;&#x8981;&#x9075;&#x5FAA;npm&#x5305;&#x7684;&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF1A;&#x4F7F;&#x7528;&#x201C;&#x6570;&#x5B57;&#x3001;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x3001;_&#x201D;&#x547D;&#x540D;</p>
-</blockquote>
-<h1 id="React&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7ED3;&#x6784;"><a href="#React&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7ED3;&#x6784;" class="headerlink" title="React&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7ED3;&#x6784;"></a>React&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7ED3;&#x6784;</h1><p><img src="/posts/0/image-20250305092315062.png" alt="image-20250305092315062"></p>
-<p>&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#xFF1A;</p>
-<p>&#x200B;	|- node_modules<br>&#x200B;	|- src&#xFF1A;&#x7F16;&#x5199;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x51E0;&#x4E4E;&#x90FD;&#x653E;&#x5728;src&#x4E0B;&#xFF08;&#x6253;&#x5305;&#x7684;&#x65F6;&#x5019;&#x4E00;&#x822C;&#x53EA;&#x5BF9;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF09;<br>&#x200B;		|-index.js<br>&#x200B;	|- public&#xFF1A;&#x653E;&#x9875;&#x9762;&#x6A21;&#x677F;<br>&#x200B;		|-index.html<br>&#x200B;	|- package.json<br>&#x200B;	|- &#x2026;</p>
-<p>&#x4F7F;&#x7528;npm&#x7BA1;&#x7406;react&#x4F1A;&#x751F;&#x6210;node_modules&#x548C;package-lock.json</p>
-<p>&#x5982;&#x679C;&#x60F3;&#x4F7F;&#x7528;yarn&#x7BA1;&#x7406;&#x9879;&#x76EE;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;node_modules&#x548C;package-lock.json&#x6587;&#x4EF6;&#x5220;&#x9664;&#x7136;&#x540E;&#x8FD0;&#x884C;</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn</span><br></pre></td></tr></table></figure>
-
-<p>&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x5C31;&#x4F1A;&#x751F;&#x6210;node_modules&#x548C;yarn.lock&#x6587;&#x4EF6;</p>
-<p><img src="/posts/0/image-20250305094116726.png" alt="image-20250305094116726"></p>
-<h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h2><p>&#x811A;&#x624B;&#x67B6;&#x81EA;&#x5E26;&#x7684;git&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x5220;&#x9664;</p>
-<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">{</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;my-react-app&quot;,//&#x9879;&#x76EE;&#x540D;&#x5B57;</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;0.1.0&quot;,//&#x7248;&#x672C;</span></span><br><span class="line">  <span class="attr">&quot;private&quot;</span>: <span class="string">true,</span></span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span>: <span class="string">{//&#x9879;&#x76EE;&#x6240;&#x9700;&#x8981;&#x7684;&#x4F9D;&#x8D56;</span></span><br><span class="line">    <span class="attr">&quot;@testing-library/dom&quot;</span>: <span class="string">&quot;^10.4.0&quot;,</span></span><br><span class="line">    <span class="attr">&quot;@testing-library/jest-dom&quot;</span>: <span class="string">&quot;^6.6.3&quot;,</span></span><br><span class="line">    <span class="attr">&quot;@testing-library/react&quot;</span>: <span class="string">&quot;^16.2.0&quot;,</span></span><br><span class="line">    <span class="attr">&quot;@testing-library/user-event&quot;</span>: <span class="string">&quot;^13.5.0&quot;,</span></span><br><span class="line">    <span class="attr">&quot;react&quot;</span>: <span class="string">&quot;^19.0.0&quot;,</span></span><br><span class="line">    <span class="attr">&quot;react-dom&quot;</span>: <span class="string">&quot;^19.0.0&quot;,</span></span><br><span class="line">    <span class="attr">&quot;react-scripts&quot;</span>: <span class="string">&quot;5.0.1&quot;,</span></span><br><span class="line">    <span class="attr">&quot;web-vitals&quot;</span>: <span class="string">&quot;^2.1.4&quot;//&#x6027;&#x80FD;&#x68C0;&#x6D4B;&#x5DE5;&#x5177;</span></span><br><span class="line">  <span class="attr">},</span></span><br></pre></td></tr></table></figure>
-
-<p>react&#xFF1A;React&#x6846;&#x67B6;&#x7684;&#x6838;&#x5FC3;</p>
-<p>react-dom&#xFF1A;React&#x89C6;&#x56FE;&#x6E32;&#x67D3;&#x7684;&#x6838;&#x5FC3;&#xFF08;&#x57FA;&#x4E8E;React&#x6784;&#x5EFA;WebApp&#xFF08;HTML&#x9875;&#x9762;&#xFF09;&#xFF09;</p>
-<p>react-native&#xFF1A;&#x6784;&#x5EFA;&#x548C;&#x6E32;&#x67D3;App&#x7684;</p>
-<p>react-scripts&#xFF1A;&#x811A;&#x624B;&#x67B6;&#x4E3A;&#x4E86;&#x8BA9;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x770B;&#x8D77;&#x6765;&#x5E72;&#x51C0;&#x4E00;&#x4E9B;&#xFF0C;&#x628A;webpack&#x6253;&#x5305;&#x7684;&#x89C4;&#x5219;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x7684;&#x63D2;&#x4EF6;/LOADER&#x7B49;&#x90FD;&#x5F71;&#x85CF;&#x5728;node_modules&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;react-scripts&#x5C31;&#x662F;&#x811A;&#x624B;&#x67B6;&#x7528;&#x4E8E;&#x6253;&#x5305;&#x547D;&#x4EE4;&#x7684;&#x4E00;&#x79CD;&#x5C01;&#x88C5;&#xFF0C;&#x57FA;&#x4E8E;&#x5B83;&#x6253;&#x5305;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;node_modules&#x4E2D;&#x7684;webpack&#x7B49;&#x8FDB;&#x884C;&#x5904;&#x7406;</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span>: <span class="string">{//&#x6253;&#x5305;&#x547D;&#x4EE4;&#x662F;&#x57FA;&#x4E8E;react-scripts&#x5904;&#x7406;</span></span><br><span class="line">    <span class="attr">&quot;start&quot;</span>: <span class="string">&quot;react-scripts start&quot;,//&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;&#x5728;&#x672C;&#x5730;&#x542F;&#x52A8;web&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x9884;&#x89C8;&#x6253;&#x5305;&#x5185;&#x5BB9;</span></span><br><span class="line">    <span class="attr">&quot;build&quot;</span>: <span class="string">&quot;react-scripts build&quot;,//&#x751F;&#x4EA7;&#x73AF;&#x5883;&#xFF0C;&#x6253;&#x5305;&#x90E8;&#x7F72;&#xFF0C;&#x6253;&#x5305;&#x7684;&#x5185;&#x5BB9;&#x5C06;&#x8F93;&#x51FA;&#x5230;dist&#x76EE;&#x5F55;&#x4E2D;</span></span><br><span class="line">    <span class="attr">&quot;test&quot;</span>: <span class="string">&quot;react-scripts test&quot;,//&#x5355;&#x5143;&#x6D4B;&#x8BD5;</span></span><br><span class="line">    <span class="attr">&quot;eject&quot;</span>: <span class="string">&quot;react-scripts eject&quot;//&#x66B4;&#x9732;webpack&#x914D;&#x7F6E;&#x89C4;&#x5219;&#xFF08;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x6253;&#x5305;&#x89C4;&#x5219;&#xFF09;</span></span><br><span class="line">  <span class="attr">},</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;eslintConfig&quot;</span>: <span class="string">{</span></span><br><span class="line">    <span class="attr">&quot;extends&quot;</span>: <span class="string">[</span></span><br><span class="line">      <span class="attr">&quot;react-app&quot;,</span></span><br><span class="line">      <span class="attr">&quot;react-app/jest&quot;</span></span><br><span class="line">    <span class="attr">]</span></span><br><span class="line">  <span class="attr">},</span></span><br></pre></td></tr></table></figure>
-
-<p>&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x5C31;&#x662F;&#x5BF9;webpack&#x4E2D;&#x7684;ESLint&#x8BCD;&#x6CD5;&#x68C0;&#x6D4B;&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#xFF1A;</p>
-<p>&#x8BCD;&#x6CD5;&#x68C0;&#x6D4B;&#xFF1A;let var = 20(&#x4E0D;&#x7B26;&#x5408;&#x6807;&#x51C6;&#x89C4;&#x8303;)//var&#x662F;&#x5173;&#x952E;&#x8BCD;</p>
-<p>&#x7B26;&#x5408;&#x89C4;&#x8303;&#xFF0C;&#x4EE3;&#x7801;&#x672C;&#x8EAB;&#x6CA1;&#x6709;&#x62A5;&#x9519;&#xFF0C;&#x4F46;&#x4E0D;&#x7B26;&#x5408;ESLint&#x7684;&#x68C0;&#x67E5;&#x89C4;&#x8303;&#xFF1A;const num = 20(&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x4F46;&#x672A;&#x4F7F;&#x7528;)</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;browserslist&quot;</span>: <span class="string">{</span></span><br><span class="line">    <span class="attr">&quot;production&quot;</span>: <span class="string">[</span></span><br><span class="line">      <span class="attr">&quot;&gt;0.2%&quot;,//&#x4F7F;&#x7528;&#x7387;&#x8D85;&#x8FC7;0.2%&#x7684;&#x6D4F;&#x89C8;&#x5668;</span></span><br><span class="line">      <span class="attr">&quot;not</span> <span class="string">dead&quot;,&#x4E0D;&#x8003;&#x8651;IE</span></span><br><span class="line">      <span class="attr">&quot;not</span> <span class="string">op_mini all&quot;&#x4E0D;&#x8003;&#x8651;op&#x6D4F;&#x89C8;&#x5668;</span></span><br><span class="line">    <span class="attr">],</span></span><br><span class="line">    <span class="attr">&quot;development&quot;</span>: <span class="string">[//&#x4E0D;&#x517C;&#x5BB9;&#x4F4E;&#x7248;&#x672C;&#x548C;IE&#x6D4F;&#x89C8;&#x5668;</span></span><br><span class="line">      <span class="attr">&quot;last</span> <span class="string">1 chrome version&quot;,</span></span><br><span class="line">      <span class="attr">&quot;last</span> <span class="string">1 firefox version&quot;,</span></span><br><span class="line">      <span class="attr">&quot;last</span> <span class="string">1 safari version&quot;</span></span><br><span class="line">    <span class="attr">]</span></span><br><span class="line">  <span class="attr">}</span></span><br></pre></td></tr></table></figure>
-
-<p>&#x5982;&#x679C;&#x60F3;&#x4F7F;&#x7528;ie&#x6D4F;&#x89C8;&#x5668;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x4E3A;</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;browserslist&quot;</span>: <span class="string">{</span></span><br><span class="line">    <span class="attr">&quot;production&quot;</span>: <span class="string">[</span></span><br><span class="line">      <span class="attr">&quot;&gt;0.2%&quot;,</span></span><br><span class="line">      <span class="attr">&quot;not</span> <span class="string">i8&lt;=8&quot;,</span></span><br><span class="line">    <span class="attr">],</span></span><br><span class="line">    <span class="attr">&quot;development&quot;</span>: <span class="string">[</span></span><br><span class="line">      <span class="attr">&quot;last</span> <span class="string">2 version&quot;,</span></span><br><span class="line">    <span class="attr">]</span></span><br><span class="line">  <span class="attr">}</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="src"><a href="#src" class="headerlink" title="src"></a>src</h2><p><img src="/posts/0/image-20250305112025966.png" alt="image-20250305112025966"></p>
-<p>&#x5220;&#x9664;&#x591A;&#x4F59;&#x7684;&#x53EA;&#x7559;&#x4E0B;index.js</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import ReactDOM from &apos;react-dom/client&apos;;</span><br><span class="line"></span><br><span class="line">const root = ReactDOM.createRoot(document.getElementById(&apos;root&apos;));</span><br><span class="line">root.render(</span><br><span class="line">  &lt;React.StrictMode&gt;//React&#x7684;&#x4E25;&#x683C;&#x8BED;&#x6CD5;&#x6A21;&#x5F0F;&#xFF0C;&#x548C;use strict&#x4E0D;&#x4E00;&#x6837;</span><br><span class="line">    &lt;div&gt;sky&#x5B66;react&lt;/div&gt;</span><br><span class="line">  &lt;/React.StrictMode&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<p>public</p>
-<p><img src="/posts/0/image-20250305112602775.png" alt="image-20250305112602775"></p>
-<p>&#x5220;&#x9664;&#x591A;&#x4F59;&#x7684;&#x53EA;&#x7559;&#x4E0B;index.html</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;%PUBLIC_URL%/favicon.ico&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Sky&#x7684;React<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;root&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-   
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/posts/d9d45835/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -803,121 +659,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/posts/17c7b154/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Sky">
-      <meta itemprop="description" content="小白学习前端">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端学习">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/17c7b154/" class="post-title-link" itemprop="url">js</a>
-        </h2>
-
-        <div class="post-meta">
-	  
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-01-02 18:12:38" itemprop="dateCreated datePublished" datetime="2025-01-02T18:12:38+08:00">2025-01-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-03-06 17:07:02" itemprop="dateModified" datetime="2025-03-06T17:07:02+08:00">2025-03-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">前端学习</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/posts/17c7b154/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/17c7b154/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;js&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/17c7b154/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-   
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/posts/1879f8e5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1033,6 +774,389 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/posts/2362a8ea/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Sky">
+      <meta itemprop="description" content="小白学习前端">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端学习">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2362a8ea/" class="post-title-link" itemprop="url">链表</a>
+        </h2>
+
+        <div class="post-meta">
+	  
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-01-02 18:12:38" itemprop="dateCreated datePublished" datetime="2025-01-02T18:12:38+08:00">2025-01-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-02-07 15:45:12" itemprop="dateModified" datetime="2025-02-07T15:45:12+08:00">2025-02-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95/%E9%93%BE%E8%A1%A8/" itemprop="url" rel="index"><span itemprop="name">链表</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/2362a8ea/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/2362a8ea/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>615</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;&#x7B97;&#x6CD5;&#x94FE;&#x8868;&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;</strong></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/2362a8ea/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+   
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/posts/17c7b154/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Sky">
+      <meta itemprop="description" content="小白学习前端">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端学习">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/17c7b154/" class="post-title-link" itemprop="url">js</a>
+        </h2>
+
+        <div class="post-meta">
+	  
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-01-02 18:12:38" itemprop="dateCreated datePublished" datetime="2025-01-02T18:12:38+08:00">2025-01-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-03-06 17:07:02" itemprop="dateModified" datetime="2025-03-06T17:07:02+08:00">2025-03-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">前端学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/17c7b154/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/17c7b154/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;js&#x7684;&#x76F8;&#x5173;&#x6559;&#x7A0B;</strong></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/17c7b154/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+   
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/posts/96f30cca/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Sky">
+      <meta itemprop="description" content="小白学习前端">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端学习">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/96f30cca/" class="post-title-link" itemprop="url">React基本使用</a>
+        </h2>
+
+        <div class="post-meta">
+	  
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-01-02 18:12:38" itemprop="dateCreated datePublished" datetime="2025-01-02T18:12:38+08:00">2025-01-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-03-18 16:56:33" itemprop="dateModified" datetime="2025-03-18T16:56:33+08:00">2025-03-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index"><span itemprop="name">react</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/96f30cca/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/96f30cca/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="create-react-app&#x57FA;&#x672C;&#x4F7F;&#x7528;"><a href="#create-react-app&#x57FA;&#x672C;&#x4F7F;&#x7528;" class="headerlink" title="create-react-app&#x57FA;&#x672C;&#x4F7F;&#x7528;"></a>create-react-app&#x57FA;&#x672C;&#x4F7F;&#x7528;</h1><p>create-react-app&#xFF1A;&#x811A;&#x624B;&#x67B6;&#xFF0C;&#x57FA;&#x4E8E;&#x5B83;&#x521B;&#x5EFA;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C31;&#x628A;webpack&#x7684;&#x6253;&#x5305;&#x89C4;&#x5219;&#x5DF2;&#x7ECF;&#x5904;&#x7406;&#x597D;&#x4E86;&#xFF0C;&#x628A;&#x4E00;&#x4E9B;&#x9879;&#x76EE;&#x9700;&#x8981;&#x7684;&#x57FA;&#x672C;&#x6587;&#x4EF6;&#x4E5F;&#x521B;&#x5EFA;&#x597D;&#x4E86;</p>
+<p>&#x5B89;&#x88C5;&#x811A;&#x624B;&#x67B6;</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">npm</span> i create-react-app -g</span><br></pre></td></tr></table></figure>
+
+<p>&#x68C0;&#x67E5;&#x5B89;&#x88C5;&#x60C5;&#x51B5;</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create-react-<span class="attribute">app</span> --version</span><br></pre></td></tr></table></figure>
+
+<p>&#x57FA;&#x4E8E;&#x811A;&#x624B;&#x67B6;&#x521B;&#x5EFA;React&#x5DE5;&#x7A0B;&#x5316;&#x7684;&#x9879;&#x76EE;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create-react-app &#x9879;&#x76EE;&#x540D;&#x79F0;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>&#x9879;&#x76EE;&#x540D;&#x79F0;&#x8981;&#x9075;&#x5FAA;npm&#x5305;&#x7684;&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF1A;&#x4F7F;&#x7528;&#x201C;&#x6570;&#x5B57;&#x3001;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x3001;_&#x201D;&#x547D;&#x540D;</p>
+</blockquote>
+<h1 id="React&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7ED3;&#x6784;"><a href="#React&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7ED3;&#x6784;" class="headerlink" title="React&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7ED3;&#x6784;"></a>React&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7ED3;&#x6784;</h1><p><img src="/posts/96f30cca/image-20250305092315062.png" alt="image-20250305092315062"></p>
+<p>&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#xFF1A;</p>
+<p>&#x200B;	|- node_modules<br>&#x200B;	|- src&#xFF1A;&#x7F16;&#x5199;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x51E0;&#x4E4E;&#x90FD;&#x653E;&#x5728;src&#x4E0B;&#xFF08;&#x6253;&#x5305;&#x7684;&#x65F6;&#x5019;&#x4E00;&#x822C;&#x53EA;&#x5BF9;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF09;<br>&#x200B;		|-index.js<br>&#x200B;	|- public&#xFF1A;&#x653E;&#x9875;&#x9762;&#x6A21;&#x677F;<br>&#x200B;		|-index.html<br>&#x200B;	|- package.json<br>&#x200B;	|- &#x2026;</p>
+<p>&#x4F7F;&#x7528;npm&#x7BA1;&#x7406;react&#x4F1A;&#x751F;&#x6210;node_modules&#x548C;package-lock.json</p>
+<p>&#x5982;&#x679C;&#x60F3;&#x4F7F;&#x7528;yarn&#x7BA1;&#x7406;&#x9879;&#x76EE;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;node_modules&#x548C;package-lock.json&#x6587;&#x4EF6;&#x5220;&#x9664;&#x7136;&#x540E;&#x8FD0;&#x884C;</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn</span><br></pre></td></tr></table></figure>
+
+<p>&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x5C31;&#x4F1A;&#x751F;&#x6210;node_modules&#x548C;yarn.lock&#x6587;&#x4EF6;</p>
+<p><img src="/posts/96f30cca/image-20250305094116726.png" alt="image-20250305094116726"></p>
+<h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h2><p>&#x811A;&#x624B;&#x67B6;&#x81EA;&#x5E26;&#x7684;git&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x5220;&#x9664;</p>
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">{</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;my-react-app&quot;,//&#x9879;&#x76EE;&#x540D;&#x5B57;</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;0.1.0&quot;,//&#x7248;&#x672C;</span></span><br><span class="line">  <span class="attr">&quot;private&quot;</span>: <span class="string">true,</span></span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span>: <span class="string">{//&#x9879;&#x76EE;&#x6240;&#x9700;&#x8981;&#x7684;&#x4F9D;&#x8D56;</span></span><br><span class="line">    <span class="attr">&quot;@testing-library/dom&quot;</span>: <span class="string">&quot;^10.4.0&quot;,</span></span><br><span class="line">    <span class="attr">&quot;@testing-library/jest-dom&quot;</span>: <span class="string">&quot;^6.6.3&quot;,</span></span><br><span class="line">    <span class="attr">&quot;@testing-library/react&quot;</span>: <span class="string">&quot;^16.2.0&quot;,</span></span><br><span class="line">    <span class="attr">&quot;@testing-library/user-event&quot;</span>: <span class="string">&quot;^13.5.0&quot;,</span></span><br><span class="line">    <span class="attr">&quot;react&quot;</span>: <span class="string">&quot;^19.0.0&quot;,</span></span><br><span class="line">    <span class="attr">&quot;react-dom&quot;</span>: <span class="string">&quot;^19.0.0&quot;,</span></span><br><span class="line">    <span class="attr">&quot;react-scripts&quot;</span>: <span class="string">&quot;5.0.1&quot;,</span></span><br><span class="line">    <span class="attr">&quot;web-vitals&quot;</span>: <span class="string">&quot;^2.1.4&quot;//&#x6027;&#x80FD;&#x68C0;&#x6D4B;&#x5DE5;&#x5177;</span></span><br><span class="line">  <span class="attr">},</span></span><br></pre></td></tr></table></figure>
+
+<p>react&#xFF1A;React&#x6846;&#x67B6;&#x7684;&#x6838;&#x5FC3;</p>
+<p>react-dom&#xFF1A;React&#x89C6;&#x56FE;&#x6E32;&#x67D3;&#x7684;&#x6838;&#x5FC3;&#xFF08;&#x57FA;&#x4E8E;React&#x6784;&#x5EFA;WebApp&#xFF08;HTML&#x9875;&#x9762;&#xFF09;&#xFF09;</p>
+<p>react-native&#xFF1A;&#x6784;&#x5EFA;&#x548C;&#x6E32;&#x67D3;App&#x7684;</p>
+<p>react-scripts&#xFF1A;&#x811A;&#x624B;&#x67B6;&#x4E3A;&#x4E86;&#x8BA9;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x770B;&#x8D77;&#x6765;&#x5E72;&#x51C0;&#x4E00;&#x4E9B;&#xFF0C;&#x628A;webpack&#x6253;&#x5305;&#x7684;&#x89C4;&#x5219;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x7684;&#x63D2;&#x4EF6;/LOADER&#x7B49;&#x90FD;&#x5F71;&#x85CF;&#x5728;node_modules&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;react-scripts&#x5C31;&#x662F;&#x811A;&#x624B;&#x67B6;&#x7528;&#x4E8E;&#x6253;&#x5305;&#x547D;&#x4EE4;&#x7684;&#x4E00;&#x79CD;&#x5C01;&#x88C5;&#xFF0C;&#x57FA;&#x4E8E;&#x5B83;&#x6253;&#x5305;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;node_modules&#x4E2D;&#x7684;webpack&#x7B49;&#x8FDB;&#x884C;&#x5904;&#x7406;</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span>: <span class="string">{//&#x6253;&#x5305;&#x547D;&#x4EE4;&#x662F;&#x57FA;&#x4E8E;react-scripts&#x5904;&#x7406;</span></span><br><span class="line">    <span class="attr">&quot;start&quot;</span>: <span class="string">&quot;react-scripts start&quot;,//&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;&#x5728;&#x672C;&#x5730;&#x542F;&#x52A8;web&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x9884;&#x89C8;&#x6253;&#x5305;&#x5185;&#x5BB9;</span></span><br><span class="line">    <span class="attr">&quot;build&quot;</span>: <span class="string">&quot;react-scripts build&quot;,//&#x751F;&#x4EA7;&#x73AF;&#x5883;&#xFF0C;&#x6253;&#x5305;&#x90E8;&#x7F72;&#xFF0C;&#x6253;&#x5305;&#x7684;&#x5185;&#x5BB9;&#x5C06;&#x8F93;&#x51FA;&#x5230;dist&#x76EE;&#x5F55;&#x4E2D;</span></span><br><span class="line">    <span class="attr">&quot;test&quot;</span>: <span class="string">&quot;react-scripts test&quot;,//&#x5355;&#x5143;&#x6D4B;&#x8BD5;</span></span><br><span class="line">    <span class="attr">&quot;eject&quot;</span>: <span class="string">&quot;react-scripts eject&quot;//&#x66B4;&#x9732;webpack&#x914D;&#x7F6E;&#x89C4;&#x5219;&#xFF08;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x6253;&#x5305;&#x89C4;&#x5219;&#xFF09;</span></span><br><span class="line">  <span class="attr">},</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;eslintConfig&quot;</span>: <span class="string">{</span></span><br><span class="line">    <span class="attr">&quot;extends&quot;</span>: <span class="string">[</span></span><br><span class="line">      <span class="attr">&quot;react-app&quot;,</span></span><br><span class="line">      <span class="attr">&quot;react-app/jest&quot;</span></span><br><span class="line">    <span class="attr">]</span></span><br><span class="line">  <span class="attr">},</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x5C31;&#x662F;&#x5BF9;webpack&#x4E2D;&#x7684;ESLint&#x8BCD;&#x6CD5;&#x68C0;&#x6D4B;&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#xFF1A;</p>
+<p>&#x8BCD;&#x6CD5;&#x68C0;&#x6D4B;&#xFF1A;let var = 20(&#x4E0D;&#x7B26;&#x5408;&#x6807;&#x51C6;&#x89C4;&#x8303;)//var&#x662F;&#x5173;&#x952E;&#x8BCD;</p>
+<p>&#x7B26;&#x5408;&#x89C4;&#x8303;&#xFF0C;&#x4EE3;&#x7801;&#x672C;&#x8EAB;&#x6CA1;&#x6709;&#x62A5;&#x9519;&#xFF0C;&#x4F46;&#x4E0D;&#x7B26;&#x5408;ESLint&#x7684;&#x68C0;&#x67E5;&#x89C4;&#x8303;&#xFF1A;const num = 20(&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x4F46;&#x672A;&#x4F7F;&#x7528;)</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;browserslist&quot;</span>: <span class="string">{</span></span><br><span class="line">    <span class="attr">&quot;production&quot;</span>: <span class="string">[</span></span><br><span class="line">      <span class="attr">&quot;&gt;0.2%&quot;,//&#x4F7F;&#x7528;&#x7387;&#x8D85;&#x8FC7;0.2%&#x7684;&#x6D4F;&#x89C8;&#x5668;</span></span><br><span class="line">      <span class="attr">&quot;not</span> <span class="string">dead&quot;,&#x4E0D;&#x8003;&#x8651;IE</span></span><br><span class="line">      <span class="attr">&quot;not</span> <span class="string">op_mini all&quot;&#x4E0D;&#x8003;&#x8651;op&#x6D4F;&#x89C8;&#x5668;</span></span><br><span class="line">    <span class="attr">],</span></span><br><span class="line">    <span class="attr">&quot;development&quot;</span>: <span class="string">[//&#x4E0D;&#x517C;&#x5BB9;&#x4F4E;&#x7248;&#x672C;&#x548C;IE&#x6D4F;&#x89C8;&#x5668;</span></span><br><span class="line">      <span class="attr">&quot;last</span> <span class="string">1 chrome version&quot;,</span></span><br><span class="line">      <span class="attr">&quot;last</span> <span class="string">1 firefox version&quot;,</span></span><br><span class="line">      <span class="attr">&quot;last</span> <span class="string">1 safari version&quot;</span></span><br><span class="line">    <span class="attr">]</span></span><br><span class="line">  <span class="attr">}</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x5982;&#x679C;&#x60F3;&#x4F7F;&#x7528;ie&#x6D4F;&#x89C8;&#x5668;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x4E3A;</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;browserslist&quot;</span>: <span class="string">{</span></span><br><span class="line">    <span class="attr">&quot;production&quot;</span>: <span class="string">[</span></span><br><span class="line">      <span class="attr">&quot;&gt;0.2%&quot;,</span></span><br><span class="line">      <span class="attr">&quot;not</span> <span class="string">i8&lt;=8&quot;,</span></span><br><span class="line">    <span class="attr">],</span></span><br><span class="line">    <span class="attr">&quot;development&quot;</span>: <span class="string">[</span></span><br><span class="line">      <span class="attr">&quot;last</span> <span class="string">2 version&quot;,</span></span><br><span class="line">    <span class="attr">]</span></span><br><span class="line">  <span class="attr">}</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="src"><a href="#src" class="headerlink" title="src"></a>src</h2><p><img src="/posts/96f30cca/image-20250305112025966.png" alt="image-20250305112025966"></p>
+<p>&#x5220;&#x9664;&#x591A;&#x4F59;&#x7684;&#x53EA;&#x7559;&#x4E0B;index.js</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import ReactDOM from &apos;react-dom/client&apos;;</span><br><span class="line"></span><br><span class="line">const root = ReactDOM.createRoot(document.getElementById(&apos;root&apos;));</span><br><span class="line">root.render(</span><br><span class="line">  &lt;React.StrictMode&gt;//React&#x7684;&#x4E25;&#x683C;&#x8BED;&#x6CD5;&#x6A21;&#x5F0F;&#xFF0C;&#x548C;use strict&#x4E0D;&#x4E00;&#x6837;</span><br><span class="line">    &lt;div&gt;sky&#x5B66;react&lt;/div&gt;</span><br><span class="line">  &lt;/React.StrictMode&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>public</p>
+<p><img src="/posts/96f30cca/image-20250305112602775.png" alt="image-20250305112602775"></p>
+<p>&#x5220;&#x9664;&#x591A;&#x4F59;&#x7684;&#x53EA;&#x7559;&#x4E0B;index.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;%PUBLIC_URL%/favicon.ico&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Sky&#x7684;React<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;root&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+   
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/posts/d59ddab2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1065,7 +1189,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-03-18 16:24:58" itemprop="dateModified" datetime="2025-03-18T16:24:58+08:00">2025-03-18</time>
+                <time title="修改时间：2025-03-18 16:55:46" itemprop="dateModified" datetime="2025-03-18T16:55:46+08:00">2025-03-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1255,121 +1379,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/posts/49d38819/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Sky">
-      <meta itemprop="description" content="小白学习前端">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端学习">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/49d38819/" class="post-title-link" itemprop="url">css面试总结</a>
-        </h2>
-
-        <div class="post-meta">
-	  
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-01-02 18:12:38" itemprop="dateCreated datePublished" datetime="2025-01-02T18:12:38+08:00">2025-01-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-02-07 15:42:15" itemprop="dateModified" datetime="2025-02-07T15:42:15+08:00">2025-02-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9D%A2%E8%AF%95/css/" itemprop="url" rel="index"><span itemprop="name">css</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/posts/49d38819/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/49d38819/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>18k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>17 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;css&#x9762;&#x8BD5;&#x7684;&#x76F8;&#x5173;&#x95EE;&#x9898;</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/49d38819/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-   
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1447,13 +1456,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
