@@ -1,3 +1,16 @@
+---
+title: React基本使用
+categories:
+  - react
+tags:
+  - react
+abbrlink: 96f30cca
+date: 2025-01-02 18:12:38
+---
+**本文讲述React基本使用**
+
+<!-- more -->
+
 # create-react-app基本使用
 
 create-react-app：脚手架，基于它创建的项目，默认就把webpack的打包规则已经处理好了，把一些项目需要的基本文件也创建好了

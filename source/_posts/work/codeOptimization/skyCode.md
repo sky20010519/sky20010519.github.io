@@ -488,6 +488,109 @@ function handle1() {
             }
 ```
 
+常用样式ERP
+
+```scss
+:deep(.el-input__wrapper) {
+        background-color: #427CD4;
+    }
+
+    :deep(.el-table--default) {
+        font-size: 14px;
+    }
+
+    :deep(.el-dialog) {
+        --el-dialog-bg-color: #3456a1
+    }
+
+    :deep(.el-dialog__title) {
+        color: #ffffff;
+    }
+
+    :deep(.el-select__wrapper) {
+        background-color: #427CD4;
+    }
+
+    :deep(.el-select__placeholder) {
+        color: #ffffff;
+    }
+
+    :deep(.el-input__inner) {
+        color: #ffffff;
+    }
+
+    :deep(.pagination-container) {
+        background: transparent;
+    }
+
+    :deep(.el-pagination__total) {
+        color: #ffffff;
+    }
+
+    :deep(.el-pagination__jump) {
+        color: #ffffff;
+    }
+
+    :deep(.el-pagination.is-background .el-pager li.is-active) {
+        border-radius: 20px;
+    }
+
+    :deep(.el-date-editor .el-range-input) {
+        color: #ffffff;
+    }
+
+    :deep(.el-date-editor .el-range-separator) {
+        color: #ffffff;
+    }
+
+    :deep(.el-table .el-table__header-wrapper th, .el-table .el-table__fixed-header-wrapper th) {
+        background-color: #1A6EF4 !important;
+        color: #ffffff;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18.48px;
+        border: 1px solid #1D469D;
+    }
+
+    :deep(.el-table)tr:nth-child(odd) {
+        background-color: #3358a7;
+        color: #ffffff;
+        border: 1px solid #1D469D;
+    }
+
+    :deep(.el-table__header-wrapper) {
+        // height: 36px;
+    }
+
+    :deep(.el-table__body-wrapper) {
+        max-height: 870px;
+        background: royalblue;
+    }
+
+    :deep(.el-table)tr:nth-child(even) {
+        background-color: #3668c3;
+        color: #ffffff;
+        border: 1px solid #1D469D;
+    }
+
+    :deep(.el-table)tbody tr:hover>td {
+        background-color: #1A6EF4 !important;
+    }
+
+    :deep(.el-table__body tr.current-row>td.el-table__cell) {
+        background-color: transparent !important;
+    }
+
+    :deep(.el-scrollbar__thumb) {
+        background-color: #409eff;
+    }
+
+    :deep(.el-scrollbar__bar.is-horizontal) {
+        height: 20px;
+    }
+```
+
 
 
 ## 合并行
@@ -811,3 +914,61 @@ site.includes('baidu');
 
 ```
 
+# 网络请求获取文件流
+
+普通的网络请求
+
+在request.js中设置请求地址，可以设置相关设置
+
+```js
+export const service2 = axios.create({
+  // axios中请求配置有baseURL选项，表示请求URL公共部分
+  baseURL: "https://ssrl.jnreli.com:18899/admin-api",
+  // baseURL:"https://safe.jinanenergy.cn/admin-api",
+  // 超时
+  timeout: 30000,
+});
+```
+
+在接口文件js中编写
+
+```js
+export function exportHazardCheck(data){
+    return service2.get("/biz/safe-to/erp/hidden/export/new",{
+        params: data,
+      })
+}
+```
+
+当请求的数据为文件流时，应该在请求头上加上responseType: 'blob'表明接收的数据为文件
+
+```js
+export function exportHazardCheck(data){
+    return service2.get("/biz/safe-to/erp/hidden/export/new",{
+        params: data,
+        responseType: 'blob'
+      })
+}
+```
+
+然后将数据用blob类型接收并且用a链接下载
+
+```js
+const blob = new Blob([data], {
+        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.style.display = "none";
+      link.href = url;
+      link.setAttribute("download", name + new Date().getTime() + ".xlsx");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link); // 下载完成移除元素
+      window.URL.revokeObjectURL(url); // 释放掉 blob 对象
+```
+
+注：type和后缀由不同的文件决定
+
+- 下载excel表格type:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,后缀为.xlsx
+- 下载pdf表格type:application/pdf,后缀为.pdf
