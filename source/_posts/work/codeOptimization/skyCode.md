@@ -257,6 +257,65 @@ function handleExport(){
 }
 ```
 
+抽象提取公共方法导出xlxs、csv、txt
+
+```js
+/**
+ * 导出文件
+ * @param {Array} exportList 导出数据
+ * @param {String} fileName 导出文件名
+ * @param {String} fileType 导出文件类型，支持 'xlsx', 'txt', 'csv'
+ */
+export function exportFile(exportList, fileName, fileType = 'xlsx') {
+  // 提取创建下载链接并触发下载的通用逻辑
+  const createAndTriggerDownload = (url, finalFileName) => {
+    const link = document.createElement("a");
+    link.style.display = "none";
+    link.href = url;
+    link.setAttribute("download", finalFileName);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  if (fileType === 'xlsx') {
+    const ws = XLSX.utils.json_to_sheet(exportList);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "result");
+    const wbout = XLSX.write(wb, {
+      bookType: "xlsx",
+      bookSST: true,
+      type: "array",
+    });
+    const blob = new Blob([wbout]);
+    const url = window.URL.createObjectURL(blob);
+    const finalFileName = `${fileName}${new Date().getTime()}.xlsx`;
+    createAndTriggerDownload(url, finalFileName);
+    window.URL.revokeObjectURL(url);
+  } else if (fileType === 'txt' || fileType === 'csv') {
+    // 提取处理每行数据的逻辑
+    const processRow = (row) => {
+      return Object.values(row).map(value => {
+        if (typeof value === 'string' && value.includes(',')) {
+          return `"${value}"`;
+        }
+        return value;
+      }).join(fileType === 'csv' ? ',' : '\t');
+    };
+
+    let csvContent = "data:text/csv;charset=utf-8,";
+    const rows = exportList.map(processRow);
+    csvContent += rows.join('\n');
+
+    const encodedUri = encodeURI(csvContent);
+    const finalFileName = `${fileName}${new Date().getTime()}.${fileType}`;
+    createAndTriggerDownload(encodedUri, finalFileName);
+  }
+}
+```
+
+
+
 # ui中的字体样式
 
 看到公司ui设计图中的字体样式，不能直接复制粘贴，因为本项目中不一定有样式中的字体包，需要我们在项目中引用字体包
@@ -972,3 +1031,70 @@ const blob = new Blob([data], {
 
 - 下载excel表格type:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,后缀为.xlsx
 - 下载pdf表格type:application/pdf,后缀为.pdf
+
+# 前端权限开发
+
+## 权限控制的方案选择
+
+做后台项目区别于做其它的项目，权限验证与安全性是非常重要的，可以说是一个后台项目一开始就必须考虑和搭建的基础核心功能。在后台管理系统中，实现权限控制可以采用多种方案：
+
+| 权限方案类型                                              | 描述                                                         |
+| :-------------------------------------------------------- | ------------------------------------------------------------ |
+| 基于角色的访问控制（Role-Based Access Control，RBAC）     | 是一种广泛采用的权限控制方案。系统中定义了不同的角色，每个角色具有一组权限，而用户被分配到一个或多个角色。通过控制用户角色的分配，可以实现对用户访问系统中不同功能和资源的权限控制。 |
+| 基于权限的访问控制（Permission-Based Access Control）     | 这种方案将权限直接分配给用户，而不是通过角色来管理。每个用户都有自己的权限列表，控制用户对系统中各项功能和资源的访问。 |
+| 基于资源的访问控制（Resource-Based Access Control，RBAC） | 这种方案将权限控制与资源本身关联起来。系统中的每个资源都有自己的访问权限，用户通过被授予资源的访问权限来控制其对资源的操作。 |
+| 层次结构权限控制（Hierarchical Access Control）           | 这种方案基于资源和操作的层次结构来进行权限控制。系统中的资源和操作被组织成层次结构，用户被授予访问某个层次及其子层次的权限。 |
+| 基于规则的访问控制（Rule-Based Access Control             | 这种方案使用预定义的规则来确定用户对系统中功能和资源的访问权限。规则可以基于用户属性、环境条件或其他因素进行定义。 |
+
+这里我选择了**基于角色的访问控制（Role-Based Access Control，RBAC）** 这是因为RBAC提供了一种灵活且易于管理的方式来控制用户对系统功能和资源的访问，也是目前最主流的前端权限方案选择。
+
+在RBAC中，系统中的功能和资源被组织成角色，而用户则被分配到不同的角色。每个角色都有一组权限，定义了该角色可以执行的操作和访问的资源。通过给用户分配适当的角色，可以实现对用户的权限控制。
+
+RBAC的好处之一是它简化了权限管理的复杂性。管理员只需管理角色和分配角色给用户，而不需要为每个用户单独定义权限。当需要对用户的权限进行修改时，只需调整其角色的权限即可。
+
+此外，RBAC还支持灵活的权限组合，允许创建具有不同权限组合的角色，以适应不同用户的需求。它也便于扩展，可以随着系统的发展和需求的变化而调整和添加角色。
+
+## RBAC下的权限字段设计与管理模型
+
+### 用户权限授权
+
+是对用户身份认证的细化。可简单理解为访问控制，在用户身份认证通过后，系统对用户访问菜单或按钮进行控制。也就是说，该用户有身份进入系统了，但他不一定能访问系统里的所有菜单或按钮，而他只能访问管理员给他分配的权限菜单或按钮。 主要包括：
+
+- Permission（权限标识、权限字符串）：针对系统访问资源的权限标识，如：用户添加、用户修改、用户删除。
+- Role （角色）：可以理解为权限组，也就是说角色下可以访问和点击哪些菜单、访问哪些权限标识。
+
+权限标识或权限字符串校验规则：
+
+- 权限字符串：指定权限串必须和菜单中的权限标识匹配才可访问
+- **权限字符串命名规范为：`模块:功能:操作`，例如：`sys:user:edit`**
+- 使用冒号分隔，对授权资源进行分类，如 `sys:user:edit` 代表 `系统模块:用户功能:编辑操作`
+- 设定的功能指定的`权限字符串`与当前用户的`权限字符串`进行匹配，若匹配成功说明当前用户有该功能权限
+- 还可以使用简单的通配符，如 `sys:user:*`，建议省略为 `sys:user`（分离前端不能使用星号写法）
+- 举例1 `sys:user` 将于 `sys:user` 或 `sys:user:` 开头的所有权限字符串匹配成功
+- 举例2 `sys` 将于 `sys` 或 `sys:` 开头的所有权限字符串匹配成功 这种命名格式的好处有：
+
+1. **可读性和可理解性**：使用模块、功能和操作的格式可以直观地表达权限的含义。每个部分都有明确的作用，模块表示特定的模块或子系统，功能表示模块内的某个功能或页面，操作表示对功能进行的具体操作。通过这种格式，权限名称可以更容易地被开发人员、管理员和其他人员理解和解释。
+2. **可扩展性和灵活性：** 通过使用模块、功能和操作的格式，可以轻松地扩展和管理权限。每个模块、功能和操作都可以被单独定义和控制。当系统需要增加新的功能或操作时，可以根据需要添加新的权限字符串，而不需要修改现有的权限规则和代码。
+3. **细粒度的权限控制：** 这种格式支持细粒度的权限控制，可以针对特定的功能和操作进行权限管理。通过将权限名称拆分为模块、功能和操作，可以精确地定义哪些用户或角色具有访问或操作特定功能的权限。
+4. **避免权限冲突：** 使用模块、功能和操作的格式可以避免权限之间的冲突。不同模块、功能和操作的权限名称是唯一的，这样可以避免同名权限之间的混淆和冲突。
+
+### 权限管理模型
+
+关键数据模型如下：
+
+- 用户：登录账号、密码、角色
+- 角色：角色名称、角色权限字符、对应菜单、对应菜单下的权限
+- 菜单：菜单名称、菜单URL、菜单类型
+- 用户角色关系：用户编码、角色编码
+- 角色菜单关系：角色编码、菜单编码
+
+关系图如下：
+
+```
+【用户】  <---多对多--->  【角色】  <---多对多--->  【菜单/权限】
+```
+
+### 实验思路与步骤
+
+前端权限一般分为路由级权限和按钮级权限，这里我们先实现页面路由级的权限功能，按钮级的会在后面讲到。
+
