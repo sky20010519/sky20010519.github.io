@@ -1098,3 +1098,132 @@ RBAC的好处之一是它简化了权限管理的复杂性。管理员只需管�
 
 前端权限一般分为路由级权限和按钮级权限，这里我们先实现页面路由级的权限功能，按钮级的会在后面讲到。
 
+# 图标的使用
+
+## el-icon
+
+项目中使用element-plus，如果没有先安装element-plus
+
+```nginx
+npm install element-plus --save
+```
+
+然后在项目main.js中应用
+
+```js
+import ElementPlus from "element-plus";
+import "element-plus/dist/index.css";
+import { zhCn } from 'element-plus/es/locale/index.mjs'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+
+const app = createApp(App)
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    app.component(key, component)
+  }//这里是全部应用所有图片，也可以不在这里应用在但页面引用
+app.use(ElementPlus,{locale: zhCn})
+```
+
+单页面
+
+```js
+import {
+  Check,
+  Delete,
+  Edit,
+  Message,
+  Search,
+  Star,
+} from '@element-plus/icons-vue'
+```
+
+然后就可以使用el-icon
+
+```vue
+<el-icon><Edit /></el-icon>
+```
+
+## 阿里图标库
+
+element的图标还是太少，而且不能选择多样的形式，阿里图标库更加丰富，支持多种形式
+
+首先前往阿里图标官网注册账号[iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/?spm=a313x.manage_type_myprojects.i3.2.e61f3a816yTH5e)
+
+注册完后再上方菜单找到资源管理->我的项目在右边点击新建项目
+
+![image-20250422183658934](image-20250422183658934.png)
+
+然后在首页去寻找自己想要的图标点击添加入库然后在右上角的小车里找到添加至项目，再去自己项目选择symbol点击查看在线链接复制到网页中打开获得一大串代码
+
+![image-20250422183849243](image-20250422183849243.png)
+
+拿到一串代码前往前端项目中在assets中创建icon文件icon.js，把自己刚刚得到的代码放进去然后在mian.js中应用
+
+```js
+import './assets/icon.js'
+```
+
+然后在自己项目中创建一个公共组件SvgIcon.vue
+
+```vue
+<template>
+    <svg :class="svgClass" aria-hidden="true">
+        <use :xlink:href="iconClassName" :fill="color"></use>
+    </svg>
+</template>
+
+<script setup>
+import { computed } from 'vue';
+
+
+const props = defineProps({
+    iconName: {
+        type: String,
+        required: true
+    },
+    className: {
+        type: String,
+        default: ''
+    },
+    color: {
+        type: String,
+        default: '#409eff'
+    }
+});
+
+const iconClassName = computed(()=>{
+    return `#${props.iconName}`
+})
+
+const svgClass = computed(()=>{
+    if(props.className){
+        return `svg-icon ${props.className}`
+    }
+    return 'svg-icon'
+})
+</script>
+
+<style lang="scss" scoped>
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+</style>
+```
+
+然后在mian.js中引用并注册
+
+```js
+import SvgIcon from './components/SvgIcon.vue'
+app.component('SvgIcon',SvgIcon)
+```
+
+这样就可以在项目的任何组件中直接使用iconName的值就是在阿里我的项目中图标的名字，放在图标上直接点复制就行
+
+```
+<SvgIcon iconName="icon-shijian"></SvgIcon>
+```
+
+后续如果想更新图标库只需在阿里我的项目中更新在线链接获取代码去更新icon.js就行
