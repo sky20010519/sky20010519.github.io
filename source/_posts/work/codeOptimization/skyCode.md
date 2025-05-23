@@ -1173,8 +1173,6 @@ import './assets/icon.js'
 
 <script setup>
 import { computed } from 'vue';
-
-
 const props = defineProps({
     iconName: {
         type: String,
@@ -1227,3 +1225,109 @@ app.component('SvgIcon',SvgIcon)
 ```
 
 后续如果想更新图标库只需在阿里我的项目中更新在线链接获取代码去更新icon.js就行
+
+# 页面缩放自适应
+
+安装postcss-px-to-viewport-update可以自动将px单位转化为vh,vw
+
+```nginx
+npm install postcss-px-to-viewport-update -save-dev
+```
+
+在vite.config.js中css->postcss->plugins配置插件
+
+```js
+postcsspxtoviewport({
+            unitToConvert: "px",
+            viewportWidth: 1920,
+            unitPrecision: 5,
+            propList: ["*", "!min-width", "!min-height"],
+            viewportUnit: "vw",
+            fontViewportUnit: "vw",
+            selectorBlackList: [],
+            minPixelValue: 1,
+            mediaQuery: false,
+            replace: true,
+            exclude: undefined, // 设置忽略文件，用正则做目录名匹配
+            include: [/\/src\/views\/dashboard\/overview\//, /\/src\/views\/dashboard\/investOverview\//,/\/src\/views\/dashboard\/comment\//],
+            landscape: false,
+            landscapeUnit: "vw",
+            landscapeWidth: 1080,
+          }),
+```
+
+
+
+# 移动端
+
+想要将网页端的东西在移动端展示，要用到rm自适应移动端界面，
+
+安装插件flexible
+
+```nginx
+npm install amfe-flexible --save-dev
+```
+
+在js中引用
+
+```js
+import 'amfe-flexible'
+```
+
+安装postcss-pxtorem(px转化为rem)
+
+安装这个后，开发过程中就可以写px了，插件会自动转化为移动端单位rm
+
+```nginx
+npm install postcss-pxtorem --save
+```
+
+在vite.config.js中css->postcss->plugins配置插件
+
+```js
+pxtorem({
+	rootValue: 75, // 1rem的大小
+	propList: ["*"], // 需要转换的属性，这里选择全部都进行转换
+	selectorBlackList: ['.vant'],
+	exclude: (e)=>{
+		if(/src(\\|\/)views(\\|\/)dashboard(\\|\/)mobileProgram/.test(e)){
+			return false;
+		}else{
+			return true;
+		}
+	}, // 默认false，可以（reg）利用正则表达式排除某些文件夹的方法，例如/(node_module)/ 。如果想把前端UI框架内的px也转换成rem，请把此属性设为默认值,
+}),
+```
+
+安装vant组件库
+
+```nginx
+npm i vant  -S
+```
+
+配置按需引入组件
+
+```nginx
+npm i unplugin-vue-components -D
+```
+
+在vite.config.js中配置插件
+
+```js
+import { VantResolver } from 'unplugin-vue-components/resolvers';
+const vitePlugins = [
+        vue(),
+        // 使用 unplugin-vue-components 插件自动导入 Vant 组件
+        Components({
+            resolvers: [VantResolver()],
+        })
+    ];
+```
+
+适配的插件也要过滤Vant才不会影响Vant组件的渲染效果
+
+```js
+selectorBlackList: [".van"],
+exclude: "/node_modules",
+```
+
