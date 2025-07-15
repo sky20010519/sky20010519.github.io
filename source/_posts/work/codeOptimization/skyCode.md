@@ -111,6 +111,29 @@ function formatDate(day, month, year) {
     dateRange.value[1] = formatDate(day, month, year);
 ```
 
+# 寻找最近日期
+
+在JavaScript中，`Date`类型可以直接进行比较。`Date`对象之间的比较会按照时间先后顺序进行判断，比较的是它们的时间戳值（自1970年1月1日以来的毫秒数）。
+
+```js
+let lineIndex = xList.findIndex(date => date.includes('2025-05-31'))
+    if(lineIndex === -1) {
+        const targetDate = new Date('2025-05-31')
+        // 遍历所有日期，找到小于等于5月31日的最大日期
+        let closestIndex = -1
+        let closestDate = null
+        xList.forEach((dateStr, idx) => {
+            const currentDate = new Date(dateStr)
+            if(currentDate <= targetDate && 
+               (!closestDate || currentDate > closestDate)) {
+                closestDate = currentDate
+                closestIndex = idx
+            }
+        })
+        lineIndex = closestIndex
+    }
+```
+
 # 用div写切换按钮的样式
 
 ```html
