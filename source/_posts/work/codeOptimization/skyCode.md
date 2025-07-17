@@ -552,6 +552,44 @@ function handle1() {
             }
 ```
 
+## 表头背景设置
+
+```css
+:deep(.el-table .el-table__header-wrapper th,
+        .el-table .el-table__fixed-header-wrapper th) {
+        background: linear-gradient(#21a8f1 0%, #0f2d91 100%);
+        border-radius: 0px 0px 0px 0px;
+        color: #ffffff;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        font-weight: 400;
+    }
+```
+
+## 表格行背景
+
+```css
+:deep(.el-table)tr {
+        background: #1A4899;
+        border-radius: 0px 0px 0px 0px;
+        color: #ffffff;
+        border: 1px solid #1d469d;
+    }
+    :deep(.el-table)tbody tr:hover>td {
+        background-color: #1a6ef4 !important;
+    }
+```
+
+## 表体背景
+
+```css
+:deep(.el-table__body-wrapper) {
+        background: #092387;
+    }
+```
+
+
+
 ## 取消表格高亮
 
 取消单行悬浮高光
@@ -774,6 +812,48 @@ const tableData = computed(()=>{
                 z-index: 1;
             }
 }
+```
+
+## 表格自动滚动
+
+使用定时器获取表格属性自动滚动
+
+先定义好表格的ref用于获取表格属性，定时器用于开启滚动或关闭
+
+```js
+<el-table ref="tableRef" :data="data" style="width: 95%" height="410">
+            </el-table>
+
+const tableRef = ref(null)
+const scrollTimer = ref(null)
+
+function startAutoScroll(isScroll) {
+    const table = tableRef.value.layout.table.refs;
+    const tableWrapper = table.bodyWrapper.firstElementChild.firstElementChild;
+
+    //鼠标放上去，停止滚动；移开，继续滚动
+    tableWrapper.addEventListener("mouseover", () => {
+        isScroll = false;
+    });
+    tableWrapper.addEventListener("mouseout", () => {
+        isScroll = true;
+    });
+    scrollTimer.value = setInterval(() => {
+        if (isScroll) {
+            tableWrapper.scrollTop += 1;
+            // 到达最后一行时从第一条继续
+            if (
+                tableWrapper.clientHeight + tableWrapper.scrollTop >=
+                tableWrapper.scrollHeight
+            ) {
+                tableWrapper.scrollTop = 0;
+            }
+        }
+    }, 50);
+}
+
+if(scrollTimer.value) clearInterval(scrollTimer.value)
+        startAutoScroll(true);
 ```
 
 # 常用的js代码
