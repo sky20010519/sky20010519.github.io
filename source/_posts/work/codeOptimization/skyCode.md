@@ -1,5 +1,6 @@
 ---
 title: 工作中用到的代码
+top: 99
 categories:
   - js
 tags:
@@ -551,6 +552,24 @@ function handle1() {
                 font-weight: bold;
             }
 ```
+
+## 数据为空时背景
+
+```scss
+.el-table tr,
+    .el-table,
+    .el-table--enable-row-hover .el-table__body tr:hover > td.el-table__cell,
+    .el-input__wrapper,
+    .el-table__footer-wrapper tfoot td.el-table__cell,
+    .el-select,
+    .el-select__wrapper,
+    .el-table__body tr > td.hover-cell,
+    .el-table td {
+      background-color: transparent !important;
+    }
+```
+
+
 
 ## 表头背景设置
 
@@ -1432,5 +1451,432 @@ const vitePlugins = [
 ```js
 selectorBlackList: [".van"],
 exclude: "/node_modules",
+```
+
+# 金额和数量的处理
+
+```js
+// 处理金额数据为万元
+export const dealAmount = (num, unit = 10000) => {
+  if (!num || isNaN(num)) return "0.00";
+  return numberWithCommas((num / unit).toFixed(2));
+};
+export const dealAmountYi = (num) => {
+  if (!num || isNaN(num)) return "0.00";
+  return numberWithCommas((num / 100000000).toFixed(2));
+};
+// 数字千分位分割
+export function numberWithCommas(x) {
+  x = x ? x : 0;
+  x = x.toString();
+  var parts = x.split(".");
+  if (parts[0]) {
+    parts[0] = parts[0].replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+  }
+  return parts.join(".");
+}
+
+```
+
+# 前端发版，浏览器页面没变
+
+> 有时候我们发了新版，结果用户看到的还是老界面。
+> 你：“我更新了啊！”
+> 用户：“我这儿没变啊！”
+> 然后你俩开始互相怀疑人生。
+> 那咋办？总不能让用户都清缓存吧
+> 当然不能。
+> 我们得让浏览器自己知道“该换新的了”。
+> 核心思路就一条：让静态资源的文件名变一变。
+> 浏览器靠文件名判断是不是同一个文件。
+> 文件名变了，它就会重新下载。
+
+## 方法1：加时间戳（简单）
+
+以前：
+
+```html
+<script src="/js/app.js"></script>
+```
+
+现在：
+
+```html
+<script src="/js/app.js?v=20250901"></script>
+```
+
+或者用时间戳：
+
+```html
+<script src="/js/app.js?t=1725153600"></script>
+```
+
+发版的时候，改一下`v` 或`t`的值，浏览器看到后发现文件名不一样，就会重新下载。
+
+> 优点：简单，立马见效
+>
+> 缺点：每次发版都得手动改，容易忘记
+
+## 方法2：用构建工具加hash
+
+你用Webpack、Vite、Rollup这些工具打包时，它会自动给文件名加一串hash:
+
+```html
+<script src="/js/app.a1b2c3d.js"></script>
+```
+
+你代码一改，hash就变
+
+```html
+<script src="/js/app.e4f5g6h.js"></script>
+```
+
+浏览器看到后发现文件名不一样，会自动拉新文件。
+
+使用时需要检查你的打包配置，确保输出文件带hash。
+
+Vite配置(vite.config.js):
+
+```js
+export default defineConfig({
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
+      }
+    }
+  }
+})
+```
+
+Vue CLI(vue.config.js):
+
+```js
+module.exports = {
+  filenameHashing: true, // 默认就是 true，别关掉！
+}
+```
+
+只要这个开着，JS/CSS 文件名就会变，浏览器就会更新。
+
+> 优点：全自动，不用操心
+> 优点：用户无感知，体验好
+> 优点：还能利用缓存（没改的文件hash不变，继续用旧的）
+
+## 虽说是这样，但为啥还有人卡在旧版本？
+
+文件名带`hash`，但`index.html`这个入口文件**本身可能被缓存了**！
+
+流程：
+
+> • `index.html`里引用了`app.8a2b1f3.js`
+>
+> • 用户第一次访问，加载了`index.html`和对应的JS
+>
+> • 你发新版，`index.html`指向`app.x9y8z7w.js`
+>
+> • 但用户浏览器缓存了旧的`index.html`，还在引用`app.8a2b1f3.js`
+>
+> • 结果：页面还是旧的
+
+这是**入口文件缓存**导致的发版无效。
+
+解决方案
+
+这是最简单有效的办法。
+配置`Nginx`，让`index.html`不缓存：
+
+```nginx
+location = /index.html {
+    add_header Cache-Control "no-cache, no-store, must-revalidate";
+    add_header Pragma "no-cache";
+    add_header Expires "0";
+}
+```
+
+这样每次用户访问，都会重新下载最新的 `index.html`，自然就拿到新的 JS 文件名。
+
+> 注意：其他静态资源（js/css）可以长期缓存，只有 `index.html` 要禁缓存。
+
+方法2：根据版本号来控制
+
+每一次更新都新建一个文件夹，然后修改`Nginx`配置
+
+```nginx
+location / {
+    root /home/server/html/yudao-vue3/version_1_2_5;
+    index index.html index.htm;
+    try_files $uri $uri/ /index.html;
+}
+```
+
+
+
+# echart组件的抽象化
+
+柱状图和折线图
+
+```vue
+<script setup>
+import * as echarts from "echarts";
+import ElementResize from 'element-resize-detector'
+import { nextTick, onUnmounted } from "vue";
+import { comptedFontSize } from "@/utils/erp";
+import { computed } from "vue";
+
+const erd = ElementResize();
+const props = defineProps({
+  echartsData: {
+    type: Object,
+    default: () => {
+      return {
+        xAxis: {},
+        yAxis: [],
+        series: [],
+      };
+    },
+  },
+});
+const emits = defineEmits(["handleClick"]);
+function clickHandle() {
+  emits("handleClick");
+}
+const echartsRef = ref(null);
+let myCharts = null;
+const createChart = ({
+  xAxis = {},
+  yAxis = [],
+  series = [],
+  grid = {},
+  tooltip = {},
+  legend = {},
+  title = {},
+  dataZoom = [],
+}) => {
+  let option = {
+    title: {
+      textStyle: {
+        fontSize: comptedFontSize(18),
+      },
+      ...title,
+    },
+    grid: {
+      left: "6%",
+      right: "6%",
+      top: "20%",
+      bottom: "13%",
+      ...grid,
+    },
+    dataZoom:[...dataZoom],
+    legend: {
+      textStyle: { color: "#000", fontSize: comptedFontSize(14) },
+      ...legend,
+    },
+    tooltip: {
+      confine: true,
+      textStyle: {
+        fontSize: comptedFontSize(18),
+      },
+
+      padding: comptedFontSize(8),
+      ...tooltip,
+    },
+    xAxis: {
+      type: "category",
+      axisLine: {
+        lineStyle: {
+          color: "#000",
+        },
+      },
+      axisTick: {
+        show: true,
+        lineStyle: {
+          color: "#000",
+        },
+      },
+      axisLabel: {
+        show: true,
+        color: "#000",
+        fontSize: comptedFontSize(14),
+      },
+      splitLine: { show: false },
+      nameTextStyle: {
+        fontSize: comptedFontSize(12),
+      },
+      ...xAxis,
+    },
+    yAxis: yAxis.map((singleYAxis) => {
+      return {
+        type: "value",
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: "#000",
+          },
+        },
+        splitLine: {
+          lineStyle: {
+            color: "#000",
+            type: "dashed",
+          },
+        },
+        axisTick: {
+          show: true,
+          lineStyle: {
+            color: "#000",
+          },
+        },
+        axisLabel: {
+          show: true,
+          color: "#000",
+          fontSize: comptedFontSize(14),
+        },
+        nameTextStyle: {
+          fontSize: comptedFontSize(12),
+        },
+        ...singleYAxis,
+      };
+    }),
+    series: [...series],
+  };
+
+  option && myCharts.setOption(option);
+};
+
+
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+
+const resizeObserver = new ResizeObserver((entries) => {
+  myCharts && myCharts.resize();
+});
+
+watch(
+  () => props.echartsData,
+  async (newValue) => {
+    console.log(newValue);
+    if (!myCharts) {
+      await sleep(100);
+      myCharts = echarts.init(echartsRef.value);
+    }
+    nextTick(() => {
+      erd.listenTo(echartsRef.value, () => {
+        myCharts.resize();
+      });
+    });
+    createChart(props.echartsData);
+    myCharts.resize();
+    resizeObserver.observe(echartsRef.value);
+  },
+  { deep: true, immediate: true }
+);
+onUnmounted(() => {
+  erd.uninstall(echartsRef.value)
+})
+</script>
+<template>
+  <div class="line-bar-echarts" @click="clickHandle" ref="echartsRef"></div>
+</template>
+<style lang="scss">
+.line-bar-echarts {
+  width: 100%;
+  height: 100%;
+  min-height: 100px;
+  min-width: 300px;
+}
+</style>
+
+```
+
+饼图
+
+```vue
+<script setup>
+import * as echarts from "echarts";
+import { onMounted } from "vue";
+import { comptedFontSize } from "@/utils/erp";
+
+const props = defineProps({
+  echartsData: {
+    type: Object,
+    default: () => {
+      return {
+        series: [],
+      };
+    },
+  },
+});
+const emits = defineEmits(["handleClick"]);
+function clickHandle() {
+  emits("handleClick"); 
+}
+const echartsRef = ref(null);
+let myCharts = null;
+const createChart = ({
+  series = [],
+  grid = {},
+  tooltip = {},
+  legend = {},
+  title = {},
+}) => {
+  if (!myCharts) {
+    myCharts = echarts.init(echartsRef.value);
+  }
+  let option = {
+    title: { ...title },
+    grid: {
+      left: "6%",
+      right: "6%",
+      top: "20%",
+      bottom: "13%",
+      ...grid,
+    },
+    legend: {
+      textStyle: { color: "#81f2fc", fontSize: comptedFontSize(14) },
+      ...legend,
+    },
+    tooltip: {
+      confine: true,
+      ...tooltip,
+    },
+
+    series: [...series],
+  };
+
+  option && myCharts.setOption(option);
+};
+
+const resizeObserver = new ResizeObserver((entries) => {
+  myCharts && myCharts.resize();
+});
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+
+watch(
+  () => props.echartsData,
+  async (newValue) => {
+    if (!myCharts) {
+      await sleep(100);
+      myCharts = echarts.init(echartsRef.value);
+    }
+    createChart(props.echartsData);
+    myCharts.resize();
+    resizeObserver.observe(echartsRef.value);
+  },
+  { deep: true, immediate: true }
+);
+</script>
+<template>
+  <div class="pie-echarts" @click="clickHandle" ref="echartsRef"></div>
+</template>
+<style lang="scss">
+.pie-echarts {
+  width: 100%;
+  height: 100%;
+  min-width: 200px;
+  min-height: 80px;
+}
+</style>
+
 ```
 
