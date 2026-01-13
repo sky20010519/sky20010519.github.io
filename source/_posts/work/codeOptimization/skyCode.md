@@ -1880,3 +1880,49 @@ watch(
 
 ```
 
+# 加载动画
+
+使用方法：在想要加加载动画的div父节点绑定position的relative，使用下面样式
+
+```scss
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(91, 221, 255, 0.3);
+    border-top-color: #5BDDFF;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.bottom-loading-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(16, 35, 82, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.loading-text {
+    margin-top: 16px;
+    color: #5BDDFF;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+```
+
