@@ -1616,7 +1616,7 @@ location / {
 
 # echart组件的抽象化
 
-柱状图和折线图
+## 柱状图和折线图
 
 ```vue
 <script setup>
@@ -1789,7 +1789,7 @@ onUnmounted(() => {
 
 ```
 
-饼图
+## 饼图
 
 ```vue
 <script setup>
@@ -1885,6 +1885,10 @@ watch(
 使用方法：在想要加加载动画的div父节点绑定position的relative，使用下面样式
 
 ```scss
+<div class="bottom-loading-mask">
+	<div class="loading-spinner"></div>
+	<div class="loading-text">加载中...</div>
+</div>
 .loading-spinner {
     width: 40px;
     height: 40px;
@@ -1923,6 +1927,151 @@ watch(
     100% {
         transform: rotate(360deg);
     }
+}
+```
+
+# 浏览器默认滑动条的样式
+
+```scss
+/* 全局滚动条样式（适配所有带滚动条的容器） */
+  /* 1. 滚动条整体容器 */
+  ::-webkit-scrollbar {
+    width: 4px;
+    /* 竖向滚动条宽度 */
+    height: 8px;
+    /* 横向滚动条高度 */
+  }
+
+  /* 2. 滚动条轨道（背景） */
+  ::-webkit-scrollbar-track {
+    background: #106eca;
+    /* 轨道底色 */
+    border-radius: 4px;
+    /* 轨道圆角 */
+  }
+
+  /* 3. 滚动条滑块（可拖动的部分） */
+  ::-webkit-scrollbar-thumb {
+    background: #42a2ff;
+    /* 滑块默认颜色 */
+    border-radius: 4px;
+    /* 滑块圆角 */
+    transition: background 0.2s;
+    /* hover 过渡效果 */
+  }
+
+  /* 4. 滑块 hover 状态（鼠标悬浮） */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #42a2ff;
+    /* 滑块悬浮颜色 */
+  }
+
+  /* 5. 滑块 active 状态（鼠标按下） */
+  ::-webkit-scrollbar-thumb:active {
+    background: #42a2ff;
+    /* 滑块按下颜色 */
+  }
+
+  /* 6. 滚动条角落（竖向+横向滚动条交汇处） */
+  ::-webkit-scrollbar-corner {
+    background: #f5f5f5;
+    /* 角落底色，与轨道一致 */
+  }
+```
+
+# echarts的进度条
+
+```js
+dataZoom: [
+    {
+      type: 'slider',                          // 使用滑动条型数据区域缩放组件
+      xAxisIndex: 0,                           // 控制第一个x轴（xAxis数组索引为0）
+      filterMode: 'filter',                    // 过滤模式，只渲染可见区域数据，提升性能
+      bottom: '2%',                            // 组件距离容器底部的距离为2%
+      height: 16,                              // 滑动条的高度为16像素
+      handleSize: '100%',                      // 两侧缩放手柄的大小为100%（填满高度）
+      showDetail: false,                       // 拖拽时不显示详细数值信息
+      borderColor: 'transparent',              // 滑动条边框颜色为透明
+      backgroundColor: 'rgba(255, 255, 255, 0.1)',  // 滑动条背景色（半透明白色）
+      fillerColor: 'rgba(11, 157, 220, 0.4)',  // 选中范围填充颜色（主题蓝色半透明）
+      handleStyle: {                           // 缩放手柄的样式配置
+        color: '#0b9ddc',                      // 手柄颜色（主题蓝色）
+        borderColor: '#0b9ddc',                // 手柄边框颜色
+        borderWidth: 1,                        // 手柄边框宽度为1像素
+        shadowBlur: 3,                         // 手柄阴影模糊度为3
+        shadowColor: 'rgba(11, 157, 220, 0.5)',// 手柄阴影颜色
+      },
+      moveHandleStyle: {                       // 移动手柄的样式配置
+        color: '#0b9ddc',                      // 移动手柄颜色（主题蓝色）
+      },
+      selectedDataBackground: {                // 选中区域的背景样式
+        lineStyle: {                           // 选中区域线条样式
+          color: '#0b9ddc',                    // 线条颜色（主题蓝色）
+        },
+        areaStyle: {                           // 选中区域填充样式
+          color: 'rgba(11, 157, 220, 0.2)',    // 填充颜色（主题蓝色半透明）
+        },
+      },
+      textStyle: {                             // 文字样式配置
+        color: '#ffffff',                      // 文字颜色为白色
+      },
+      minValueSpan: 3,                         // 最小显示数据个数为3（防止滑块过小）
+      maxValueSpan: 10,                        // 最大显示数据个数为10（限制显示范围）
+      startValue: 0,                           // 数据窗口起始值为索引0
+      endValue: 9,                             // 数据窗口结束值为索引9（默认显示10条）
+    },
+    {
+      type: 'inside',                          // 使用内置型数据区域缩放组件（鼠标滚轮/触摸）
+      xAxisIndex: 0,                           // 控制第一个x轴（xAxis数组索引为0）
+      filterMode: 'filter',                    // 过滤模式，只渲染可见区域数据，提升性能
+      minValueSpan: 3,                         // 最小显示数据个数为3（防止缩放过小）
+      maxValueSpan: 10,                        // 最大显示数据个数为10（限制缩放范围）
+      startValue: 0,                           // 数据窗口起始值为索引0
+      endValue: 9,                             // 数据窗口结束值为索引9（默认显示10条）
+    },
+  ],
+```
+
+# 前端免密登录（第三方跳转）
+
+找到文件中的路由守卫文件，找路由跳转前守卫，当获取token失败时截取链接中的参数pSign然后走单独方法，使用接口登录
+
+```js
+router.beforeEach((to, from, next) => {
+	NProgress.start();
+	if (getToken()) {
+		......
+	} else {
+		// 没有token
+		if (isWhiteList(to.path)) {
+			// 在免登录白名单，直接进入
+			next();
+		} else {
+			if (
+				Object.prototype.hasOwnProperty.call(query, 'pSign') &&
+				redirectList.indexOf(to.path) !== -1
+			) {
+				isLogin(to, next);
+			} else {
+				next(`/login?redirect=${to.fullPath}`); // 否则全部重定向到登录页
+			}
+			NProgress.done();
+		}
+	}
+});
+
+function isLogin(to, next) {
+  let pSign = to.query.pSign;
+  useUserStore()
+    .LoginJHaveToken({
+      pSign: pSign,
+    })
+    .then(() => {
+      next(to.path);
+    })
+    .catch(() => {
+      next(`/login?redirect=${to.fullPath}`); // 否则全部重定向到登录页
+    });
 }
 ```
 
